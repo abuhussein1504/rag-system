@@ -14,6 +14,10 @@ class Settings(BaseSettings):
     APP_NAME: str 
     APP_VERSION: str
 
+    FILE_ALLOWED_TYPES: list[str]
+    FILE_MAX_SIZE: int
+    DATA_DIR: str
+
  
 @lru_cache
 def get_settings() -> Settings:
