@@ -4,7 +4,7 @@ import pytest
 from fastapi.testclient import TestClient
 
 from main import app
-from src.utils.config import get_settings
+from src.config import get_settings
 
 
 @pytest.fixture

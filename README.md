@@ -10,22 +10,65 @@ RAG is an AI technique that improves LLM responses by first **retrieving** relev
 
 ```
 rag-system/
-├── src/rag/              # Core pipeline modules
-│   ├── chunking/         # Split documents into chunks
-│   ├── embedding/        # Convert chunks to vector embeddings
-│   ├── indexing/         # Store & search vectors (Qdrant)
-│   └── generation/       # Query LLM with retrieved context
-├── api/                  # FastAPI REST API
-├── scripts/              # CLI tools (ingest, eval)
-├── configs/              # YAML configuration files
-├── eval/                 # Evaluation golden set & reports
-├── tests/
+├── main.py                            # FastAPI entry point & lifespan
+├── pyproject.toml                     # Project metadata & configurations
+├── uv.lock                            # Dependency lockfile
+├── .env                               # Environment variables (ignored by git)
+├── .env.example                       # Environment variables template
+├── .gitignore
+├── LICENSE
+├── README.md
+│
+├── src/                               # Main source code
+│   ├── config.py                      # Pydantic Settings & environment config
+│   ├── enums.py                       # Enums (status, file types, sources)
+│   ├── schemas.py                     # Core domain models (Chunk, Document, etc.)
+│   │
+│   ├── api/                           # API layer (FastAPI)
+│   │   ├── routes/
+│   │   │   ├── base.py                # Health / status endpoints
+│   │   │   └── data.py                # Document upload & ingestion endpoints
+│   │   └── schemas/
+│   │       └── data.py                # API request/response schemas
+│   │
+│   ├── core/                          # Business logic
+│   │   └── ingestion/
+│   │       └── storage.py             # File saving & validation logic
+│   │
+│   ├── repositories/                  # Data access / repositories
+│   │   ├── enums/
+│   │   └── schemes/
+│   │
+│   ├── stores/                        # Storage abstractions (vector store, etc.)
+│   ├── scripts/                       # CLI commands & scripts
+│   └── utils/                         # Utilities & shared helpers
+│
+├── tests/                             # Test suite
 │   ├── unit/
-│   └── integration/
-└── data/
-    ├── raw/              # Original documents
-    ├── processed/        # Chunked & embedded documents
-    └── indexes/          # Vector index files
+│   │   ├── test_schemas.py            # Unit tests for domain models
+│   │   └── test_upload.py             # Unit tests for upload endpoint
+│   └── integration/                   # Integration tests
+│
+├── data/                              # Data directory (ignored by git)
+│   ├── raw/                           # Raw uploaded files (by project_id)
+│   ├── processed/                     # Parsed & chunked data
+│   └── indexes/                       # Vector indices / local cache
+│
+├── configs/                           # Application & pipeline YAML configurations
+│   ├── base.yaml
+│   └── experiments/
+│
+├── eval/                              # Evaluation harness & benchmarks
+│   ├── golden_set.jsonl
+│   └── reports/
+│
+├── docs/                              # Project documentation & architecture notes
+│   ├── architecture.md
+│   └── decisions/
+│
+└── .github/
+    └── workflows/
+        └── ci.yml                     # Continuous integration workflow
 ```
 
 ## Tech Stack
@@ -63,14 +106,10 @@ Copy `.env.example` to `.env` and fill in your keys:
 cp .env.example .env
 ```
 
-```env
-
-```
-
 ### Run the API
 
 ```bash
-uvicorn api:app --reload
+uvicorn main:app --reload
 ```
 
 ## License

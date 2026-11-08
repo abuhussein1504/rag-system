@@ -5,13 +5,13 @@ from fastapi import APIRouter, Depends, HTTPException, UploadFile
 from fastapi import Path as PathParam
 
 from src.api.schemas.data import UploadResponse
+from src.config import Settings, get_settings
 from src.core.ingestion.storage import (
     FileTooLargeError,
     FileTypeNotSupportedError,
     save_upload,
 )
-from src.utils.enums import ResponseStatus
-from src.utils.config import Settings, get_settings
+from src.enums import ResponseStatus
 
 data_router = APIRouter(prefix="/api/data", tags=["data"])
 

@@ -1,7 +1,8 @@
-from fastapi import APIRouter, Depends
 from typing import Annotated
 
-from src.utils.config import Settings, get_settings
+from fastapi import APIRouter, Depends
+
+from src.config import Settings, get_settings
 
 base_router = APIRouter(prefix="/api/info", tags=["base"])
 

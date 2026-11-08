@@ -2,7 +2,7 @@ from typing import Any
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
-from src.utils.enums import RetrievalSource
+from src.enums import RetrievalSource
 
 
 class Document(BaseModel):

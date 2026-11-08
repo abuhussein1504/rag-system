@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from src.utils.enums import ResponseStatus
+from src.enums import ResponseStatus
 
 
 class UploadResponse(BaseModel):
