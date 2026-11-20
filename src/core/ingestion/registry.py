@@ -2,7 +2,7 @@ import hashlib
 from collections.abc import Callable
 from pathlib import Path
 
-from src.schemas import Document
+from src.models.schemas import Document
 
 Loader = Callable[[Path, str], list[Document]]
 _LOADERS: dict[str, Loader] = {}
@@ -13,8 +13,6 @@ class UnsupportedFileError(Exception):
 
 
 def register(*extensions: str) -> Callable[[Loader], Loader]:
-    """Decorator: marks a function as the loader for these extensions."""
-
     def decorator(fn: Loader) -> Loader:
         for ext in extensions:
             _LOADERS[ext] = fn
@@ -31,7 +29,6 @@ def make_document(
     key: str | int = 1,
     **metadata: object,
 ) -> Document:
-    """Build a Document with a stable ID. `key` is the page/slide/sheet."""
     doc_id = hashlib.sha256(f"{path.name}:{key}".encode()).hexdigest()[:16]
     return Document(
         id=doc_id,
@@ -43,9 +40,7 @@ def make_document(
 
 
 def _ensure_loaded() -> None:
-    # Importing the package runs every loader file, so they register themselves.
-    # Done here (not at the top) to avoid a circular import.
-    from src.core.ingestion import loaders  # noqa: F401
+    from src.core.ingestion import loaders
 
 
 def supported_extensions() -> set[str]:

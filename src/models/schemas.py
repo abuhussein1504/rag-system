@@ -2,7 +2,7 @@ from typing import Any
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
-from src.enums import RetrievalSource
+from src.models.enums import RetrievalSource
 
 
 class Document(BaseModel):
@@ -10,7 +10,7 @@ class Document(BaseModel):
 
     id: str
     project_id: str
-    source: str # original filename
+    source: str
     text: str
     metadata: dict[str, Any] = Field(default_factory=dict)
 

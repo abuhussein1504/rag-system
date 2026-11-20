@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 from src.core.ingestion.cleaner import clean_text
 from src.core.ingestion.registry import make_document, register
-from src.schemas import Document
+from src.models.schemas import Document
 
 NOISE_TAGS = ["script", "style", "noscript", "nav", "footer", "header", "aside", "form"]
 

@@ -1,9 +1,21 @@
 from pydantic import BaseModel
 
-from src.enums import ResponseStatus
+from src.models.enums import ResponseStatus
 
 
 class UploadResponse(BaseModel):
     status: ResponseStatus
     stored_filename: str
+
+class ProcessResponse(BaseModel):
+    status: ResponseStatus
+    files_processed: int
+    files_skipped: int
+    files_removed: int
+    chunks_created: int
+    failed_files: list[str]
+
+class ResetResponse(BaseModel):
+    status: ResponseStatus
+    deleted: list[str]
 

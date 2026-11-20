@@ -3,8 +3,8 @@ from typing import Any
 import pytest
 from pydantic import ValidationError
 
-from src.enums import RetrievalSource
-from src.schemas import Answer, Chunk, RetrievedChunk
+from src.models.enums import RetrievalSource
+from src.models.schemas import Answer, Chunk, RetrievedChunk
 
 
 def make_chunk(**overrides: Any) -> Chunk:

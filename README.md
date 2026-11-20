@@ -21,8 +21,10 @@ rag-system/
 │
 ├── src/                               # Main source code
 │   ├── config.py                      # Pydantic Settings & environment config
-│   ├── enums.py                       # Enums (status, file types, sources)
-│   ├── schemas.py                     # Core domain models (Chunk, Document, etc.)
+│   │
+│   ├── models/                        # Core domain models
+│   │   ├── enums.py                   # Enums (status, file types, sources)
+│   │   └── schemas.py                 # Domain models (Chunk, Document, etc.)
 │   │
 │   ├── api/                           # API layer (FastAPI)
 │   │   ├── routes/
@@ -32,21 +34,33 @@ rag-system/
 │   │       └── data.py                # API request/response schemas
 │   │
 │   ├── core/                          # Business logic
-│   │   └── ingestion/
-│   │       └── storage.py             # File saving & validation logic
+│   │   ├── ingestion/                 # Document ingestion pipeline
+│   │   │   ├── loaders/               # File-type loaders
+│   │   │   │   ├── pdf.py
+│   │   │   │   ├── docx.py
+│   │   │   │   ├── html.py
+│   │   │   │   └── text.py
+│   │   │   ├── cleaner.py             # Text cleaning & normalisation
+│   │   │   ├── processing.py          # Orchestrates load → clean → chunk
+│   │   │   ├── registry.py            # Loader registry / factory
+│   │   │   └── storage.py             # File saving & validation logic
+│   │   ├── chunking/                  # Chunking strategies
+│   │   │   ├── base.py                # Abstract chunker interface
+│   │   │   └── fixed.py               # Fixed-size chunker
+│   │   ├── retrieval/                 # Retrieval logic (planned)
+│   │   ├── generation/                # Generation logic (planned)
+│   │   └── llm/                       # LLM client abstractions (planned)
 │   │
-│   ├── repositories/                  # Data access / repositories
-│   │   ├── enums/
-│   │   └── schemes/
-│   │
-│   ├── stores/                        # Storage abstractions (vector store, etc.)
-│   ├── scripts/                       # CLI commands & scripts
-│   └── utils/                         # Utilities & shared helpers
+│   └── infrastructure/                # Infrastructure & persistence adapters
+│
+├── scripts/                           # CLI commands & utility scripts
 │
 ├── tests/                             # Test suite
 │   ├── unit/
 │   │   ├── test_schemas.py            # Unit tests for domain models
-│   │   └── test_upload.py             # Unit tests for upload endpoint
+│   │   ├── test_upload.py             # Unit tests for upload endpoint
+│   │   ├── test_loaders.py            # Unit tests for file loaders
+│   │   └── test_processing.py         # Unit tests for ingestion pipeline
 │   └── integration/                   # Integration tests
 │
 ├── data/                              # Data directory (ignored by git)
@@ -59,16 +73,10 @@ rag-system/
 │   └── experiments/
 │
 ├── eval/                              # Evaluation harness & benchmarks
-│   ├── golden_set.jsonl
-│   └── reports/
 │
-├── docs/                              # Project documentation & architecture notes
-│   ├── architecture.md
-│   └── decisions/
-│
-└── .github/
-    └── workflows/
-        └── ci.yml                     # Continuous integration workflow
+└── docs/                              # Project documentation & architecture notes
+    ├── architecture.md
+    └── decisions/
 ```
 
 ## Tech Stack
