@@ -8,7 +8,7 @@ base_router = APIRouter(prefix="/api/info", tags=["base"])
 
 SettingsDep = Annotated[Settings, Depends(get_settings)]
 
-@base_router.get("/info")
+@base_router.get("/")
 def info(settings: SettingsDep):
     return {"name": settings.APP_NAME, "version": settings.APP_VERSION}
 
