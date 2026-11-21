@@ -1,9 +1,10 @@
 from functools import lru_cache
-from typing import Literal
 
 from pydantic import Field, model_validator
 from pydantic import SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+from src.models.enums import DistanceMethod, EmbeddingBackend, VectorDBBackend
 
 
 class Settings(BaseSettings):
@@ -23,6 +24,18 @@ class Settings(BaseSettings):
 
     FILE_DEFAULT_CHUNK_SIZE: int = Field(gt=0)
     FILE_DEFAULT_OVERLAP_SIZE: int = Field(ge=0)
+
+
+    # EMBEDDING
+    EMBEDDING_BACKEND: EmbeddingBackend
+    EMBEDDING_MODEL_ID: str
+    EMBEDDING_MODEL_SIZE: int
+    GOOGLE_API_KEY: SecretStr | None = None
+
+    # VECTOR
+    VECTOR_DB_BACKEND: VectorDBBackend
+    VECTOR_DB_PATH: str
+    VECTOR_DB_DISTANCE_METHOD: DistanceMethod = DistanceMethod.COSINE
 
 
 @model_validator(mode="after")
