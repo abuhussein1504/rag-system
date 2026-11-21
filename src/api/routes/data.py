@@ -1,11 +1,16 @@
 import shutil
 from pathlib import Path
-from typing import Annotated, Literal
+from typing import Literal
 
-from fastapi import APIRouter, Depends, HTTPException, UploadFile
-from fastapi import Path as PathParam
+from fastapi import APIRouter, HTTPException, UploadFile
 
-from src.api.schemas.data import ProcessResponse, ResetResponse, UploadResponse
+from src.api.dependencies import EmbedderDep, StoreDep, ProjectId, SettingsDep
+from src.api.schemas.data import (
+    ProcessResponse,
+    ResetResponse,
+    UploadResponse,
+    IndexResponse,
+)
 from src.core.chunking.fixed import FixedSizeChunker
 from src.core.ingestion.processing import process_project
 from src.core.ingestion.storage import (
@@ -14,17 +19,16 @@ from src.core.ingestion.storage import (
     save_upload,
 )
 from src.models.enums import ResponseStatus
-from src.config import Settings, get_settings
+
+from src.core.indexing.indexer import collection_name, index_project
 
 data_router = APIRouter(prefix="/api/data", tags=["data"])
 
-SettingsDep = Annotated[Settings, Depends(get_settings)]
-ProjectId = Annotated[str, PathParam(pattern=r"^[A-Za-z0-9_-]{1,64}$")]
 
 SCOPES = {
     "raw": ["raw"],
     "processed": ["processed"],
-    "all": ["raw", "processed", "indexes"],
+    "all": ["raw", "processed"],
 }
 
 
@@ -76,10 +80,28 @@ def process(project_id: ProjectId, settings: SettingsDep, force: bool = False):
     )
 
 
+@data_router.post("/index/{project_id}", response_model=IndexResponse)
+def index(
+    project_id: ProjectId, settings: SettingsDep, embedder: EmbedderDep, store: StoreDep
+):
+    processed_dir = Path(settings.DATA_DIR) / "processed" / project_id
+    if not processed_dir.is_dir():
+        raise HTTPException(status_code=404, detail="Process the project first")
+
+    result = index_project(processed_dir, collection_name(project_id), embedder, store)
+    return IndexResponse(
+        status=ResponseStatus.SUCCESS,
+        files_indexed=result.files_indexed,
+        chunks_indexed=result.chunks_indexed,
+    )
+
+
+
 @data_router.delete("/{project_id}", response_model=ResetResponse)
 def reset_project(
     project_id: ProjectId,
     settings: SettingsDep,
+    store: StoreDep,
     scope: Literal["raw", "processed", "all"] = "all",
 ):
     deleted = []
@@ -88,21 +110,28 @@ def reset_project(
         if target.is_dir():
             shutil.rmtree(target)
             deleted.append(folder)
+
+    if scope in ("processed", "all"):
+        store.delete_collection(collection_name(project_id))
+        deleted.append("vectors")
     return ResetResponse(status=ResponseStatus.SUCCESS, deleted=deleted)
 
 
 @data_router.delete("", response_model=ResetResponse)
-def reset_all(settings: SettingsDep, confirm: bool = False):
+def reset_all(settings: SettingsDep, store: StoreDep, confirm: bool = False):
     if not confirm:
         raise HTTPException(
             status_code=400,
             detail="This deletes ALL data. Call again with ?confirm=true",
         )
     deleted = []
-    for folder in ("raw", "processed", "indexes"):
+    for folder in ("raw", "processed"):
         target = Path(settings.DATA_DIR) / folder
         if target.is_dir():
             shutil.rmtree(target)
             deleted.append(folder)
+
+    store.delete_all()
+    deleted.append("vectors")
     return ResetResponse(status=ResponseStatus.SUCCESS, deleted=deleted)
 

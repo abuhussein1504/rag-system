@@ -19,3 +19,8 @@ class ResetResponse(BaseModel):
     status: ResponseStatus
     deleted: list[str]
 
+class IndexResponse(BaseModel):
+    status: ResponseStatus
+    files_indexed: int
+    chunks_indexed: int
+

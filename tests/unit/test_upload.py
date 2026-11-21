@@ -118,3 +118,40 @@ def test_orphan_chunk_file_is_removed(client, tmp_path):
     assert r["files_removed"] == 1
     assert not (tmp_path / "processed" / "p1" / f"{stored}.jsonl").exists()
 
+
+def test_search_after_index(client):
+    client.post(
+        "/api/data/upload/p1", files={"file": ("a.txt", b"cats are small animals. " * 20)}
+    )
+    client.post("/api/data/process/p1")
+    assert client.post("/api/data/index/p1").json()["chunks_indexed"] > 0
+
+    r = client.post("/api/search/p1", json={"query": "cats", "top_k": 3})
+    assert r.status_code == 200
+    assert 1 <= len(r.json()["hits"]) <= 3
+
+
+def test_search_unindexed_project_is_empty(client):
+    r = client.post("/api/search/nope", json={"query": "x"})
+    assert r.json() == {"hits": []}
+
+
+def test_search_rejects_empty_query(client):
+    assert client.post("/api/search/p1", json={"query": ""}).status_code == 422
+
+
+def test_reset_all_removes_vectors(client):
+    client.post("/api/data/upload/p1", files={"file": ("a.txt", b"cats " * 50)})
+    client.post("/api/data/process/p1")
+    client.post("/api/data/index/p1")
+    assert client.delete("/api/data?confirm=true").json()["deleted"].count("vectors") == 1
+    assert client.post("/api/search/p1", json={"query": "cats"}).json() == {"hits": []}
+
+
+def test_reset_processed_also_removes_vectors(client):
+    client.post("/api/data/upload/p1", files={"file": ("a.txt", b"cats " * 50)})
+    client.post("/api/data/process/p1")
+    client.post("/api/data/index/p1")
+    client.delete("/api/data/p1?scope=processed")
+    assert client.post("/api/search/p1", json={"query": "cats"}).json() == {"hits": []}
+
