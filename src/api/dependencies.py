@@ -5,6 +5,7 @@ from src.models.enums import EmbeddingBackend
 
 from src.stores.embedding.base import Embedder
 from src.stores.embedding.gemini_embedder import GeminiEmbedder
+from src.stores.embedding.remote_embedder import RemoteEmbedder
 
 from src.stores.vectordb.base import VectorStore
 from src.stores.vectordb.qdrant import QdrantStore
@@ -25,6 +26,13 @@ def get_embedder() -> Embedder:
             s.GOOGLE_API_KEY.get_secret_value(),
             s.EMBEDDING_MODEL_ID or "gemini-embedding-001",
             s.EMBEDDING_MODEL_SIZE,
+        )
+    if s.EMBEDDING_BACKEND == EmbeddingBackend.REMOTE:
+        if not s.REMOTE_EMBEDDER_URL:
+            raise RuntimeError("REMOTE_EMBEDDER_URL is required for the remote backend")
+        return RemoteEmbedder(
+            base_url=s.REMOTE_EMBEDDER_URL,
+            dimension=s.EMBEDDING_MODEL_SIZE,
         )
     raise ValueError(f"Unsupported embedding backend: {s.EMBEDDING_BACKEND}")
 

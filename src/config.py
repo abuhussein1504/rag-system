@@ -31,6 +31,7 @@ class Settings(BaseSettings):
     EMBEDDING_MODEL_ID: str
     EMBEDDING_MODEL_SIZE: int
     GOOGLE_API_KEY: SecretStr | None = None
+    REMOTE_EMBEDDER_URL: str | None = None
 
     # VECTOR
     VECTOR_DB_BACKEND: VectorDBBackend

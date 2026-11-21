@@ -30,6 +30,7 @@ class GenerationBackend(StrEnum):
 class EmbeddingBackend(StrEnum):
     SENTENCE_TRANSFORMERS = "sentence_transformers"
     GEMINI = "gemini"
+    REMOTE = "remote"  # any HTTP embedding server (e.g. Colab + ngrok)
 
 
 class VectorDBBackend(StrEnum):
