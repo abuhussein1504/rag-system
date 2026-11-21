@@ -24,14 +24,18 @@ rag-system/
 │   │
 │   ├── models/                        # Core domain models
 │   │   ├── enums.py                   # Enums (status, file types, sources)
+│   │   ├── retry.py                   # Retry logic & backoff models
 │   │   └── schemas.py                 # Domain models (Chunk, Document, etc.)
 │   │
 │   ├── api/                           # API layer (FastAPI)
+│   │   ├── dependencies.py            # Shared FastAPI dependencies
 │   │   ├── routes/
 │   │   │   ├── base.py                # Health / status endpoints
-│   │   │   └── data.py                # Document upload & ingestion endpoints
+│   │   │   ├── data.py                # Document upload & ingestion endpoints
+│   │   │   └── search.py              # Search & retrieval endpoints
 │   │   └── schemas/
-│   │       └── data.py                # API request/response schemas
+│   │       ├── data.py                # Upload API request/response schemas
+│   │       └── search.py              # Search API request/response schemas
 │   │
 │   ├── core/                          # Business logic
 │   │   ├── ingestion/                 # Document ingestion pipeline
@@ -47,9 +51,19 @@ rag-system/
 │   │   ├── chunking/                  # Chunking strategies
 │   │   │   ├── base.py                # Abstract chunker interface
 │   │   │   └── fixed.py               # Fixed-size chunker
+│   │   ├── indexing/                  # Vector indexing pipeline
+│   │   │   └── indexer.py             # Orchestrates embed → upsert
 │   │   ├── retrieval/                 # Retrieval logic (planned)
 │   │   ├── generation/                # Generation logic (planned)
 │   │   └── llm/                       # LLM client abstractions (planned)
+│   │
+│   ├── stores/                        # External storage adapters
+│   │   ├── embedding/                 # Embedding model clients
+│   │   │   ├── base.py                # Abstract embedder interface
+│   │   │   └── gemini_embedder.py     # Gemini text-embedding client
+│   │   └── vectordb/                  # Vector database clients
+│   │       ├── base.py                # Abstract vector store interface
+│   │       └── qdrant.py              # Qdrant vector store client
 │   │
 │   └── infrastructure/                # Infrastructure & persistence adapters
 │
@@ -60,13 +74,15 @@ rag-system/
 │   │   ├── test_schemas.py            # Unit tests for domain models
 │   │   ├── test_upload.py             # Unit tests for upload endpoint
 │   │   ├── test_loaders.py            # Unit tests for file loaders
-│   │   └── test_processing.py         # Unit tests for ingestion pipeline
+│   │   ├── test_processing.py         # Unit tests for ingestion pipeline
+│   │   └── test_gemini_embedder.py    # Unit tests for Gemini embedder
 │   └── integration/                   # Integration tests
 │
 ├── data/                              # Data directory (ignored by git)
 │   ├── raw/                           # Raw uploaded files (by project_id)
 │   ├── processed/                     # Parsed & chunked data
 │   └── indexes/                       # Vector indices / local cache
+│       └── qdrant/                    # Local Qdrant storage
 │
 ├── configs/                           # Application & pipeline YAML configurations
 │   ├── base.yaml
