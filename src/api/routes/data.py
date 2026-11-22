@@ -96,7 +96,6 @@ def index(
     )
 
 
-
 @data_router.delete("/{project_id}", response_model=ResetResponse)
 def reset_project(
     project_id: ProjectId,

@@ -1,4 +1,5 @@
 import hashlib
+import importlib
 from collections.abc import Callable
 from pathlib import Path
 
@@ -40,7 +41,7 @@ def make_document(
 
 
 def _ensure_loaded() -> None:
-    pass
+    importlib.import_module("src.core.ingestion.loaders")
 
 
 def supported_extensions() -> set[str]:

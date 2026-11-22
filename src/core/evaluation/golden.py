@@ -34,11 +34,16 @@ class GoldItem(BaseModel):
     question: str = Field(min_length=5)
     doc: str
     page: int | None = None
-    answers: list[str] = Field(min_length=1)
+    answers: list[str] = Field(default_factory=list)
+    start_char: int | None = None
+    end_char: int | None = None
+    preview: str = ""
 
     @field_validator("answers")
     @classmethod
     def _answers_long_enough(cls, answers: list[str]) -> list[str]:
+        if len(answers) == 0:
+            raise ValueError("answers must not be empty")
         for answer in answers:
             if len(_WORDS.findall(answer)) <= SHINGLE_SIZE:
                 raise ValueError(f"Answer needs at least {SHINGLE_SIZE + 1} words: {answer!r}")
@@ -57,6 +62,14 @@ def load_golden(path: Path) -> list[GoldItem]:
 def is_relevant(chunk: Chunk, gold: GoldItem) -> bool:
     if original_name(chunk.metadata.get("source", "")) != gold.doc:
         return False
+    if not gold.answers:
+        if gold.start_char is not None and gold.end_char is not None:
+            overlap = min(chunk.end_char, gold.end_char) - max(chunk.start_char, gold.start_char)
+            if overlap <= 0:
+                return False
+            smaller = min(chunk.end_char - chunk.start_char, gold.end_char - gold.start_char)
+            return overlap >= 0.5 * smaller
+        return chunk.metadata.get("page") == gold.page
     return any(coverage(answer, chunk.text) >= MIN_COVERAGE for answer in gold.answers)
 
 
