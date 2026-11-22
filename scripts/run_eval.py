@@ -33,10 +33,15 @@ def main() -> None:
         "chunk_size": settings.FILE_DEFAULT_CHUNK_SIZE,
         "overlap": settings.FILE_DEFAULT_OVERLAP_SIZE,
         "embedding_backend": settings.EMBEDDING_BACKEND,
-        "embedding_model": settings.EMBEDDING_MODEL_ID,
-        "embedding_dim": settings.EMBEDDING_MODEL_SIZE,
         "n_questions": len(golden),
     }
+
+    embedder = get_embedder()
+    info = getattr(embedder, "info", None)
+    try:
+        report["config"]["embedder"] = info() if callable(info) else {}
+    except Exception:
+        report["config"]["embedder"] = {"model": settings.EMBEDDING_MODEL_ID}
 
     out = Path("eval/reports") / f"{args.name}.json"
     out.parent.mkdir(parents=True, exist_ok=True)

@@ -1,16 +1,32 @@
 import re
 from pathlib import Path
 
-from pydantic import BaseModel, Field, model_validator
+from pydantic import BaseModel, Field, field_validator
 
 from src.models.schemas import Chunk
 
 _UPLOAD_PREFIX = re.compile(r"^[0-9a-f]{12}_")
-MIN_OVERLAP_RATIO = 0.5
+_WORDS = re.compile(r"\w+")
+SHINGLE_SIZE = 5
+MIN_COVERAGE = 0.6
 
 
 def original_name(stored_name: str) -> str:
     return _UPLOAD_PREFIX.sub("", stored_name)
+
+
+def _shingles(text: str) -> set[tuple[str, ...]]:
+    words = _WORDS.findall(text.lower())  # ignores punctuation, line breaks, case
+    if len(words) < SHINGLE_SIZE:
+        return set()
+    return {tuple(words[i : i + SHINGLE_SIZE]) for i in range(len(words) - SHINGLE_SIZE + 1)}
+
+
+def coverage(answer: str, chunk_text: str) -> float:
+    wanted = _shingles(answer)
+    if not wanted:
+        return 0.0
+    return len(wanted & _shingles(chunk_text)) / len(wanted)
 
 
 class GoldItem(BaseModel):
@@ -18,15 +34,15 @@ class GoldItem(BaseModel):
     question: str = Field(min_length=5)
     doc: str
     page: int | None = None
-    start_char: int = Field(ge=0)
-    end_char: int
-    preview: str = ""
+    answers: list[str] = Field(min_length=1)
 
-    @model_validator(mode="after")
-    def _check_span(self) -> "GoldItem":
-        if self.end_char <= self.start_char:
-            raise ValueError("end_char must be greater than start_char")
-        return self
+    @field_validator("answers")
+    @classmethod
+    def _answers_long_enough(cls, answers: list[str]) -> list[str]:
+        for answer in answers:
+            if len(_WORDS.findall(answer)) <= SHINGLE_SIZE:
+                raise ValueError(f"Answer needs at least {SHINGLE_SIZE + 1} words: {answer!r}")
+        return answers
 
 
 def load_golden(path: Path) -> list[GoldItem]:
@@ -41,11 +57,14 @@ def load_golden(path: Path) -> list[GoldItem]:
 def is_relevant(chunk: Chunk, gold: GoldItem) -> bool:
     if original_name(chunk.metadata.get("source", "")) != gold.doc:
         return False
-    if chunk.metadata.get("page") != gold.page:
-        return False
-    overlap = min(chunk.end_char, gold.end_char) - max(chunk.start_char, gold.start_char)
-    if overlap <= 0:
-        return False
-    smaller = min(chunk.end_char - chunk.start_char, gold.end_char - gold.start_char)
-    return overlap >= MIN_OVERLAP_RATIO * smaller
+    return any(coverage(answer, chunk.text) >= MIN_COVERAGE for answer in gold.answers)
+
+
+def is_right_page(chunk: Chunk, gold: GoldItem) -> bool:
+    """Looser check used as a second metric: right file and right page."""
+    return (
+        gold.page is not None
+        and original_name(chunk.metadata.get("source", "")) == gold.doc
+        and chunk.metadata.get("page") == gold.page
+    )
 

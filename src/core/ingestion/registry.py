@@ -40,7 +40,7 @@ def make_document(
 
 
 def _ensure_loaded() -> None:
-    from src.core.ingestion import loaders
+    pass
 
 
 def supported_extensions() -> set[str]:

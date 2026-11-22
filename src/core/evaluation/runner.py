@@ -2,7 +2,7 @@ import time
 from collections.abc import Callable
 from typing import Any
 
-from src.core.evaluation.golden import GoldItem, is_relevant, original_name
+from src.core.evaluation.golden import GoldItem, is_relevant, is_right_page, original_name
 from src.core.evaluation.metrics import aggregate, first_relevant_rank
 from src.models.schemas import RetrievedChunk
 
@@ -19,11 +19,14 @@ def evaluate(golden: list[GoldItem], retrieve: Retrieve, *, k: int = 10) -> dict
         latencies.append(time.perf_counter() - started)
 
         flags = [is_relevant(hit.chunk, gold) for hit in hits]
+        page_flags = [is_right_page(hit.chunk, gold) for hit in hits]
         questions.append(
             {
                 "id": gold.id,
                 "question": gold.question,
+                "gold_page": gold.page,
                 "rank": first_relevant_rank(flags),
+                "page_rank": first_relevant_rank(page_flags),
                 "top3": [
                     {
                         "source": original_name(hit.chunk.metadata.get("source", "")),
@@ -38,6 +41,7 @@ def evaluate(golden: list[GoldItem], retrieve: Retrieve, *, k: int = 10) -> dict
         )
 
     metrics = aggregate([q["rank"] for q in questions])
+    metrics.update(aggregate([q["page_rank"] for q in questions], prefix="page_"))
     metrics["avg_latency_ms"] = round(1000 * sum(latencies) / len(latencies), 1)
     return {"metrics": metrics, "questions": questions}
 

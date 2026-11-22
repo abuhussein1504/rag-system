@@ -4,14 +4,15 @@ from typing import Literal
 
 from fastapi import APIRouter, HTTPException, UploadFile
 
-from src.api.dependencies import EmbedderDep, StoreDep, ProjectId, SettingsDep
+from src.api.dependencies import EmbedderDep, ProjectId, SettingsDep, StoreDep
 from src.api.schemas.data import (
+    IndexResponse,
     ProcessResponse,
     ResetResponse,
     UploadResponse,
-    IndexResponse,
 )
 from src.core.chunking.fixed import FixedSizeChunker
+from src.core.indexing.indexer import collection_name, index_project
 from src.core.ingestion.processing import process_project
 from src.core.ingestion.storage import (
     FileTooLargeError,
@@ -19,8 +20,6 @@ from src.core.ingestion.storage import (
     save_upload,
 )
 from src.models.enums import ResponseStatus
-
-from src.core.indexing.indexer import collection_name, index_project
 
 data_router = APIRouter(prefix="/api/data", tags=["data"])
 

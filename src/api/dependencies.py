@@ -1,19 +1,16 @@
 from functools import lru_cache
-
-from src.config import Settings, get_settings
-from src.models.enums import EmbeddingBackend
-
-from src.stores.embedding.base import Embedder
-from src.stores.embedding.gemini_embedder import GeminiEmbedder
-from src.stores.embedding.remote_embedder import RemoteEmbedder
-
-from src.stores.vectordb.base import VectorStore
-from src.stores.vectordb.qdrant import QdrantStore
-
 from typing import Annotated
 
 from fastapi import Depends
 from fastapi import Path as PathParam
+
+from src.config import Settings, get_settings
+from src.models.enums import EmbeddingBackend
+from src.stores.embedding.base import Embedder
+from src.stores.embedding.gemini_embedder import GeminiEmbedder
+from src.stores.embedding.remote_embedder import RemoteEmbedder
+from src.stores.vectordb.base import VectorStore
+from src.stores.vectordb.qdrant import QdrantStore
 
 
 @lru_cache

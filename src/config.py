@@ -1,7 +1,6 @@
 from functools import lru_cache
 
-from pydantic import Field, model_validator
-from pydantic import SecretStr
+from pydantic import Field, SecretStr, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from src.models.enums import DistanceMethod, EmbeddingBackend, VectorDBBackend
@@ -38,12 +37,11 @@ class Settings(BaseSettings):
     VECTOR_DB_PATH: str
     VECTOR_DB_DISTANCE_METHOD: DistanceMethod = DistanceMethod.COSINE
 
-
-@model_validator(mode="after")
-def _check_overlap(self) -> "Settings":
-    if self.FILE_DEFAULT_OVERLAP_SIZE >= self.FILE_DEFAULT_CHUNK_SIZE:
-        raise ValueError("FILE_DEFAULT_OVERLAP_SIZE must be smaller than chunk size")
-    return self
+    @model_validator(mode="after")
+    def _check_overlap(self) -> "Settings":
+        if self.FILE_DEFAULT_OVERLAP_SIZE >= self.FILE_DEFAULT_CHUNK_SIZE:
+            raise ValueError("FILE_DEFAULT_OVERLAP_SIZE must be smaller than chunk size")
+        return self   
 
  
 @lru_cache

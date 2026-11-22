@@ -1,7 +1,7 @@
 from types import SimpleNamespace
 
-from src.stores.embedding.gemini_embedder import GeminiEmbedder
 from src.models.retry import retry
+from src.stores.embedding.gemini_embedder import GeminiEmbedder
 
 
 class FakeClient:
@@ -52,7 +52,7 @@ def test_retry_gives_up_on_non_retryable_error():
 
     try:
         retry(broken, should_retry=lambda e: False)
-        assert False, "should have raised"
+        raise AssertionError("should have raised")
     except ValueError:
         pass
 

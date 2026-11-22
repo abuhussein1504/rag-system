@@ -18,7 +18,7 @@ logging.basicConfig(
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # --- STARTUP ---
-    settings = get_settings()
+    get_settings()
 
     yield
     # --- SHUTDOWN ---

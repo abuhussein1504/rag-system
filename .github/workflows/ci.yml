@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    env:
+      APP_NAME: ci
+      APP_VERSION: "0"
+      FILE_ALLOWED_TYPES: '["txt","md"]'
+      FILE_MAX_SIZE: "1"
+      DATA_DIR: data
+      FILE_DEFAULT_CHUNK_SIZE: "1000"
+      FILE_DEFAULT_OVERLAP_SIZE: "200"
+      EMBEDDING_BACKEND: remote
+      EMBEDDING_MODEL_ID: BAAI/bge-base-en-v1.5
+      EMBEDDING_MODEL_SIZE: "768"
+      VECTOR_DB_BACKEND: qdrant
+      VECTOR_DB_PATH: data/indexes/qdrant
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --group dev
+      - run: uv run ruff check .
+      - run: uv run mypy src
+      - run: uv run pytest
+

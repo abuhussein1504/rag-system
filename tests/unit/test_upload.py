@@ -1,9 +1,8 @@
+import json
 from types import SimpleNamespace
 
 import pytest
 from fastapi.testclient import TestClient
-
-import json
 
 from main import app
 from src.config import get_settings
