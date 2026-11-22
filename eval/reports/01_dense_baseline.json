@@ -1,0 +1,2627 @@
+{
+  "metrics": {
+    "hit@1": 0.3871,
+    "hit@3": 0.5806,
+    "hit@5": 0.6559,
+    "hit@10": 0.7312,
+    "mrr": 0.4953,
+    "avg_latency_ms": 1776.8
+  },
+  "questions": [
+    {
+      "id": "q001",
+      "question": "How should a class be organized internally following standard Java conventions?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 167,
+          "score": 0.732,
+          "relevant": true,
+          "preview": "136 Chapter 10: Classes Class Organization Following the standard Java convention, a class should begin with a list of v"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 170,
+          "score": 0.7308,
+          "relevant": false,
+          "preview": "and well-labeled components? Or do you want a few drawers that you just toss everything into? Every sizable system will "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 170,
+          "score": 0.7279,
+          "relevant": false,
+          "preview": "works. We fail to switch to the other concern of organization and cleanliness. We move on to the next problem rather tha"
+        }
+      ]
+    },
+    {
+      "id": "q002",
+      "question": "When are legal comments, such as copyright and authorship statements, appropriate?",
+      "rank": 3,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 87,
+          "score": 0.709,
+          "relevant": false,
+          "preview": "56 Chapter 4: Comments Comments like this should not be contracts or legal tomes. Where possible, refer to a standard li"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 99,
+          "score": 0.7081,
+          "relevant": false,
+          "preview": "68 Chapter 4: Comments Attributions and Bylines /* Added by Rick */ Source code control systems are very good at remembe"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 86,
+          "score": 0.7027,
+          "relevant": true,
+          "preview": "Check to see if the employee is eligible for full benefits if ((employee.flags & HOURLY_FLAG) && (employee.age > 65)) Or"
+        }
+      ]
+    },
+    {
+      "id": "q003",
+      "question": "Where should dependent functions be positioned relative to each other vertically?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 111,
+          "score": 0.7401,
+          "relevant": false,
+          "preview": "80 Chapter 5: Formatting Vertical Distance Have you ever chased your tail through a class, hopping from one function to "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 68,
+          "score": 0.6638,
+          "relevant": false,
+          "preview": "content, and then we include the teardowns. To include the setups, we include the suite setup if this is a suite, then w"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 98,
+          "score": 0.6601,
+          "relevant": false,
+          "preview": "file. For example, I recently found this in a program I was looking through: // Actions ////////////////////////////////"
+        }
+      ]
+    },
+    {
+      "id": "q004",
+      "question": "Why should mandated comments like requiring Javadocs for every private method be avoided?",
+      "rank": 5,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 94,
+          "score": 0.8323,
+          "relevant": false,
+          "preview": "himself in a debugging session trying to figure out why his code executed so slowly. Mandated Comments It is just plain "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 97,
+          "score": 0.8084,
+          "relevant": false,
+          "preview": "66 Chapter 4: Comments Replace the temptation to create noise with the determination to clean your code. You’ll find it "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 102,
+          "score": 0.8008,
+          "relevant": false,
+          "preview": "71 Bad Comments Javadocs in Nonpublic Code As useful as javadocs are for public APIs, they are anathema to code that is "
+        }
+      ]
+    },
+    {
+      "id": "q005",
+      "question": "What is the code smell of code at the wrong level of abstraction?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 317,
+          "score": 0.7371,
+          "relevant": false,
+          "preview": "286 Chapter 17: Smells and Heuristics I compiled this list by walking through several different programs and refactoring"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 335,
+          "score": 0.7213,
+          "relevant": false,
+          "preview": "of. Put the processing for them in one place. Don’t let them leak all over the code. We don’t want swarms of +1s and -1s"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 23,
+          "score": 0.7151,
+          "relevant": false,
+          "preview": "not a static endpoint. It’s in the code that the architectural metrics of coupling and cohesion play out. If you listen "
+        }
+      ]
+    },
+    {
+      "id": "q006",
+      "question": "What is the Law of Demeter regarding object method calls?",
+      "rank": 7,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 128,
+          "score": 0.8071,
+          "relevant": false,
+          "preview": "to expose, rather than to hide, its internal structure. More precisely, the Law of Demeter says that a method f of a cla"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 128,
+          "score": 0.8034,
+          "relevant": false,
+          "preview": "want to add new data types rather than new functions. For these cases objects and OO are most appropriate. On the other "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 129,
+          "score": 0.7552,
+          "relevant": false,
+          "preview": "98 Chapter 6: Objects and Data Structures • An object passed as an argument to f • An object held in an instance variabl"
+        }
+      ]
+    },
+    {
+      "id": "q007",
+      "question": "What is successive refinement when building clean software?",
+      "rank": 5,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 237,
+          "score": 0.7752,
+          "relevant": false,
+          "preview": "206 Chapter 14: Successive Refinement I hope your initial reaction to this mass of code is “I’m certainly glad he didn’t"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 243,
+          "score": 0.7743,
+          "relevant": false,
+          "preview": "212 Chapter 14: Successive Refinement You can see that this is starting to get out of hand. It’s still not horrible, but"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 2,
+          "score": 0.7702,
+          "relevant": false,
+          "preview": "Clean Code"
+        }
+      ]
+    },
+    {
+      "id": "q008",
+      "question": "How does isolating classes from change through interfaces adhere to the Dependency Inversion Principle?",
+      "rank": 8,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 181,
+          "score": 0.7266,
+          "relevant": false,
+          "preview": "another class design principle known as the Dependency Inversion Principle (DIP).5 In essence, the DIP says that our cla"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 180,
+          "score": 0.7178,
+          "relevant": false,
+          "preview": "when those details change. We can introduce interfaces and abstract classes to help isolate the impact of those details."
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 181,
+          "score": 0.7117,
+          "relevant": false,
+          "preview": "$500 for our overall portfolio value. public class PortfolioTest { private FixedStockExchangeStub exchange; private Port"
+        }
+      ]
+    },
+    {
+      "id": "q009",
+      "question": "Why are learning tests considered better than free when upgrading third-party libraries?",
+      "rank": 2,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 149,
+          "score": 0.7556,
+          "relevant": false,
+          "preview": "them to. Once integrated, there are no guarantees that the third-party code will stay compatible with our needs. The ori"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 149,
+          "score": 0.7391,
+          "relevant": true,
+          "preview": "118 Chapter 8: Boundaries Now we know how to get a simple console logger initialized, and we can encapsulate that knowle"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 155,
+          "score": 0.699,
+          "relevant": false,
+          "preview": "to understand and can certainly be improved. First, there is a terrible amount of duplicate code [G5] in the repeated ca"
+        }
+      ]
+    },
+    {
+      "id": "q010",
+      "question": "Why should developers write the try-catch-finally statement first when writing code that could throw?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 136,
+          "score": 0.8439,
+          "relevant": true,
+          "preview": "105 Write Your Try-Catch-Finally Statement First Notice how much cleaner it is. This isn’t just a matter of aesthetics. "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 136,
+          "score": 0.8266,
+          "relevant": false,
+          "preview": "to start with a try-catch-finally statement when you are writing code that could throw exceptions. This helps you define"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 96,
+          "score": 0.752,
+          "relevant": false,
+          "preview": "spelling in comments will be a balm for those of us who read a lot of code. Listing 4-4 startSending private void startS"
+        }
+      ]
+    },
+    {
+      "id": "q011",
+      "question": "Why is separating system construction from system use critical for software architectures?",
+      "rank": 2,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 186,
+          "score": 0.761,
+          "relevant": false,
+          "preview": "The startup process of object construction and wiring is no exception. We should modularize this process separately from"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 185,
+          "score": 0.7412,
+          "relevant": true,
+          "preview": "have the same separation of concerns and levels of abstraction. Clean code helps us achieve this at the lower levels of "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 185,
+          "score": 0.7385,
+          "relevant": false,
+          "preview": "will look a lot different too. Software systems should separate the startup process, when the application objects are co"
+        }
+      ]
+    },
+    {
+      "id": "q012",
+      "question": "How does Michael Feathers define clean code?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 41,
+          "score": 0.8447,
+          "relevant": true,
+          "preview": "10 Chapter 1: Clean Code Michael Feathers, author of Working Effectively with Legacy Code I could list all of the qualit"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 2,
+          "score": 0.817,
+          "relevant": false,
+          "preview": "Clean Code"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 38,
+          "score": 0.7638,
+          "relevant": false,
+          "preview": "to get from here to there. In short, a programmer who writes clean code is an artist who can take a blank screen through"
+        }
+      ]
+    },
+    {
+      "id": "q013",
+      "question": "Why is vertical openness between concepts important in source code formatting?",
+      "rank": 2,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 110,
+          "score": 0.802,
+          "relevant": false,
+          "preview": "79 Vertical Formatting This effect is even more pronounced when you unfocus your eyes. In the first example the differen"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 109,
+          "score": 0.7843,
+          "relevant": true,
+          "preview": "78 Chapter 5: Formatting concepts and algorithms. Detail should increase as we move downward, until at the end we find t"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 111,
+          "score": 0.7641,
+          "relevant": false,
+          "preview": "80 Chapter 5: Formatting Vertical Distance Have you ever chased your tail through a class, hopping from one function to "
+        }
+      ]
+    },
+    {
+      "id": "q014",
+      "question": "Why does Robert C. Martin compare a programmer defending clean code to a doctor refusing to skip hand washing?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 37,
+          "score": 0.7023,
+          "relevant": true,
+          "preview": "6 Chapter 1: Clean Code are deeply complicit in the planning of the project and share a great deal of the responsibility"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 39,
+          "score": 0.6685,
+          "relevant": false,
+          "preview": "gloss over details. Memory leaks are another, race conditions still another. Inconsistent naming yet another. The upshot"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 37,
+          "score": 0.658,
+          "relevant": false,
+          "preview": "to write clean code! 2. When hand-washing was first recommended to physicians by Ignaz Semmelweis in 1847, it was reject"
+        }
+      ]
+    },
+    {
+      "id": "q015",
+      "question": "What is the single concept per test rule in unit testing?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 162,
+          "score": 0.7505,
+          "relevant": true,
+          "preview": "131 One Assert per Test I think the single assert rule is a good guideline.7 I usually try to create a domainspecific te"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 161,
+          "score": 0.7221,
+          "relevant": false,
+          "preview": "130 Chapter 9: Unit Tests That is the nature of the dual standard. There are things that you might never do in a product"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 163,
+          "score": 0.7003,
+          "relevant": false,
+          "preview": "test just one concept per test function. F.I.R.S.T.8 Clean tests follow five other rules that form the above acronym: Fa"
+        }
+      ]
+    },
+    {
+      "id": "q016",
+      "question": "What is the vertical distance concept and where should local variables be declared?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 111,
+          "score": 0.7768,
+          "relevant": true,
+          "preview": "80 Chapter 5: Formatting Vertical Distance Have you ever chased your tail through a class, hopping from one function to "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 112,
+          "score": 0.7365,
+          "relevant": false,
+          "preview": "of the class. This should not increase the vertical distance of these variables, because in a well-designed class, they "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 111,
+          "score": 0.7316,
+          "relevant": false,
+          "preview": "have a very good reason. Indeed, this is one of the reasons that protected variables should be avoided. For those concep"
+        }
+      ]
+    },
+    {
+      "id": "q017",
+      "question": "What are TODO comments and how should they be used?",
+      "rank": 2,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 90,
+          "score": 0.8282,
+          "relevant": false,
+          "preview": "59 Bad Comments TODOs are jobs that the programmer thinks should be done, but for some reason can’t do at the moment. It"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 89,
+          "score": 0.7303,
+          "relevant": true,
+          "preview": "comment, while flippant, makes the point pretty well. Here’s another, more poignant example: public static SimpleDateFor"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 99,
+          "score": 0.7152,
+          "relevant": false,
+          "preview": "68 Chapter 4: Comments Attributions and Bylines /* Added by Rick */ Source code control systems are very good at remembe"
+        }
+      ]
+    },
+    {
+      "id": "q018",
+      "question": "How should classes be structured to organize for change and minimize modification risks?",
+      "rank": 2,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 170,
+          "score": 0.765,
+          "relevant": false,
+          "preview": "works. We fail to switch to the other concern of organization and cleanliness. We move on to the next problem rather tha"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 178,
+          "score": 0.7528,
+          "relevant": true,
+          "preview": "147 Organizing for Change Organizing for Change For most systems, change is continual. Every change subjects us to the r"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 180,
+          "score": 0.7527,
+          "relevant": false,
+          "preview": "149 Organizing for Change The code in each class becomes excruciatingly simple. Our required comprehension time to under"
+        }
+      ]
+    },
+    {
+      "id": "q019",
+      "question": "Why should developers prefer exceptions over returning error codes from functions?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 135,
+          "score": 0.7735,
+          "relevant": false,
+          "preview": "104 Chapter 7: Error Handling Use Exceptions Rather Than Return Codes Back in the distant past there were many languages"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 78,
+          "score": 0.7682,
+          "relevant": false,
+          "preview": "47 Prefer Exceptions to Returning Error Codes public void delete(Page page) { try { deletePageAndAllReferences(page); } "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 137,
+          "score": 0.7567,
+          "relevant": false,
+          "preview": "exceptions were introduced in the first version of Java, they seemed like a great idea. The signature of every method wo"
+        }
+      ]
+    },
+    {
+      "id": "q020",
+      "question": "What is a Data Transfer Object (DTO) and what is its typical structure?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 131,
+          "score": 0.7763,
+          "relevant": true,
+          "preview": "100 Chapter 6: Objects and Data Structures So, what if we told the ctxt object to do this? BufferedOutputStream bos = ct"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 191,
+          "score": 0.7098,
+          "relevant": false,
+          "preview": "server. Reuse outside of the EJB2 architecture is effectively impossible, due to the tight coupling. Finally, even objec"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 132,
+          "score": 0.7014,
+          "relevant": false,
+          "preview": "101 Bibliography Active Record Active Records are special forms of DTOs. They are data structures with public (or beanac"
+        }
+      ]
+    },
+    {
+      "id": "q021",
+      "question": "What is the first rule of functions according to Robert C. Martin?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 65,
+          "score": 0.6597,
+          "relevant": false,
+          "preview": "Small! The first rule of functions is that they should be small. The second rule of functions is that they should be sma"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 62,
+          "score": 0.6356,
+          "relevant": false,
+          "preview": "31 3 Functions In the early days of programming we composed our systems of routines and subroutines. Then, in the era of"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 83,
+          "score": 0.6271,
+          "relevant": false,
+          "preview": "52 Chapter 3: Functions Bibliography [KP78]: Kernighan and Plaugher, The Elements of Programming Style, 2d. ed., McGrawH"
+        }
+      ]
+    },
+    {
+      "id": "q022",
+      "question": "Why is using pronounceable names important for programming teams?",
+      "rank": 9,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 53,
+          "score": 0.7515,
+          "relevant": false,
+          "preview": "22 Chapter 2: Meaningful Names advantage of that huge portion of our brains that has evolved to deal with spoken languag"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 340,
+          "score": 0.7377,
+          "relevant": false,
+          "preview": "appropriateness of the names you choose. This is not just a “feel-good” recommendation. Names in software are 90 percent"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 51,
+          "score": 0.7279,
+          "relevant": false,
+          "preview": "by a simple renaming. Make Meaningful Distinctions Programmers create problems for themselves when they write code solel"
+        }
+      ]
+    },
+    {
+      "id": "q023",
+      "question": "What role does the main function play in separating construction from runtime execution?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 186,
+          "score": 0.8223,
+          "relevant": true,
+          "preview": "The startup process of object construction and wiring is no exception. We should modularize this process separately from"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 187,
+          "score": 0.7344,
+          "relevant": false,
+          "preview": "156 Chapter 11: Systems LineItem instances to add to an Order. In this case we can use the ABSTRACT FACTORY2 pattern to "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 185,
+          "score": 0.734,
+          "relevant": false,
+          "preview": "will look a lot different too. Software systems should separate the startup process, when the application objects are co"
+        }
+      ]
+    },
+    {
+      "id": "q024",
+      "question": "What does vertical density imply about closely related lines of code?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 110,
+          "score": 0.7918,
+          "relevant": true,
+          "preview": "79 Vertical Formatting This effect is even more pronounced when you unfocus your eyes. In the first example the differen"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 462,
+          "score": 0.7431,
+          "relevant": false,
+          "preview": "431 Index variables 1 based versus zero based, 261 declaring, 80, 81, 292 explaining temporary, 279–281 explanatory, 296"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 111,
+          "score": 0.7076,
+          "relevant": false,
+          "preview": "80 Chapter 5: Formatting Vertical Distance Have you ever chased your tail through a class, hopping from one function to "
+        }
+      ]
+    },
+    {
+      "id": "q025",
+      "question": "What is the Special Case Pattern for handling exceptions in the normal flow?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 140,
+          "score": 0.7714,
+          "relevant": false,
+          "preview": "The information sent with the exception can distinguish the errors. Use different classes only if there are times when y"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 141,
+          "score": 0.7596,
+          "relevant": false,
+          "preview": "110 Chapter 7: Error Handling Can we make the code that simple? It turns out that we can. We can change the ExpenseRepor"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 12,
+          "score": 0.7466,
+          "relevant": false,
+          "preview": "xi Contents Chapter 7: Error Handling ...........................................................103 Use Exceptions Rath"
+        }
+      ]
+    },
+    {
+      "id": "q026",
+      "question": "Why is test code just as important as production code and why must it be kept clean?",
+      "rank": 7,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 155,
+          "score": 0.8173,
+          "relevant": false,
+          "preview": "It is unit tests that keep our code flexible, maintainable, and reusable. The reason is simple. If you have tests, you d"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 155,
+          "score": 0.8166,
+          "relevant": false,
+          "preview": "124 Chapter 9: Unit Tests In a way they were right. Their testing effort had failed them. But it was their decision to a"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 155,
+          "score": 0.7962,
+          "relevant": false,
+          "preview": "and architecture as clean as possible. Tests enable all the -ilities, because tests enable change. So if your tests are "
+        }
+      ]
+    },
+    {
+      "id": "q027",
+      "question": "How can wrappers or the Adapter pattern be used to keep code boundaries clean?",
+      "rank": 3,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 2,
+          "score": 0.7454,
+          "relevant": false,
+          "preview": "Clean Code"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 145,
+          "score": 0.7141,
+          "relevant": false,
+          "preview": "114 Chapter 8: Boundaries with our own. In this chapter we look at practices and techniques to keep the boundaries of ou"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 151,
+          "score": 0.7091,
+          "relevant": true,
+          "preview": "120 Chapter 8: Boundaries Clean Boundaries Interesting things happen at boundaries. Change is one of those things. Good "
+        }
+      ]
+    },
+    {
+      "id": "q028",
+      "question": "What is the importance of choosing intention-revealing names according to Robert C. Martin?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 49,
+          "score": 0.6651,
+          "relevant": true,
+          "preview": "18 Chapter 2: Meaningful Names so much of it, we’d better do it well. What follows are some simple rules for creating go"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 340,
+          "score": 0.64,
+          "relevant": false,
+          "preview": "appropriateness of the names you choose. This is not just a “feel-good” recommendation. Names in software are 90 percent"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 8,
+          "score": 0.6036,
+          "relevant": false,
+          "preview": "and Principles........................................................................15 Conclusion....................."
+        }
+      ]
+    },
+    {
+      "id": "q029",
+      "question": "Why is limiting the scope of synchronized data critical in concurrent programming?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 212,
+          "score": 0.8435,
+          "relevant": false,
+          "preview": "the added burden of surrounding application code. Recommendation: Keep your concurrency-related code separate from other"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 216,
+          "score": 0.7941,
+          "relevant": false,
+          "preview": "at any given time. Locks are expensive because they create delays and add overhead. So we don’t want to litter our code "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 362,
+          "score": 0.7671,
+          "relevant": false,
+          "preview": "331 Dependencies Between Methods Can Break Concurrent Code synchronized (iterator) { if (!iterator.hasNext()) break; nex"
+        }
+      ]
+    },
+    {
+      "id": "q030",
+      "question": "What are Kent Beck’s Four Rules of Simple Design in order of priority?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 202,
+          "score": 0.7366,
+          "relevant": true,
+          "preview": "171 12 Emergence by Jeff Langr Getting Clean via Emergent Design What if there were four simple rules that you could fol"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 41,
+          "score": 0.6997,
+          "relevant": false,
+          "preview": "the time to keep it simple and orderly. They have paid appropriate attention to details. They have cared. Ron Jeffries, "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 207,
+          "score": 0.6924,
+          "relevant": false,
+          "preview": "and methods. So this rule suggests that we also keep our function and class counts low. High class and method counts are"
+        }
+      ]
+    },
+    {
+      "id": "q031",
+      "question": "What are the Producer-Consumer, Readers-Writers, and Dining Philosophers execution models?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 215,
+          "score": 0.7692,
+          "relevant": false,
+          "preview": "will be starved. On the other hand, if there are frequent writers and they are given priority, throughput will suffer. F"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 215,
+          "score": 0.7665,
+          "relevant": false,
+          "preview": "puts both his forks back down on the table and waits until he is hungry again. Replace philosophers with threads and for"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 14,
+          "score": 0.7063,
+          "relevant": false,
+          "preview": "Know Your Execution Models ..........................................................183 Producer-Consumer.............."
+        }
+      ]
+    },
+    {
+      "id": "q032",
+      "question": "How does Dave Thomas define clean code?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 2,
+          "score": 0.8222,
+          "relevant": false,
+          "preview": "Clean Code"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 38,
+          "score": 0.77,
+          "relevant": false,
+          "preview": "to get from here to there. In short, a programmer who writes clean code is an artist who can take a blank screen through"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 40,
+          "score": 0.7612,
+          "relevant": false,
+          "preview": "other than its original author. It has unit and acceptance tests. It has meaningful names. It provides one way rather th"
+        }
+      ]
+    },
+    {
+      "id": "q033",
+      "question": "Why are dyadic (two-argument) functions more problematic than monadic functions?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 73,
+          "score": 0.8438,
+          "relevant": true,
+          "preview": "42 Chapter 3: Functions Dyadic Functions A function with two arguments is harder to understand than a monadic function. "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 9,
+          "score": 0.7283,
+          "relevant": false,
+          "preview": "Common Monadic Forms.................................................................41 Flag Arguments ................."
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 74,
+          "score": 0.7152,
+          "relevant": false,
+          "preview": "arguments. In the case of a monad, the function and argument should form a very nice verb/noun pair. For example, write("
+        }
+      ]
+    },
+    {
+      "id": "q034",
+      "question": "Why does the author compare writing clean software to writing an essay in drafts?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 39,
+          "score": 0.7178,
+          "relevant": false,
+          "preview": "gloss over details. Memory leaks are another, race conditions still another. Inconsistent naming yet another. The upshot"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 38,
+          "score": 0.7069,
+          "relevant": false,
+          "preview": "to get from here to there. In short, a programmer who writes clean code is an artist who can take a blank screen through"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 39,
+          "score": 0.7047,
+          "relevant": false,
+          "preview": "reads like well-written prose. Clean code never obscures the designer’s intent but rather is full of crisp abstractions "
+        }
+      ]
+    },
+    {
+      "id": "q035",
+      "question": "Why is duplication considered the primary enemy of a well-designed system in simple design?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 204,
+          "score": 0.7906,
+          "relevant": true,
+          "preview": "173 No Duplication No Duplication Duplication is the primary enemy of a well-designed system. It represents additional w"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 79,
+          "score": 0.7581,
+          "relevant": false,
+          "preview": "ever have to change. It is also a four-fold opportunity for an error of omission. This duplication was remedied by the i"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 321,
+          "score": 0.7448,
+          "relevant": false,
+          "preview": "290 Chapter 17: Smells and Heuristics you create. Coding becomes faster and less error prone because you have raised the"
+        }
+      ]
+    },
+    {
+      "id": "q036",
+      "question": "How does Robert C. Martin measure the size of a class compared to a function?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 167,
+          "score": 0.6879,
+          "relevant": true,
+          "preview": "the same package needs to call a function or access a variable, we’ll make it protected or package scope. However, we’ll"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 207,
+          "score": 0.6792,
+          "relevant": false,
+          "preview": "and methods. So this rule suggests that we also keep our function and class counts low. High class and method counts are"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 174,
+          "score": 0.678,
+          "relevant": false,
+          "preview": "143 Classes Should Be Small! This program, written as a single function, is a mess. It has a deeply indented structure, "
+        }
+      ]
+    },
+    {
+      "id": "q037",
+      "question": "What is the Boy Scout Rule and how does it apply to maintaining software?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 45,
+          "score": 0.6697,
+          "relevant": true,
+          "preview": "makes it easier to write. There is no escape from this logic. You cannot write code if you cannot read the surrounding c"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 144,
+          "score": 0.6321,
+          "relevant": false,
+          "preview": "113 8 Boundaries by James Grenning We seldom control all the software in our systems. Sometimes we buy third-party packa"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 345,
+          "score": 0.6248,
+          "relevant": false,
+          "preview": "the goal, because what this list does do is imply a value system. Indeed, that value system has been the goal, and the t"
+        }
+      ]
+    },
+    {
+      "id": "q038",
+      "question": "What is 'The Grand Redesign in the Sky' and why does management resist it?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 36,
+          "score": 0.7052,
+          "relevant": true,
+          "preview": "5 The Total Cost of Owning a Mess The Grand Redesign in the Sky Eventually the team rebels. They inform management that "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 8,
+          "score": 0.6559,
+          "relevant": false,
+          "preview": "Grand Redesign in the Sky..........................................................5 Attitude..........................."
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 35,
+          "score": 0.6404,
+          "relevant": false,
+          "preview": "to the system requires that the tangles, twists, and knots be “understood” so that more tangles, twists, and knots can b"
+        }
+      ]
+    },
+    {
+      "id": "q039",
+      "question": "Why does running all tests enable continuous refactoring in simple design?",
+      "rank": 5,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 203,
+          "score": 0.8222,
+          "relevant": false,
+          "preview": "and high cohesion. Writing tests leads to better designs. Simple Design Rules 2–4: Refactoring Once we have tests, we ar"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 155,
+          "score": 0.782,
+          "relevant": false,
+          "preview": "It is unit tests that keep our code flexible, maintainable, and reusable. The reason is simple. If you have tests, you d"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 203,
+          "score": 0.7512,
+          "relevant": false,
+          "preview": "verified should never be deployed. Fortunately, making our systems testable pushes us toward a design where our classes "
+        }
+      ]
+    },
+    {
+      "id": "q040",
+      "question": "Why should passing null as an argument to functions be avoided?",
+      "rank": 3,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 143,
+          "score": 0.7726,
+          "relevant": false,
+          "preview": "still have a runtime error. In most programming languages there is no good way to deal with a null that is passed by a c"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 142,
+          "score": 0.7564,
+          "relevant": false,
+          "preview": "and your code will be cleaner. Don’t Pass Null Returning null from methods is bad, but passing null into methods is wors"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 142,
+          "score": 0.7346,
+          "relevant": true,
+          "preview": "111 Don’t Pass Null In many cases, special case objects are an easy remedy. Imagine that you have code like this: List<E"
+        }
+      ]
+    },
+    {
+      "id": "q041",
+      "question": "What is Data/Object Anti-Symmetry as described by Robert C. Martin?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 126,
+          "score": 0.7599,
+          "relevant": true,
+          "preview": "95 Data/Object Anti-Symmetry In both of the above cases the second option is preferable. We do not want to expose the de"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 11,
+          "score": 0.6899,
+          "relevant": false,
+          "preview": "Abstraction..................................................................................93 Data/Object Anti-Symmetr"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 125,
+          "score": 0.6409,
+          "relevant": false,
+          "preview": "94 Chapter 6: Objects and Data Structures The beautiful thing about Listing 6-2 is that there is no way you can tell whe"
+        }
+      ]
+    },
+    {
+      "id": "q042",
+      "question": "What does the rule that functions should do one thing mean?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 80,
+          "score": 0.7217,
+          "relevant": false,
+          "preview": "those actions are written to use the very domain-specific language they define to tell their own small part of the story"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 67,
+          "score": 0.7136,
+          "relevant": false,
+          "preview": "36 Chapter 3: Functions So which is it? Is the function doing one thing or three things? Notice that the three steps of "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 65,
+          "score": 0.7077,
+          "relevant": false,
+          "preview": "Small! The first rule of functions is that they should be small. The second rule of functions is that they should be sma"
+        }
+      ]
+    },
+    {
+      "id": "q043",
+      "question": "Why are single-letter names problematic when searching across a codebase?",
+      "rank": 5,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 53,
+          "score": 0.7807,
+          "relevant": false,
+          "preview": "but the number 7 could be more troublesome. Searches may turn up the digit as part of file names, other constant definit"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 343,
+          "score": 0.7122,
+          "relevant": false,
+          "preview": "replaced with something annoying like rollCount. On the other hand, variables and functions with short names lose their "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 54,
+          "score": 0.7115,
+          "relevant": false,
+          "preview": "intended meaning. Avoid Encodings We have enough encodings to deal with without adding more to our burden. Encoding type"
+        }
+      ]
+    },
+    {
+      "id": "q044",
+      "question": "What are the Three Laws of Test-Driven Development (TDD)?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 153,
+          "score": 0.7893,
+          "relevant": true,
+          "preview": "tests, and more are joining their ranks every day. But in the mad rush to add testing to our discipline, many programmer"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 461,
+          "score": 0.7341,
+          "relevant": false,
+          "preview": "430 Index Third Law, of TDD, 122 third-party code integrating, 116 learning, 116 using, 114–115 writing tests for, 116 t"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 460,
+          "score": 0.7231,
+          "relevant": false,
+          "preview": "252–254 patterns of failure, 269, 314 turning off, 58 test code, 124, 127 TEST DOUBLE, assigning, 155 Test Driven Develo"
+        }
+      ]
+    },
+    {
+      "id": "q045",
+      "question": "What does the F.I.R.S.T. acronym stand for in unit testing?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 451,
+          "score": 0.6442,
+          "relevant": false,
+          "preview": "420 Index failure, continued patterns of, 314 tolerating with no harm, 330 false argument, 294 fast tests, 132 fast-runn"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 163,
+          "score": 0.6336,
+          "relevant": false,
+          "preview": "test just one concept per test function. F.I.R.S.T.8 Clean tests follow five other rules that form the above acronym: Fa"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 288,
+          "score": 0.6299,
+          "relevant": false,
+          "preview": "257 The JUnit Framework Even though the authors left this module in very good shape, the Boy Scout Rule2 tells us we sho"
+        }
+      ]
+    },
+    {
+      "id": "q046",
+      "question": "What is a train wreck in method chaining and why is it considered a violation of good design?",
+      "rank": 7,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 207,
+          "score": 0.7257,
+          "relevant": false,
+          "preview": "and methods. So this rule suggests that we also keep our function and class counts low. High class and method counts are"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 186,
+          "score": 0.7241,
+          "relevant": false,
+          "preview": "Principle in a small way. Perhaps worst of all, we do not know whether MyServiceImpl is the right object in all cases. I"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 42,
+          "score": 0.714,
+          "relevant": false,
+          "preview": "11 The Total Cost of Owning a Mess beyond names, however. I also look at whether an object or method is doing more than "
+        }
+      ]
+    },
+    {
+      "id": "q047",
+      "question": "What is an informative comment and when can it be useful?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 87,
+          "score": 0.7131,
+          "relevant": true,
+          "preview": "56 Chapter 4: Comments Comments like this should not be contracts or legal tomes. Where possible, refer to a standard li"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 86,
+          "score": 0.6817,
+          "relevant": false,
+          "preview": "55 Good Comments Comments Do Not Make Up for Bad Code One of the more common motivations for writing comments is bad cod"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 86,
+          "score": 0.6812,
+          "relevant": false,
+          "preview": "Check to see if the employee is eligible for full benefits if ((employee.flags & HOURLY_FLAG) && (employee.age > 65)) Or"
+        }
+      ]
+    },
+    {
+      "id": "q048",
+      "question": "How does the fourth rule of simple design balance minimizing classes and methods against dogmatism?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 207,
+          "score": 0.8126,
+          "relevant": false,
+          "preview": "and methods. So this rule suggests that we also keep our function and class counts low. High class and method counts are"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 170,
+          "score": 0.7298,
+          "relevant": false,
+          "preview": "works. We fail to switch to the other concern of organization and cleanliness. We move on to the next problem rather tha"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 171,
+          "score": 0.7189,
+          "relevant": false,
+          "preview": "140 Chapter 10: Classes to look to find things and need only understand the directly affected complexity at any given ti"
+        }
+      ]
+    },
+    {
+      "id": "q049",
+      "question": "What does the author mean by the mumbling comment smell?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 90,
+          "score": 0.6962,
+          "relevant": false,
+          "preview": "fall into this category. Usually they are crutches or excuses for poor code or justifications for insufficient decisions"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 317,
+          "score": 0.6793,
+          "relevant": false,
+          "preview": "286 Chapter 17: Smells and Heuristics I compiled this list by walking through several different programs and refactoring"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 15,
+          "score": 0.6791,
+          "relevant": false,
+          "preview": "17: Smells and Heuristics .............................................285 Comments ...................................."
+        }
+      ]
+    },
+    {
+      "id": "q050",
+      "question": "What is the single most important quality of a clean test according to Robert C. Martin?",
+      "rank": 3,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 154,
+          "score": 0.6464,
+          "relevant": false,
+          "preview": "123 Keeping Tests Clean These three laws lock you into a cycle that is perhaps thirty seconds long. The tests and the pr"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 163,
+          "score": 0.6393,
+          "relevant": false,
+          "preview": "test just one concept per test function. F.I.R.S.T.8 Clean tests follow five other rules that form the above acronym: Fa"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 155,
+          "score": 0.6322,
+          "relevant": true,
+          "preview": "and architecture as clean as possible. Tests enable all the -ilities, because tests enable change. So if your tests are "
+        }
+      ]
+    },
+    {
+      "id": "q051",
+      "question": "Why are side effects harmful in functions according to Clean Code?",
+      "rank": 3,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 2,
+          "score": 0.7877,
+          "relevant": false,
+          "preview": "Clean Code"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 115,
+          "score": 0.7715,
+          "relevant": false,
+          "preview": "polluting detail. We expect the low-level details to come last. This allows us to skim source files, getting the gist fr"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 75,
+          "score": 0.755,
+          "relevant": true,
+          "preview": "44 Chapter 3: Functions Have No Side Effects Side effects are lies. Your function promises to do one thing, but it also "
+        }
+      ]
+    },
+    {
+      "id": "q052",
+      "question": "Why is putting inappropriate information like change history or authors in comments considered a code smell?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 317,
+          "score": 0.8309,
+          "relevant": true,
+          "preview": "286 Chapter 17: Smells and Heuristics I compiled this list by walking through several different programs and refactoring"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 317,
+          "score": 0.7474,
+          "relevant": false,
+          "preview": "just clutter up source files with volumes of historical and uninteresting text. In general, meta-data such as authors, l"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 99,
+          "score": 0.7454,
+          "relevant": false,
+          "preview": "68 Chapter 4: Comments Attributions and Bylines /* Added by Rick */ Source code control systems are very good at remembe"
+        }
+      ]
+    },
+    {
+      "id": "q053",
+      "question": "Why does the author advise against returning null from functions?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 185,
+          "score": 0.7418,
+          "relevant": false,
+          "preview": "idiom, and it has several merits. We don’t incur the overhead of construction unless we actually use the object, and our"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 143,
+          "score": 0.7399,
+          "relevant": false,
+          "preview": "still have a runtime error. In most programming languages there is no good way to deal with a null that is passed by a c"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 142,
+          "score": 0.7336,
+          "relevant": false,
+          "preview": "and your code will be cleaner. Don’t Pass Null Returning null from methods is bad, but passing null into methods is wors"
+        }
+      ]
+    },
+    {
+      "id": "q054",
+      "question": "How does true data abstraction differ from simply exposing variables through getters and setters?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 124,
+          "score": 0.7917,
+          "relevant": true,
+          "preview": "93 6 Objects and Data Structures There is a reason that we keep our variables private. We don’t want anyone else to depe"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 126,
+          "score": 0.77,
+          "relevant": false,
+          "preview": "95 Data/Object Anti-Symmetry In both of the above cases the second option is preferable. We do not want to expose the de"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 125,
+          "score": 0.7526,
+          "relevant": false,
+          "preview": "Hiding implementation is not just a matter of putting a layer of functions between the variables. Hiding implementation "
+        }
+      ]
+    },
+    {
+      "id": "q055",
+      "question": "Why does the author discourage using noise words like Info or Data in class names?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 51,
+          "score": 0.7053,
+          "relevant": true,
+          "preview": "an object by name without seeing your copious comments or even the list of methods supplied by that class. A truly awful"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 80,
+          "score": 0.702,
+          "relevant": false,
+          "preview": "it and refine it until it reads the way you want it to read. When I write functions, they come out long and complicated."
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 53,
+          "score": 0.7019,
+          "relevant": false,
+          "preview": "we were tolerating poor naming. New developers had to have the variables explained to them, and then they spoke about it"
+        }
+      ]
+    },
+    {
+      "id": "q056",
+      "question": "Why should programmers avoid puns when choosing names for methods?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 58,
+          "score": 0.7242,
+          "relevant": false,
+          "preview": "instead. To call the new method add would be a pun. Our goal, as authors, is to make our code as easy as possible to und"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 57,
+          "score": 0.7113,
+          "relevant": false,
+          "preview": "26 Chapter 2: Meaningful Names Don’t Be Cute If names are too clever, they will be memorable only to people who share th"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 56,
+          "score": 0.7112,
+          "relevant": false,
+          "preview": "25 Method Names Avoid Mental Mapping Readers shouldn’t have to mentally translate your names into other names they alrea"
+        }
+      ]
+    },
+    {
+      "id": "q057",
+      "question": "What context should be provided when creating and throwing exceptions?",
+      "rank": 6,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 12,
+          "score": 0.7602,
+          "relevant": false,
+          "preview": "xi Contents Chapter 7: Error Handling ...........................................................103 Use Exceptions Rath"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 138,
+          "score": 0.7473,
+          "relevant": false,
+          "preview": "development the dependency costs outweigh the benefits. Provide Context with Exceptions Each exception that you throw sh"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 136,
+          "score": 0.7426,
+          "relevant": false,
+          "preview": "to start with a try-catch-finally statement when you are writing code that could throw exceptions. This helps you define"
+        }
+      ]
+    },
+    {
+      "id": "q058",
+      "question": "Why are obsolete comments worse than no comments at all?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 317,
+          "score": 0.8002,
+          "relevant": true,
+          "preview": "just clutter up source files with volumes of historical and uninteresting text. In general, meta-data such as authors, l"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 86,
+          "score": 0.7392,
+          "relevant": false,
+          "preview": "55 Good Comments Comments Do Not Make Up for Bad Code One of the more common motivations for writing comments is bad cod"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 100,
+          "score": 0.7386,
+          "relevant": false,
+          "preview": "69 Bad Comments else { this.pngBytes = null; } return this.pngBytes; Why are those two lines of code commented? Are they"
+        }
+      ]
+    },
+    {
+      "id": "q059",
+      "question": "What is the Command Query Separation principle for functions?",
+      "rank": 3,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 77,
+          "score": 0.7555,
+          "relevant": false,
+          "preview": "46 Chapter 3: Functions could try to resolve this by renaming the set function to setAndCheckIfExists, but that doesn’t "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 76,
+          "score": 0.725,
+          "relevant": false,
+          "preview": "it was sometimes necessary to have output arguments. However, much of the need for output arguments disappears in OO lan"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 72,
+          "score": 0.6931,
+          "relevant": true,
+          "preview": "into something else and returning it. For example, InputStream fileOpen(“MyFile”) transforms a file name String into an "
+        }
+      ]
+    },
+    {
+      "id": "q060",
+      "question": "Why are redundant comments like commenting a getter with // returns the name harmful?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 100,
+          "score": 0.731,
+          "relevant": false,
+          "preview": "69 Bad Comments else { this.pngBytes = null; } return this.pngBytes; Why are those two lines of code commented? Are they"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 10,
+          "score": 0.7309,
+          "relevant": false,
+          "preview": "of Intent........................................................................56 Clarification......................."
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 98,
+          "score": 0.7289,
+          "relevant": false,
+          "preview": "67 Bad Comments Don’t Use a Comment When You Can Use a Function or a Variable Consider the following stretch of code: //"
+        }
+      ]
+    },
+    {
+      "id": "q061",
+      "question": "Why does using copies of data help avoid concurrency bugs?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 212,
+          "score": 0.781,
+          "relevant": true,
+          "preview": "the source of failures, which are already hard enough to find. Recommendation: Take data encapsulation to heart; severel"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 213,
+          "score": 0.7807,
+          "relevant": false,
+          "preview": "182 Chapter 13: Concurrency If there is an easy way to avoid sharing objects, the resulting code will be far less likely"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 211,
+          "score": 0.7751,
+          "relevant": false,
+          "preview": "180 Chapter 13: Concurrency • Concurrency bugs aren’t usually repeatable, so they are often ignored as one-offs2 instead"
+        }
+      ]
+    },
+    {
+      "id": "q062",
+      "question": "What are learning tests and how do they help developers integrate third-party APIs?",
+      "rank": 4,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 147,
+          "score": 0.7982,
+          "relevant": false,
+          "preview": "Integrating the third-party code is hard too. Doing both at the same time is doubly hard. What if we took a different ap"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 149,
+          "score": 0.7512,
+          "relevant": false,
+          "preview": "them to. Once integrated, there are no guarantees that the third-party code will stay compatible with our needs. The ori"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 149,
+          "score": 0.7353,
+          "relevant": false,
+          "preview": "118 Chapter 8: Boundaries Now we know how to get a simple console logger initialized, and we can encapsulate that knowle"
+        }
+      ]
+    },
+    {
+      "id": "q063",
+      "question": "What is the author’s guideline for horizontal formatting and line width?",
+      "rank": 2,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 11,
+          "score": 0.801,
+          "relevant": false,
+          "preview": "Horizontal Formatting........................................................................85 Horizontal Openness and "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 116,
+          "score": 0.7966,
+          "relevant": true,
+          "preview": "85 Horizontal Formatting first few functions, without having to immerse ourselves in the details. Listing 5-5 is organiz"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 116,
+          "score": 0.7427,
+          "relevant": false,
+          "preview": "very significant. Programmers clearly prefer short lines. This suggests that we should strive to keep our lines short. T"
+        }
+      ]
+    },
+    {
+      "id": "q064",
+      "question": "What is the Stepdown Rule for organizing functions in a source file?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 68,
+          "score": 0.7567,
+          "relevant": true,
+          "preview": "37 Switch Statements like broken windows, once details are mixed with essential concepts, more and more details tend to "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 111,
+          "score": 0.7298,
+          "relevant": false,
+          "preview": "80 Chapter 5: Formatting Vertical Distance Have you ever chased your tail through a class, hopping from one function to "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 9,
+          "score": 0.7216,
+          "relevant": false,
+          "preview": "Blocks and Indenting........................................................................35 Do One Thing............."
+        }
+      ]
+    },
+    {
+      "id": "q065",
+      "question": "What is an explanation of intent comment in source code?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 10,
+          "score": 0.7544,
+          "relevant": false,
+          "preview": "of Intent........................................................................56 Clarification......................."
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 99,
+          "score": 0.7543,
+          "relevant": false,
+          "preview": "68 Chapter 4: Comments Attributions and Bylines /* Added by Rick */ Source code control systems are very good at remembe"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 100,
+          "score": 0.7513,
+          "relevant": false,
+          "preview": "69 Bad Comments else { this.pngBytes = null; } return this.pngBytes; Why are those two lines of code commented? Are they"
+        }
+      ]
+    },
+    {
+      "id": "q066",
+      "question": "What are cross-cutting concerns and why are they challenging in modular software?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 191,
+          "score": 0.7386,
+          "relevant": false,
+          "preview": "like persistence tend to cut across the natural object boundaries of a domain. You want to persist all your objects usin"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 198,
+          "score": 0.7185,
+          "relevant": false,
+          "preview": "APIs can be overkill when they aren’t really needed. A good API should largely disappear from view most of the time, so "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 79,
+          "score": 0.7057,
+          "relevant": false,
+          "preview": "ever have to change. It is also a four-fold opportunity for an error of omission. This duplication was remedied by the i"
+        }
+      ]
+    },
+    {
+      "id": "q067",
+      "question": "According to Robert C. Martin, what is the only way to go fast and meet deadlines?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 37,
+          "score": 0.6582,
+          "relevant": false,
+          "preview": "instantly, and will force you to miss the deadline. The only way to make the deadline—the only way to go fast—is to keep"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 3,
+          "score": 0.6087,
+          "relevant": false,
+          "preview": "Robert C. Martin Series The mission of this series is to improve the state of the art of software craftsmanship. The boo"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 369,
+          "score": 0.5765,
+          "relevant": false,
+          "preview": "338 Appendix A: Concurrency II Breaking Lock & Wait You can also eliminate deadlock if you refuse to wait. Check each re"
+        }
+      ]
+    },
+    {
+      "id": "q068",
+      "question": "Why does the author argue against passing boolean flag arguments into functions?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 72,
+          "score": 0.7537,
+          "relevant": true,
+          "preview": "names and contexts carefully. Try to avoid any monadic functions that don’t follow these forms, for example, void includ"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 328,
+          "score": 0.737,
+          "relevant": false,
+          "preview": "if statements and flags, without really stopping to consider what is really going on. Programming is often an exploratio"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 72,
+          "score": 0.7351,
+          "relevant": false,
+          "preview": "than one thing. It does one thing if the flag is true and another if the flag is false! In Listing 3-7 we had no choice "
+        }
+      ]
+    },
+    {
+      "id": "q069",
+      "question": "Why should try/catch blocks be extracted into separate functions?",
+      "rank": 9,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 136,
+          "score": 0.7414,
+          "relevant": false,
+          "preview": "105 Write Your Try-Catch-Finally Statement First Notice how much cleaner it is. This isn’t just a matter of aesthetics. "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 12,
+          "score": 0.7386,
+          "relevant": false,
+          "preview": "xi Contents Chapter 7: Error Handling ...........................................................103 Use Exceptions Rath"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 10,
+          "score": 0.7333,
+          "relevant": false,
+          "preview": "ix Contents Prefer Exceptions to Returning Error Codes...................................46 Extract Try/Catch Blocks ..."
+        }
+      ]
+    },
+    {
+      "id": "q070",
+      "question": "Why is using exceptions preferred over returning error codes?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 135,
+          "score": 0.8056,
+          "relevant": true,
+          "preview": "104 Chapter 7: Error Handling Use Exceptions Rather Than Return Codes Back in the distant past there were many languages"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 12,
+          "score": 0.7969,
+          "relevant": false,
+          "preview": "xi Contents Chapter 7: Error Handling ...........................................................103 Use Exceptions Rath"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 10,
+          "score": 0.7848,
+          "relevant": false,
+          "preview": "ix Contents Prefer Exceptions to Returning Error Codes...................................46 Extract Try/Catch Blocks ..."
+        }
+      ]
+    },
+    {
+      "id": "q071",
+      "question": "What is the author’s stance on checked exceptions versus unchecked exceptions?",
+      "rank": 3,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 137,
+          "score": 0.7197,
+          "relevant": false,
+          "preview": "exceptions were introduced in the first version of Java, they seemed like a great idea. The signature of every method wo"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 12,
+          "score": 0.7191,
+          "relevant": false,
+          "preview": "xi Contents Chapter 7: Error Handling ...........................................................103 Use Exceptions Rath"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 137,
+          "score": 0.6909,
+          "relevant": true,
+          "preview": "stream.close(); } catch (FileNotFoundException e) { throw new StorageException(\"retrieval error”, e); } return new Array"
+        }
+      ]
+    },
+    {
+      "id": "q072",
+      "question": "Why does Robert C. Martin claim that comments do not make up for bad code?",
+      "rank": 2,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 84,
+          "score": 0.7772,
+          "relevant": false,
+          "preview": "53 4 Comments “Don’t comment bad code—rewrite it.” —Brian W. Kernighan and P. J. Plaugher1 Nothing can be quite so helpf"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 86,
+          "score": 0.7425,
+          "relevant": true,
+          "preview": "55 Good Comments Comments Do Not Make Up for Bad Code One of the more common motivations for writing comments is bad cod"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 94,
+          "score": 0.7318,
+          "relevant": false,
+          "preview": "63 Bad Comments Misleading Comments Sometimes, with all the best intentions, a programmer makes a statement in his comme"
+        }
+      ]
+    },
+    {
+      "id": "q073",
+      "question": "How does Grady Booch define clean code?",
+      "rank": 2,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 2,
+          "score": 0.8137,
+          "relevant": false,
+          "preview": "Clean Code"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 39,
+          "score": 0.8048,
+          "relevant": true,
+          "preview": "gloss over details. Memory leaks are another, race conditions still another. Inconsistent naming yet another. The upshot"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 38,
+          "score": 0.7749,
+          "relevant": false,
+          "preview": "to get from here to there. In short, a programmer who writes clean code is an artist who can take a blank screen through"
+        }
+      ]
+    },
+    {
+      "id": "q074",
+      "question": "How does Dependency Injection (DI) implement Inversion of Control for object construction?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 188,
+          "score": 0.7994,
+          "relevant": true,
+          "preview": "157 Scaling Up Dependency Injection A powerful mechanism for separating construction from use is Dependency Injection (D"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 200,
+          "score": 0.736,
+          "relevant": false,
+          "preview": "Upper Saddle River, NJ, 2005. [DSL]: Domain-specific programming language, http://en.wikipedia.org/wiki/Domainspecific_p"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 188,
+          "score": 0.7347,
+          "relevant": false,
+          "preview": "where an object asks a directory server to provide a “service” matching a particular name. MyService myService = (MyServ"
+        }
+      ]
+    },
+    {
+      "id": "q075",
+      "question": "How does Bjarne Stroustrup define clean code in Chapter 1?",
+      "rank": 5,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 38,
+          "score": 0.8114,
+          "relevant": false,
+          "preview": "to get from here to there. In short, a programmer who writes clean code is an artist who can take a blank screen through"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 2,
+          "score": 0.7651,
+          "relevant": false,
+          "preview": "Clean Code"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 39,
+          "score": 0.7622,
+          "relevant": false,
+          "preview": "gloss over details. Memory leaks are another, race conditions still another. Inconsistent naming yet another. The upshot"
+        }
+      ]
+    },
+    {
+      "id": "q076",
+      "question": "What is LeBlanc’s law regarding postponed code cleanup?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 35,
+          "score": 0.7459,
+          "relevant": true,
+          "preview": "4 Chapter 1: Clean Code working mess is better than nothing. We’ve all said we’d go back and clean it up later. Of cours"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 2,
+          "score": 0.6937,
+          "relevant": false,
+          "preview": "Clean Code"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 281,
+          "score": 0.6626,
+          "relevant": false,
+          "preview": "can be redone, bad requirements can be redefined. Bad team dynamics can be repaired. But bad code rots and ferments, bec"
+        }
+      ]
+    },
+    {
+      "id": "q077",
+      "question": "What is the DRY (Don’t Repeat Yourself) principle and why is duplication considered evil in software?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 320,
+          "score": 0.8104,
+          "relevant": false,
+          "preview": "(or all warnings!) may help you get the build to succeed, but at the risk of endless debugging sessions. Turning off fai"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 79,
+          "score": 0.7936,
+          "relevant": false,
+          "preview": "ever have to change. It is also a four-fold opportunity for an error of omission. This duplication was remedied by the i"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 204,
+          "score": 0.7688,
+          "relevant": false,
+          "preview": "173 No Duplication No Duplication Duplication is the primary enemy of a well-designed system. It represents additional w"
+        }
+      ]
+    },
+    {
+      "id": "q078",
+      "question": "How does Ward Cunningham describe the experience of reading clean code?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 42,
+          "score": 0.7662,
+          "relevant": true,
+          "preview": "behavior when all I really need is a few fairly simple ways of finding what I want. Reduced duplication, high expressive"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 43,
+          "score": 0.7534,
+          "relevant": false,
+          "preview": "12 Chapter 1: Clean Code “. . . pretty much what you expected.” When was the last time you saw a module that was pretty "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 39,
+          "score": 0.7475,
+          "relevant": false,
+          "preview": "gloss over details. Memory leaks are another, race conditions still another. Inconsistent naming yet another. The upshot"
+        }
+      ]
+    },
+    {
+      "id": "q079",
+      "question": "Why should all statements within a function be at the same level of abstraction?",
+      "rank": 2,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 335,
+          "score": 0.7859,
+          "relevant": false,
+          "preview": "of. Put the processing for them in one place. Don’t let them leak all over the code. We don’t want swarms of +1s and -1s"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 67,
+          "score": 0.7587,
+          "relevant": true,
+          "preview": "steps at many different levels of abstraction. So it is clearly doing more than one thing. Even Listing 3-2 has two leve"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 68,
+          "score": 0.7476,
+          "relevant": false,
+          "preview": "function refactored according to the principles described here. Notice how each function introduces the next, and each f"
+        }
+      ]
+    },
+    {
+      "id": "q080",
+      "question": "Why is overriding compiler warnings or disabling safeties considered dangerous?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 320,
+          "score": 0.7095,
+          "relevant": true,
+          "preview": "their code works in all the corner and boundary cases. There is no replacement for due diligence. Every boundary conditi"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 16,
+          "score": 0.6971,
+          "relevant": false,
+          "preview": "G32: Don’t Be Arbitrary.................................................................303 G33: Encapsulate Boundary Co"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 115,
+          "score": 0.6893,
+          "relevant": false,
+          "preview": "polluting detail. We expect the low-level details to come last. This allows us to skim source files, getting the gist fr"
+        }
+      ]
+    },
+    {
+      "id": "q081",
+      "question": "What is the principle of picking one word per concept in naming methods?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 58,
+          "score": 0.7383,
+          "relevant": false,
+          "preview": "27 Add Meaningful Context If you follow the “one word per concept” rule, you could end up with many classes that have, f"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 9,
+          "score": 0.6941,
+          "relevant": false,
+          "preview": "Pick One Word per Concept...............................................................26 Don’t Pun ..................."
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 56,
+          "score": 0.6864,
+          "relevant": false,
+          "preview": "25 Method Names Avoid Mental Mapping Readers shouldn’t have to mentally translate your names into other names they alrea"
+        }
+      ]
+    },
+    {
+      "id": "q082",
+      "question": "What is a Domain-Specific Testing Language in clean unit tests?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 158,
+          "score": 0.7732,
+          "relevant": true,
+          "preview": "127 Clean Tests The BUILD-OPERATE-CHECK2 pattern is made obvious by the structure of these tests. Each of the tests is c"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 200,
+          "score": 0.7319,
+          "relevant": false,
+          "preview": "Upper Saddle River, NJ, 2005. [DSL]: Domain-specific programming language, http://en.wikipedia.org/wiki/Domainspecific_p"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 164,
+          "score": 0.7246,
+          "relevant": false,
+          "preview": "and succinct. Invent testing APIs that act as domain-specific language that helps you write the tests. If you let the te"
+        }
+      ]
+    },
+    {
+      "id": "q083",
+      "question": "What are common concurrency myths that software developers mistakenly believe?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 13,
+          "score": 0.7336,
+          "relevant": false,
+          "preview": "Chapter 13: Concurrency ..............................................................177 Why Concurrency? ............."
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 211,
+          "score": 0.7268,
+          "relevant": false,
+          "preview": "180 Chapter 13: Concurrency • Concurrency bugs aren’t usually repeatable, so they are often ignored as one-offs2 instead"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 210,
+          "score": 0.7149,
+          "relevant": false,
+          "preview": "time of this system by handling many users concurrently. Or consider a system that interprets large data sets but can on"
+        }
+      ]
+    },
+    {
+      "id": "q084",
+      "question": "Why should a single source file ideally contain only one programming language?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 319,
+          "score": 0.7861,
+          "relevant": false,
+          "preview": "dead code around is wasteful. Don’t be afraid to delete the function. Remember, your source code control system still re"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 115,
+          "score": 0.6884,
+          "relevant": false,
+          "preview": "polluting detail. We expect the low-level details to come last. This allows us to skim source files, getting the gist fr"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 453,
+          "score": 0.6718,
+          "relevant": false,
+          "preview": "76, 77 Just-In-Time Compiler, 180 K keyword form, of a function name, 43 L L, lower-case in variable names, 20 language "
+        }
+      ]
+    },
+    {
+      "id": "q085",
+      "question": "What are selector arguments in functions and why are they considered a code smell?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 325,
+          "score": 0.7393,
+          "relevant": false,
+          "preview": "design.7 It would couple HourlyEmployee to the format of the report, exposing it to changes in that format. G15: Selecto"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 326,
+          "score": 0.7305,
+          "relevant": false,
+          "preview": "295 General real shame of a function like this is that the author missed the opportunity to write the following: public "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 80,
+          "score": 0.7295,
+          "relevant": false,
+          "preview": "it and refine it until it reads the way you want it to read. When I write functions, they come out long and complicated."
+        }
+      ]
+    },
+    {
+      "id": "q086",
+      "question": "What tension exists between third-party package providers and package consumers at system boundaries?",
+      "rank": 2,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 149,
+          "score": 0.7155,
+          "relevant": false,
+          "preview": "them to. Once integrated, there are no guarantees that the third-party code will stay compatible with our needs. The ori"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 145,
+          "score": 0.7073,
+          "relevant": true,
+          "preview": "114 Chapter 8: Boundaries with our own. In this chapter we look at practices and techniques to keep the boundaries of ou"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 144,
+          "score": 0.6903,
+          "relevant": false,
+          "preview": "113 8 Boundaries by James Grenning We seldom control all the software in our systems. Sometimes we buy third-party packa"
+        }
+      ]
+    },
+    {
+      "id": "q087",
+      "question": "How does maintaining high cohesion often lead to having many small classes?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 172,
+          "score": 0.8035,
+          "relevant": true,
+          "preview": "141 Classes Should Be Small! get out of the larger class. You should try to separate the variables and methods into two "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 170,
+          "score": 0.8024,
+          "relevant": false,
+          "preview": "works. We fail to switch to the other concern of organization and cleanliness. We move on to the next problem rather tha"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 171,
+          "score": 0.7751,
+          "relevant": false,
+          "preview": "140 Chapter 10: Classes to look to find things and need only understand the directly affected complexity at any given ti"
+        }
+      ]
+    },
+    {
+      "id": "q088",
+      "question": "Why should Active Records not be treated as domain objects with business logic?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 132,
+          "score": 0.824,
+          "relevant": true,
+          "preview": "101 Bibliography Active Record Active Records are special forms of DTOs. They are data structures with public (or beanac"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 191,
+          "score": 0.6886,
+          "relevant": false,
+          "preview": "like persistence tend to cut across the natural object boundaries of a domain. You want to persist all your objects usin"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 191,
+          "score": 0.6765,
+          "relevant": false,
+          "preview": "server. Reuse outside of the EJB2 architecture is effectively impossible, due to the tight coupling. Finally, even objec"
+        }
+      ]
+    },
+    {
+      "id": "q089",
+      "question": "What is the misplaced responsibility smell and the Principle of Least Surprise?",
+      "rank": null,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 319,
+          "score": 0.678,
+          "relevant": false,
+          "preview": "the number and extent of extra languages in our source files. G2: Obvious Behavior Is Unimplemented Following “The Princ"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 22,
+          "score": 0.6558,
+          "relevant": false,
+          "preview": "As beautiful as a house is, a messy desk robs it of its splendor. How about Shutsuke in these small matters? He who is f"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 28,
+          "score": 0.6135,
+          "relevant": false,
+          "preview": "xxvii Introduction heuristic or smell. We tried to understand our own reactions to the code we were reading and changing"
+        }
+      ]
+    },
+    {
+      "id": "q090",
+      "question": "What is the Newspaper Metaphor for formatting a source file?",
+      "rank": 3,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 108,
+          "score": 0.7173,
+          "relevant": false,
+          "preview": "story is about and allows you to decide whether it is something you want to read. The first paragraph gives you a synops"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 109,
+          "score": 0.7155,
+          "relevant": false,
+          "preview": "78 Chapter 5: Formatting concepts and algorithms. Detail should increase as we move downward, until at the end we find t"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 108,
+          "score": 0.6815,
+          "relevant": true,
+          "preview": "77 Vertical Formatting Junit, FitNesse, and Time and Money are composed of relatively small files. None are over 500 lin"
+        }
+      ]
+    },
+    {
+      "id": "q091",
+      "question": "How does the author advise naming interfaces and their implementations without using an I-prefix?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 55,
+          "score": 0.7706,
+          "relevant": true,
+          "preview": "them distinct. public class Part { private String m_dsc; // The textual description void setName(String name) { m_dsc = "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 342,
+          "score": 0.7251,
+          "relevant": false,
+          "preview": "311 Names N2: Choose Names at the Appropriate Level of Abstraction Don’t pick names that communicate implementation; cho"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 9,
+          "score": 0.7226,
+          "relevant": false,
+          "preview": "viii Contents Avoid Encodings ..................................................................................23 Hunga"
+        }
+      ]
+    },
+    {
+      "id": "q092",
+      "question": "Why should programmers avoid disinformation such as naming an arbitrary container an accountList?",
+      "rank": 5,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 50,
+          "score": 0.7722,
+          "relevant": false,
+          "preview": "vary from our intended meaning. For example, hp, aix, and sco would be poor variable names because they are the names of"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 51,
+          "score": 0.7243,
+          "relevant": false,
+          "preview": "an object by name without seeing your copious comments or even the list of methods supplied by that class. A truly awful"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 52,
+          "score": 0.7019,
+          "relevant": false,
+          "preview": "to protect the guilty, but here’s the exact form of the error: getActiveAccount(); getActiveAccounts(); getActiveAccount"
+        }
+      ]
+    },
+    {
+      "id": "q093",
+      "question": "Why should threads be designed to be as independent as possible?",
+      "rank": 1,
+      "top3": [
+        {
+          "source": "clean-code.pdf",
+          "page": 213,
+          "score": 0.7402,
+          "relevant": true,
+          "preview": "182 Chapter 13: Concurrency If there is an easy way to avoid sharing objects, the resulting code will be far less likely"
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 221,
+          "score": 0.7398,
+          "relevant": false,
+          "preview": "foremost, follow the Single Responsibility Principle. Break your system into POJOs that separate thread-aware code from "
+        },
+        {
+          "source": "clean-code.pdf",
+          "page": 213,
+          "score": 0.738,
+          "relevant": false,
+          "preview": "makes each of those threads behave as if it were the only thread in the world and there were no synchronization requirem"
+        }
+      ]
+    }
+  ],
+  "name": "01_dense_baseline",
+  "created_at": "2026-11-22T08:36:36.186027+00:00",
+  "config": {
+    "retriever": "dense",
+    "chunk_size": 1000,
+    "overlap": 200,
+    "embedding_backend": "remote",
+    "embedding_model": "BAAI/bge-base-en-v1.5",
+    "embedding_dim": 768,
+    "n_questions": 93
+  }
+}

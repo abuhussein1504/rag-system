@@ -32,6 +32,7 @@ def main() -> None:
         "retriever": "dense",
         "chunk_size": settings.FILE_DEFAULT_CHUNK_SIZE,
         "overlap": settings.FILE_DEFAULT_OVERLAP_SIZE,
+        "embedding_backend": settings.EMBEDDING_BACKEND,
         "embedding_model": settings.EMBEDDING_MODEL_ID,
         "embedding_dim": settings.EMBEDDING_MODEL_SIZE,
         "n_questions": len(golden),
