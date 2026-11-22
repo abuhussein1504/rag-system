@@ -1,7 +1,7 @@
 import re
 from pathlib import Path
 
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 from src.models.schemas import Chunk
 
@@ -42,12 +42,16 @@ class GoldItem(BaseModel):
     @field_validator("answers")
     @classmethod
     def _answers_long_enough(cls, answers: list[str]) -> list[str]:
-        if len(answers) == 0:
-            raise ValueError("answers must not be empty")
         for answer in answers:
             if len(_WORDS.findall(answer)) <= SHINGLE_SIZE:
                 raise ValueError(f"Answer needs at least {SHINGLE_SIZE + 1} words: {answer!r}")
         return answers
+
+    @model_validator(mode="after")
+    def _validate_ground_truth(self) -> "GoldItem":
+        if not self.answers and (self.start_char is None or self.end_char is None):
+            raise ValueError("answers must not be empty unless start_char and end_char are provided")
+        return self
 
 
 def load_golden(path: Path) -> list[GoldItem]:
