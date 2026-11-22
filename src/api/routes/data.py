@@ -29,6 +29,7 @@ SCOPES = {
     "raw": ["raw"],
     "processed": ["processed"],
     "all": ["raw", "processed"],
+    "vectors": [],
 }
 
 
@@ -102,7 +103,7 @@ def reset_project(
     project_id: ProjectId,
     settings: SettingsDep,
     store: StoreDep,
-    scope: Literal["raw", "processed", "all"] = "all",
+    scope: Literal["raw", "processed", "vectors", "all"] = "all",
 ):
     deleted = []
     for folder in SCOPES[scope]:
@@ -111,7 +112,7 @@ def reset_project(
             shutil.rmtree(target)
             deleted.append(folder)
 
-    if scope in ("processed", "all"):
+    if scope in ("vectors", "processed", "all"):
         store.delete_collection(collection_name(project_id))
         deleted.append("vectors")
     return ResetResponse(status=ResponseStatus.SUCCESS, deleted=deleted)
