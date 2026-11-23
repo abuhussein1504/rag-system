@@ -117,4 +117,11 @@ def test_evaluate_ranks_and_pages():
     assert report["metrics"]["hit@3"] == 1.0
     assert report["metrics"]["page_hit@3"] == 1.0
 
+def test_compare_table_lists_each_report():
+    from scripts.compare_reports import build_table
+
+    report = {"name": "01_x", "metrics": {"hit@1": 0.5, "mrr": 0.6, "avg_latency_ms": 12.3}}
+    table = build_table([report])
+    assert "| 01_x | 0.500 |" in table
+    assert "0.600" in table
 
