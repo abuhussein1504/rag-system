@@ -1,11 +1,12 @@
 import re
 import unicodedata
 
+_PRIVATE_USE = re.compile(r"[\ue000-\uf8ff]")
 
 def clean_text(text: str, *, join_lines: bool = True) -> str:
     # Fix odd characters, e.g. the ligature "ﬁ" becomes "fi"
     text = unicodedata.normalize("NFKC", text)
-    text = text.replace("\x00", "")
+    text = _PRIVATE_USE.sub("-", text)
 
     # Join words split across lines: "inter-\nnational" -> "international"
     text = re.sub(r"(\w)-\n(\w)", r"\1\2", text)
