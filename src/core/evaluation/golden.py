@@ -45,7 +45,6 @@ class GoldItem(BaseModel):
         return answers
 
 
-
 def load_golden(path: Path) -> list[GoldItem]:
     lines = path.read_text(encoding="utf-8").splitlines()
     items = [GoldItem.model_validate_json(line) for line in lines if line.strip()]
