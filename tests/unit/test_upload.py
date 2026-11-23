@@ -1,28 +1,4 @@
 import json
-from types import SimpleNamespace
-
-import pytest
-from fastapi.testclient import TestClient
-
-from main import app
-from src.config import get_settings
-
-
-@pytest.fixture
-def client(tmp_path):
-    fake = SimpleNamespace(
-        DATA_DIR=str(tmp_path),
-        FILE_MAX_SIZE=1,  # 1 MB
-        FILE_ALLOWED_TYPES=["txt", "md"],
-        APP_NAME="test",
-        APP_VERSION="0",
-        FILE_DEFAULT_CHUNK_SIZE=200,
-        FILE_DEFAULT_OVERLAP_SIZE=20,
-    )
-    app.dependency_overrides[get_settings] = lambda: fake
-    with TestClient(app) as c:
-        yield c
-    app.dependency_overrides.clear()
 
 
 def test_upload_ok(client, tmp_path):
