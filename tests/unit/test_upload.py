@@ -16,7 +16,7 @@ def test_rejects_too_large(client, tmp_path):
     big = b"x" * (2 * 1024 * 1024)
     r = client.post("/api/data/upload/proj1", files={"file": ("a.txt", big)})
     assert r.status_code == 413
-    assert not list((tmp_path / "raw" / "proj1").glob("*"))  # no partial file left
+    assert not list((tmp_path / "raw" / "proj1").glob("*"))
 
 
 def test_filename_traversal_stays_inside_project_dir(client, tmp_path):

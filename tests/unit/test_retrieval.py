@@ -30,7 +30,7 @@ def test_bm25_ranks_the_document_with_the_rare_term_first():
              "money money money"]
     ranked = BM25Index(texts).search("special case pattern", 3)
     assert ranked[0][0] == 1
-    assert len(ranked) == 1  # the other documents share no query term
+    assert len(ranked) == 1
 
 
 def test_bm25_prefers_the_shorter_document_for_the_same_term():

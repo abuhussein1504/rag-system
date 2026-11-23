@@ -75,7 +75,7 @@ def test_pdf_loader_strips_page_numbers(tmp_path):
 
     docs = load_file(f, "p1")
     assert [d.text for d in docs] == [f"Real content of page {n}" for n in (1, 2, 3)]
-    assert [d.metadata["page"] for d in docs] == [1, 2, 3]  # PDF page numbers stay stable
+    assert [d.metadata["page"] for d in docs] == [1, 2, 3]
 
 
 def test_word_bullets_become_dashes():

@@ -15,7 +15,7 @@ def reciprocal_rank_fusion(
             scores[chunk_id] = scores.get(chunk_id, 0.0) + 1.0 / (k + rank)
             first_hit.setdefault(chunk_id, hit)
 
-    ordered = sorted(scores, key=lambda chunk_id: -scores[chunk_id])  # ties keep first-seen order
+    ordered = sorted(scores, key=lambda chunk_id: -scores[chunk_id])
     fused = [
         RetrievedChunk(
             chunk=first_hit[chunk_id].chunk,
