@@ -1,130 +1,116 @@
 # RAG System
 
-A modular Retrieval-Augmented Generation (RAG) pipeline with an evaluation harness, built with Python.
+A modular, production-ready Retrieval-Augmented Generation (RAG) pipeline with an evaluation harness, built with Python and FastAPI.
+
+---
 
 ## What is RAG?
 
-RAG is an AI technique that improves LLM responses by first **retrieving** relevant documents from a knowledge base, then passing them as context to the model before **generating** an answer. This reduces hallucinations and keeps answers grounded in your actual data.
+Retrieval-Augmented Generation (RAG) is an AI architecture that enhances Large Language Model (LLM) responses by first **retrieving** relevant context from a curated knowledge base (vector database) and then **generating** answers grounded in that retrieved context. This approach minimizes hallucinations, ensures factual accuracy, and keeps responses aligned with your proprietary data.
+
+---
 
 ## Project Structure
 
+> In accordance with project conventions, only directories are listed below to illustrate architectural organization:
+
 ```
 rag-system/
-├── main.py                            # FastAPI entry point & lifespan
-├── pyproject.toml                     # Project metadata & configurations
-├── uv.lock                            # Dependency lockfile
-├── .env                               # Environment variables (ignored by git)
-├── .env.example                       # Environment variables template
-├── .gitignore
-├── LICENSE
-├── README.md
-│
-├── src/                               # Main source code
-│   ├── config.py                      # Pydantic Settings & environment config
-│   │
-│   ├── models/                        # Core domain models
-│   │   ├── enums.py                   # Enums (status, file types, sources)
-│   │   ├── retry.py                   # Retry logic & backoff models
-│   │   └── schemas.py                 # Domain models (Chunk, Document, etc.)
-│   │
-│   ├── api/                           # API layer (FastAPI)
-│   │   ├── dependencies.py            # Shared FastAPI dependencies
-│   │   ├── routes/
-│   │   │   ├── base.py                # Health / status endpoints
-│   │   │   ├── data.py                # Document upload & ingestion endpoints
-│   │   │   └── search.py              # Search & retrieval endpoints
-│   │   └── schemas/
-│   │       ├── data.py                # Upload API request/response schemas
-│   │       └── search.py              # Search API request/response schemas
-│   │
-│   ├── core/                          # Business logic
-│   │   ├── ingestion/                 # Document ingestion pipeline
-│   │   │   ├── loaders/               # File-type loaders
-│   │   │   │   ├── pdf.py
-│   │   │   │   ├── docx.py
-│   │   │   │   ├── html.py
-│   │   │   │   └── text.py
-│   │   │   ├── cleaner.py             # Text cleaning & normalisation
-│   │   │   ├── processing.py          # Orchestrates load → clean → chunk
-│   │   │   ├── registry.py            # Loader registry / factory
-│   │   │   └── storage.py             # File saving & validation logic
-│   │   ├── chunking/                  # Chunking strategies
-│   │   │   ├── base.py                # Abstract chunker interface
-│   │   │   └── fixed.py               # Fixed-size chunker
-│   │   ├── indexing/                  # Vector indexing pipeline
-│   │   │   └── indexer.py             # Orchestrates embed → upsert
-│   │   ├── retrieval/                 # Retrieval logic (planned)
-│   │   ├── generation/                # Generation logic (planned)
-│   │   └── llm/                       # LLM client abstractions (planned)
-│   │
-│   ├── stores/                        # External storage adapters
-│   │   ├── embedding/                 # Embedding model clients
-│   │   │   ├── base.py                # Abstract embedder interface
-│   │   │   └── gemini_embedder.py     # Gemini text-embedding client
-│   │   └── vectordb/                  # Vector database clients
-│   │       ├── base.py                # Abstract vector store interface
-│   │       └── qdrant.py              # Qdrant vector store client
-│   │
-│   └── infrastructure/                # Infrastructure & persistence adapters
-│
-├── scripts/                           # CLI commands & utility scripts
-│
-├── tests/                             # Test suite
-│   ├── unit/
-│   │   ├── test_schemas.py            # Unit tests for domain models
-│   │   ├── test_upload.py             # Unit tests for upload endpoint
-│   │   ├── test_loaders.py            # Unit tests for file loaders
-│   │   ├── test_processing.py         # Unit tests for ingestion pipeline
-│   │   └── test_gemini_embedder.py    # Unit tests for Gemini embedder
-│   └── integration/                   # Integration tests
-│
-├── data/                              # Data directory (ignored by git)
-│   ├── raw/                           # Raw uploaded files (by project_id)
-│   ├── processed/                     # Parsed & chunked data
-│   └── indexes/                       # Vector indices / local cache
-│       └── qdrant/                    # Local Qdrant storage
-│
-├── configs/                           # Application & pipeline YAML configurations
-│   ├── base.yaml
-│   └── experiments/
-│
-├── eval/                              # Evaluation harness & benchmarks
-│
-└── docs/                              # Project documentation & architecture notes
-    ├── architecture.md
-    └── decisions/
+├── configs/                           # Application and pipeline configurations
+│   └── experiments/                   # Experiment-specific configuration presets
+├── data/                              # Local data storage (ignored by git)
+│   ├── indexes/                       # Vector indices and database persistent storage
+│   │   └── qdrant/                    # Local Qdrant vector database storage
+│   ├── processed/                     # Parsed, cleaned, and chunked documents (JSONL)
+│   └── raw/                           # Raw uploaded files partitioned by project_id
+├── docs/                              # Project documentation and architectural records
+│   └── decisions/                     # Architecture Decision Records (ADRs)
+├── eval/                              # Evaluation harness datasets and benchmark outputs
+│   └── reports/                       # Generated evaluation benchmark reports (JSON)
+├── scripts/                           # CLI commands and evaluation utilities
+├── src/                               # Main application source code
+│   ├── api/                           # FastAPI web service layer
+│   │   ├── routes/                    # API route handlers (data ingestion, search, info)
+│   │   └── schemas/                   # Pydantic request and response schemas
+│   ├── core/                          # Core business logic and processing pipelines
+│   │   ├── chunking/                  # Chunking strategies (fixed-size with overlap)
+│   │   ├── evaluation/                # Retrieval evaluation logic (metrics, runner, golden set)
+│   │   ├── generation/                # LLM response generation and prompt synthesis
+│   │   ├── indexing/                  # Vector indexing and embedding orchestration
+│   │   ├── ingestion/                 # Document ingestion, cleaning, and storage logic
+│   │   │   └── loaders/               # Multi-format document loaders (PDF, DOCX, HTML, TXT, MD)
+│   │   ├── llm/                       # LLM client abstractions
+│   │   └── retrieval/                 # Information retrieval engines (dense retriever)
+│   ├── infrastructure/                # Persistence and system infrastructure adapters
+│   ├── models/                        # Core domain schemas, enums, and retry mechanisms
+│   └── stores/                        # External storage adapters
+│       ├── embedding/                 # Embedding model clients (Google Gemini, Remote HTTP)
+│       └── vectordb/                  # Vector database clients (Qdrant)
+└── tests/                             # Automated test suite
+    ├── integration/                   # Integration and end-to-end tests
+    └── unit/                          # Unit tests for components and API endpoints
 ```
+
+---
+
+## Key Features
+
+- **Multi-Format Ingestion**: Load and parse `.pdf` (with page tracking via PyMuPDF), `.docx`, `.html` / `.htm`, `.txt`, and `.md` files. Includes file-type checking and maximum file size validation.
+- **Robust Text Cleaning & Normalization**: Strips excessive whitespace, non-printable control characters, and normalizes formatting while preserving structural readability.
+- **Configurable Chunking**: Fixed-size text chunker with configurable chunk size and overlap; preserves document source, page numbers, and character span offsets.
+- **Flexible Embedding Providers**:
+  - **Google Gemini API**: Native integration via `google-genai` (e.g. `text-embedding-004`).
+  - **Remote HTTP Embedder**: HTTP client with exponential backoff and retry logic, compatible with any embedding server (such as `BAAI/bge-base-en-v1.5` or `all-MiniLM-L6-v2`).
+  - **Free Colab GPU Server**: Included Jupyter notebook (`colab_embedding_server.ipynb`) to run sentence-transformers on a free Google Colab GPU over an ngrok tunnel.
+- **Vector Database (Qdrant)**: Local persistent storage using Qdrant with project-scoped collections, metadata payloads, and configurable distance metrics (Cosine, Dot product).
+- **Dense Semantic Retrieval**: High-performance vector retrieval with top-$k$ similarity filtering and score ranking.
+- **RESTful API (FastAPI)**: Clean REST endpoints with automatic OpenAPI documentation (`/docs`) for uploading, processing, indexing, resetting, and querying documents.
+- **Comprehensive Evaluation Harness**:
+  - Interactive CLI tool to generate golden question-chunk datasets (`scripts/build_golden_set.py`).
+  - Sentence-level ground truth annotation tool (`scripts/annotate_answers.py`).
+  - Automated benchmark runner (`scripts/run_eval.py`) reporting **Hit@1**, **Hit@3**, **Hit@5**, **Hit@10**, and **MRR** (Mean Reciprocal Rank) using $n$-gram shingle overlap.
+  - JSON benchmark reporting stored under `eval/reports/`.
+
+---
 
 ## Tech Stack
 
-| Component | Library |
-|---|---|
-| API | FastAPI + Uvicorn |
+| Component | Technology | Description |
+|---|---|---|
+| **API Framework** | [FastAPI](https://fastapi.tiangolo.com/) + [Uvicorn](https://www.uvicorn.org/) | Asynchronous, high-performance web API |
+| **Validation & Config** | [Pydantic v2](https://docs.pydantic.dev/) + [Pydantic-Settings](https://docs.pydantic.dev/latest/concepts/pydantic_settings/) | Strict type validation and environment settings |
+| **Vector Database** | [Qdrant](https://qdrant.tech/) (`qdrant-client`) | High-performance vector search engine with local persistence |
+| **Embeddings** | [Google GenAI SDK](https://github.com/google-gemini/generative-ai-python) / Remote HTTP | Gemini embeddings or self-hosted sentence-transformers |
+| **Document Loaders** | PyMuPDF (`fitz`), python-docx, BeautifulSoup4 | Native parsing for PDF, Word documents, and HTML |
+| **Package Manager** | [uv](https://docs.astral.sh/uv/) | Extremely fast Python package manager and resolver |
+| **Testing & Quality** | Pytest, Pytest-Cov, Ruff, Mypy | Test coverage, static linting, and strict type checking |
+
+---
 
 ## Getting Started
 
 ### Prerequisites
 
-- Python >= 3.12
+- **Python**: `>= 3.12`
+- **uv**: Recommended fast package installer (`curl -LsSf https://astral.sh/uv/install.sh | sh`)
 
 ### Installation
 
-```bash
-git clone https://github.com/abuhussein1504/rag-system.git
-cd rag-system
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/abuhussein1504/rag-system.git
+   cd rag-system
+   ```
 
-# Create a virtual environment
-uv venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
-
-# Install dependencies one by one as you need them
-uv pip install fastapi uvicorn
-uv pip install pydantic pydantic-settings
-```
+2. **Set up the virtual environment and install dependencies**:
+   ```bash
+   uv sync
+   source .venv/bin/activate    # On Windows: .venv\Scripts\activate
+   ```
 
 ### Configuration
 
-Copy `.env.example` to `.env` and fill in your keys:
+Create your `.env` configuration file from the provided template:
 
 ```bash
 cp .env.example .env
@@ -132,11 +118,118 @@ cp .env.example .env
 
 ### Run the API
 
+Start the FastAPI application with Uvicorn:
+
 ```bash
-uvicorn main:app --reload
+uv run uvicorn main:app --reload
 ```
+
+The interactive OpenAPI documentation will be accessible at:
+- **Swagger UI**: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+- **ReDoc**: [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
+
+---
+
+## API Workflow & Endpoints
+
+The system organizes documents under a `project_id` namespace, allowing multi-project isolation.
+
+### 1. Check System Health
+```bash
+curl -X GET "http://127.0.0.1:8000/api/info/"
+```
+
+### 2. Upload Documents
+Upload a supported file (`.pdf`, `.docx`, `.html`, `.txt`, `.md`) to project `project_1`:
+```bash
+curl -X POST "http://127.0.0.1:8000/api/data/upload/project_1" \
+     -F "file=@/path/to/document.pdf"
+```
+
+### 3. Process & Chunk Documents
+Parse raw documents, clean text, and generate chunks with overlap:
+```bash
+curl -X POST "http://127.0.0.1:8000/api/data/process/project_1?force=false"
+```
+
+### 4. Index Chunks into Vector DB
+Generate vector embeddings and index them into Qdrant:
+```bash
+curl -X POST "http://127.0.0.1:8000/api/data/index/project_1"
+```
+
+### 5. Semantic Search / Retrieval
+Query the indexed collection using dense vector search:
+```bash
+curl -X POST "http://127.0.0.1:8000/api/search/project_1" \
+     -H "Content-Type: application/json" \
+     -d '{"query": "What is the primary conclusion?", "top_k": 5}'
+```
+
+### 6. Reset / Delete Data
+Delete project-specific data (scopes: `raw`, `processed`, `vectors`, or `all`):
+```bash
+curl -X DELETE "http://127.0.0.1:8000/api/data/project_1?scope=all"
+```
+Or reset all projects:
+```bash
+curl -X DELETE "http://127.0.0.1:8000/api/data?confirm=true"
+```
+
+---
+
+## Evaluation Harness
+
+The repository includes a complete retrieval evaluation pipeline to measure retrieval quality and avoid regressions.
+
+### 1. Build Golden Set
+Create a question-document benchmark dataset interactively from processed chunks:
+```bash
+uv run python scripts/build_golden_set.py --project project_1 --out eval/golden_set.jsonl
+```
+
+### 2. Annotate Ground Truth Answers
+Annotate sentence-level ground truth answers for precise relevance evaluation:
+```bash
+uv run python scripts/annotate_answers.py --project project_1 --src eval/golden_set.jsonl --out eval/golden_set_v2.jsonl
+```
+
+### 3. Run Benchmark Evaluation
+Run the evaluation runner against the indexed vector collection:
+```bash
+uv run python scripts/run_eval.py --project project_1 --name 01_dense_baseline --golden eval/golden_set.jsonl --k 10
+```
+
+The evaluator calculates:
+- **Hit@1, Hit@3, Hit@5, Hit@10**: Proportion of queries where a relevant chunk was found within top $k$ results (based on 5-gram shingle matching).
+- **MRR (Mean Reciprocal Rank)**: Average reciprocal rank of the first relevant retrieved document.
+- Saves detailed JSON reports into `eval/reports/<name>.json`.
+
+---
+
+## Testing & Quality
+
+Run the test suite with pytest:
+
+```bash
+uv run pytest
+```
+
+Run test coverage:
+
+```bash
+uv run pytest --cov=src
+```
+
+Run static analysis and linting:
+
+```bash
+uv run ruff check .
+uv run mypy src
+```
+
+---
 
 ## License
 
-MIT
-
+This project is licensed under the [MIT License](file:///mnt/data/Projects/rag-system/LICENSE).
