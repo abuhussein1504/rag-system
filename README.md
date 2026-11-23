@@ -232,4 +232,4 @@ uv run mypy src
 
 ## License
 
-This project is licensed under the [MIT License](file:///mnt/data/Projects/rag-system/LICENSE).
+This project is licensed under the [Apache License 2.0](LICENSE).

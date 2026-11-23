@@ -7,7 +7,7 @@ name = "rag-system"
 version = "0.1.0"
 description = "RAG System"
 readme = "README.md"
-license = "MIT"
+license = "Apache-2.0"
 requires-python = ">=3.12"
 dependencies = [
     "aiofiles>=25.1.0",
