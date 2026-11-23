@@ -1,4 +1,5 @@
 from typing import Any
+from functools import partial
 
 from google import genai
 from google.genai import errors, types
@@ -19,7 +20,7 @@ class GeminiEmbedder:
         model_id: str = "gemini-embedding-001",
         dimension: int = 768,
         batch_size: int = 32,
-        client: Any = None,  # lets tests pass a fake client
+        client: Any = None,
     ) -> None:
         self.client = client or genai.Client(api_key=api_key)
         self.model_id = model_id
@@ -34,8 +35,11 @@ class GeminiEmbedder:
         for i in range(0, len(texts), self.batch_size):
             batch = texts[i : i + self.batch_size]
             response = retry(
-                lambda b=batch: self.client.models.embed_content(
-                    model=self.model_id, contents=b, config=config
+                partial(
+                    self.client.models.embed_content,
+                    model=self.model_id,
+                    contents=batch,
+                    config=config,
                 ),
                 should_retry=_is_retryable,
             )
