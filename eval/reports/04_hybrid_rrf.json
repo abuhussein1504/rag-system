@@ -1,0 +1,2581 @@
+{
+  "metrics": {
+    "hit@1": 0.4706,
+    "hit@3": 0.7294,
+    "hit@5": 0.8118,
+    "hit@10": 0.9059,
+    "mrr": 0.6099,
+    "page_hit@1": 0.5882,
+    "page_hit@3": 0.8,
+    "page_hit@5": 0.8706,
+    "page_hit@10": 0.9765,
+    "page_mrr": 0.7081,
+    "avg_latency_ms": 1976.7
+  },
+  "questions": [
+    {
+      "id": "q001",
+      "question": "How were white box and black box testing conducted on the BudgetService and parser endpoints?",
+      "gold_page": 57,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 57,
+          "score": 0.0325,
+          "relevant": true,
+          "preview": "and SQLite transaction aggregation through to the Safe-to-Spend and justify outputs, verifying each arithmetic step agai"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 57,
+          "score": 0.0325,
+          "relevant": false,
+          "preview": "Dataset Category Inconsistency: The four Kaggle source datasets used different category taxonomies. A manual mapping ste"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 57,
+          "score": 0.0306,
+          "relevant": false,
+          "preview": "tip rendering after expenses, chat responses for conversational queries, and correct PaydayCircle rendering across diffe"
+        }
+      ]
+    },
+    {
+      "id": "q002",
+      "question": "How did acceptance testing verify that all functional requirements from Chapter 3 were satisfied?",
+      "gold_page": 59,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 59,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "4.10.5 Acceptance Testing Each functional requirement from Chapter 3 was mapped to a test scenario and executed against "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 33,
+          "score": 0.032,
+          "relevant": false,
+          "preview": "number. 3.7 Summary Chapter 3 defines the functional and non-functional requirements for the 3ML application. It details"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 59,
+          "score": 0.0312,
+          "relevant": false,
+          "preview": "review, unit testing, and integration testing. All features were traced back to their corresponding functional requireme"
+        }
+      ]
+    },
+    {
+      "id": "q003",
+      "question": "What complete user workflows were simulated during end-to-end system testing of 3ML?",
+      "gold_page": 58,
+      "rank": 2,
+      "page_rank": 2,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 59,
+          "score": 0.0325,
+          "relevant": false,
+          "preview": "review, unit testing, and integration testing. All features were traced back to their corresponding functional requireme"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 58,
+          "score": 0.032,
+          "relevant": true,
+          "preview": "4.10.4 System Testing End-to-end system tests simulated complete user workflows: onboarding, profile setup, transaction "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 33,
+          "score": 0.0308,
+          "relevant": false,
+          "preview": "number. 3.7 Summary Chapter 3 defines the functional and non-functional requirements for the 3ML application. It details"
+        }
+      ]
+    },
+    {
+      "id": "q004",
+      "question": "How was the dataset for the DistilBERT intent classifier constructed, balanced, and trained?",
+      "gold_page": 37,
+      "rank": 4,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 37,
+          "score": 0.0325,
+          "relevant": false,
+          "preview": "4.5 Model 1: The Classifier 4.5.1 Model Design The Classifier is a binary text classification model fine-tuned on Distil"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 36,
+          "score": 0.032,
+          "relevant": false,
+          "preview": "4.4 Dataset A key contribution of this project is the creation and public release of a custom dataset, abuhussein1504/ev"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 61,
+          "score": 0.0318,
+          "relevant": false,
+          "preview": "5.1 Introduction This chapter presents the results of the three AI models and the functional evaluation of the 3ML appli"
+        }
+      ]
+    },
+    {
+      "id": "q005",
+      "question": "What principal contributions did the 3ML project make to personal finance AI and open datasets?",
+      "gold_page": 66,
+      "rank": 6,
+      "page_rank": 6,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 67,
+          "score": 0.0325,
+          "relevant": false,
+          "preview": "6.6 Final Remarks Make My Money Last demonstrates that a thoughtfully designed AI system, built with domain-specific fin"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 65,
+          "score": 0.0318,
+          "relevant": false,
+          "preview": "6.1 Summary of the Project This project developed Make My Money Last (3ML), a chat-based, AI-powered personal budgeting "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 65,
+          "score": 0.0315,
+          "relevant": false,
+          "preview": "local-only data storage, and no bank account linking. The secondary objective of lightweight spending analytics was fulf"
+        }
+      ]
+    },
+    {
+      "id": "q006",
+      "question": "What user privacy assurances and data management capabilities are outlined in the Privacy Policy modal?",
+      "gold_page": 54,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 54,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "Privacy Policy Modal: A pop-up titled 'Privacy Policy' with a padlock icon confirms to the user that no bank linking is "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 53,
+          "score": 0.0323,
+          "relevant": false,
+          "preview": "Settings (Bottom Half): Scrolling down reveals Privacy & Data options (Privacy Policy viewer, CSV export, JSON backup), "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 22,
+          "score": 0.0312,
+          "relevant": false,
+          "preview": "2.7 Summary This chapter has systematically situated the Make My Money Last (3ML) project within the broader context of "
+        }
+      ]
+    },
+    {
+      "id": "q007",
+      "question": "What key implementation milestones across the three AI models and Flutter app are summarized in Chapter 4?",
+      "gold_page": 59,
+      "rank": null,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 59,
+          "score": 0.0325,
+          "relevant": false,
+          "preview": "review, unit testing, and integration testing. All features were traced back to their corresponding functional requireme"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 35,
+          "score": 0.0325,
+          "relevant": false,
+          "preview": "4.1 Introduction This chapter presents the complete design, implementation, and testing of the Make My Money Last (3ML) "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 45,
+          "score": 0.0308,
+          "relevant": false,
+          "preview": "4.8 Mobile Application Implementation 4.8.1 Technology Stack The mobile front-end was developed using Flutter (Dart SDK "
+        }
+      ]
+    },
+    {
+      "id": "q008",
+      "question": "What development methodology was followed during the design and implementation of 3ML?",
+      "gold_page": 35,
+      "rank": 3,
+      "page_rank": 3,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 59,
+          "score": 0.0318,
+          "relevant": false,
+          "preview": "review, unit testing, and integration testing. All features were traced back to their corresponding functional requireme"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 63,
+          "score": 0.031,
+          "relevant": false,
+          "preview": "5.7 Skills Acquired The development of 3ML facilitated acquisition of a broad range of technical and professional skills"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 35,
+          "score": 0.0307,
+          "relevant": true,
+          "preview": "4.1 Introduction This chapter presents the complete design, implementation, and testing of the Make My Money Last (3ML) "
+        }
+      ]
+    },
+    {
+      "id": "q009",
+      "question": "What technologies and third-party Flutter packages comprise the mobile application stack in 3ML?",
+      "gold_page": 45,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 45,
+          "score": 0.0323,
+          "relevant": true,
+          "preview": "4.8 Mobile Application Implementation 4.8.1 Technology Stack The mobile front-end was developed using Flutter (Dart SDK "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 63,
+          "score": 0.032,
+          "relevant": false,
+          "preview": "5.7 Skills Acquired The development of 3ML facilitated acquisition of a broad range of technical and professional skills"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 63,
+          "score": 0.0311,
+          "relevant": false,
+          "preview": "project reinforced iterative development practices, technical documentation discipline, and full-stack system integratio"
+        }
+      ]
+    },
+    {
+      "id": "q010",
+      "question": "What training setup and hyperparameters were utilized to fine-tune the Llama-3.2-3B Coach and Chatbot model?",
+      "gold_page": 42,
+      "rank": 6,
+      "page_rank": 6,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 41,
+          "score": 0.0323,
+          "relevant": false,
+          "preview": "4.6.3 Output Schema and Sample Results The model is constrained by a structured system prompt to always produce a JSON o"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 69,
+          "score": 0.0313,
+          "relevant": false,
+          "preview": "(Accessed 1 Apr. 2025). 17.Unsloth AI. (2025). Unsloth: Fine-tune LLMs 2x faster with 60% less memory. Available at: htt"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 59,
+          "score": 0.0312,
+          "relevant": false,
+          "preview": "were built: a DistilBERT intent classifier, a Qwen2.5-3B-Instruct event parser fine-tuned with QLoRA, and a Llama-3.2-3B"
+        }
+      ]
+    },
+    {
+      "id": "q011",
+      "question": "What details and calculation steps are revealed when a user taps the Tap-to-Justify calculation modal?",
+      "gold_page": 47,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 47,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "Calculation Breakdown (Tapto-Justify): Tapping the main card opens a bottom sheet titled 'How We Calculated This' with a"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 62,
+          "score": 0.032,
+          "relevant": false,
+          "preview": "restaurant dining, the model identified the critical status and produced recoveryoriented advice; for a user in a comfor"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 26,
+          "score": 0.0315,
+          "relevant": false,
+          "preview": "3.4 System Modelling 3.4.1 Use Case Diagram: 1. Logging Transactions: - The user inputs spending using simple text (Log "
+        }
+      ]
+    },
+    {
+      "id": "q012",
+      "question": "What visual elements and budget metrics are displayed on 3ML's Home Dashboard screen?",
+      "gold_page": 46,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 46,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "Home Dashboard: The home screen greets the user by name and centres on a large mintgreen card displaying the headline 'A"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 51,
+          "score": 0.0294,
+          "relevant": false,
+          "preview": "All Spending Categories Modal: Expanding the analytics view opens a full-list modal showing every category with total sp"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 24,
+          "score": 0.0288,
+          "relevant": false,
+          "preview": "3.1 Introduction This chapter translates the project's initial aims into specific functional and nonfunctional requireme"
+        }
+      ]
+    },
+    {
+      "id": "q013",
+      "question": "How are the Rules Engine, Coaching LLM, and local data layer architected in 3ML to guarantee auditability?",
+      "gold_page": 17,
+      "rank": 3,
+      "page_rank": 3,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 25,
+          "score": 0.0325,
+          "relevant": false,
+          "preview": "text logs, identifying the intent, amount, and date. - Counting Engine (Rules Engine): The deterministic logic core. It "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 32,
+          "score": 0.0315,
+          "relevant": false,
+          "preview": "3.5 Alternative Approaches - Bank Linking vs. Manual Entry (Privacy): The chosen approach is Manual Entry Only. This was"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 17,
+          "score": 0.0313,
+          "relevant": true,
+          "preview": "latency. Rules Engine: Deterministic budgeting logic (savings-first, runway calculation) implemented as auditable functi"
+        }
+      ]
+    },
+    {
+      "id": "q014",
+      "question": "How does 3ML address user privacy and support offline expense logging?",
+      "gold_page": 12,
+      "rank": null,
+      "page_rank": 7,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 25,
+          "score": 0.0328,
+          "relevant": false,
+          "preview": "fully auditable. Privacy by Default The system shall ensure privacy by supporting manual entry only and strictly prevent"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 21,
+          "score": 0.032,
+          "relevant": false,
+          "preview": "needing bank linking, 3ML will utilize a Quick-Split Income Prompt. After a user logs a salary event (e.g., \"paycheck 20"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 16,
+          "score": 0.0308,
+          "relevant": false,
+          "preview": "permission number for today helps those choices. - Less clutter, less avoidance. When apps feel heavy—too many charts or"
+        }
+      ]
+    },
+    {
+      "id": "q015",
+      "question": "How does 3ML architecturally separate probabilistic AI processing from deterministic financial arithmetic?",
+      "gold_page": 35,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 35,
+          "score": 0.0323,
+          "relevant": true,
+          "preview": "implementation, and manual validation before proceeding. This approach was particularly critical for the split between p"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 62,
+          "score": 0.032,
+          "relevant": false,
+          "preview": "(Qwen2.5-3B), deterministic budgeting (BudgetService), and coaching (Llama-3.2-3B) into four distinct concerns produced "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 67,
+          "score": 0.0315,
+          "relevant": false,
+          "preview": "6.6 Final Remarks Make My Money Last demonstrates that a thoughtfully designed AI system, built with domain-specific fin"
+        }
+      ]
+    },
+    {
+      "id": "q016",
+      "question": "What latency targets, solvency metrics, and control conditions were established for evaluating 3ML?",
+      "gold_page": 33,
+      "rank": 3,
+      "page_rank": 3,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 32,
+          "score": 0.0318,
+          "relevant": false,
+          "preview": "3.5 Alternative Approaches - Bank Linking vs. Manual Entry (Privacy): The chosen approach is Manual Entry Only. This was"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 17,
+          "score": 0.0304,
+          "relevant": false,
+          "preview": "Synthesis for design. The theoretical threads converge on four design imperatives for 3ML: 1. Prioritize immediacy (JITA"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 33,
+          "score": 0.0303,
+          "relevant": true,
+          "preview": "- Speed (Latency): I will measure the time it takes from sending a message to getting a reply. My goal is for the app to"
+        }
+      ]
+    },
+    {
+      "id": "q017",
+      "question": "What integration tests verified the interactions between the Flutter client, local SQLite, and AI backend?",
+      "gold_page": 57,
+      "rank": null,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 57,
+          "score": 0.032,
+          "relevant": false,
+          "preview": "and SQLite transaction aggregation through to the Safe-to-Spend and justify outputs, verifying each arithmetic step agai"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 35,
+          "score": 0.032,
+          "relevant": false,
+          "preview": "implementation, and manual validation before proceeding. This approach was particularly critical for the split between p"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 35,
+          "score": 0.0315,
+          "relevant": false,
+          "preview": "4.1 Introduction This chapter presents the complete design, implementation, and testing of the Make My Money Last (3ML) "
+        }
+      ]
+    },
+    {
+      "id": "q018",
+      "question": "How were source datasets unified into sixteen target categories and augmented with edge cases?",
+      "gold_page": 36,
+      "rank": 3,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 36,
+          "score": 0.0325,
+          "relevant": false,
+          "preview": "4.4 Dataset A key contribution of this project is the creation and public release of a custom dataset, abuhussein1504/ev"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 57,
+          "score": 0.0323,
+          "relevant": false,
+          "preview": "Dataset Category Inconsistency: The four Kaggle source datasets used different category taxonomies. A manual mapping ste"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 36,
+          "score": 0.032,
+          "relevant": true,
+          "preview": "category taxonomies, so a mapping step was applied to unify all labels into the app's sixteen target categories. Three s"
+        }
+      ]
+    },
+    {
+      "id": "q019",
+      "question": "What architectural benefits resulted from decoupling the system into classifier, parser, rules engine, and coach?",
+      "gold_page": 62,
+      "rank": 10,
+      "page_rank": 7,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 66,
+          "score": 0.0323,
+          "relevant": false,
+          "preview": "that keeps the core budgeting experience fully functional without network connectivity. 6.4 Lessons Learned Several impo"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 35,
+          "score": 0.0311,
+          "relevant": false,
+          "preview": "implementation, and manual validation before proceeding. This approach was particularly critical for the split between p"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 13,
+          "score": 0.0297,
+          "relevant": false,
+          "preview": "- Backend services: Event Parser (small encoder), Counting Engine (rules), Coach Generator (LLM). - Docs: API contracts,"
+        }
+      ]
+    },
+    {
+      "id": "q020",
+      "question": "What sample sizes, datasets, and analysis techniques were planned for testing the parser and user experience?",
+      "gold_page": 33,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 33,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "there is no internet. 3.6.4 Sample Size and Datasets - For the AI (Parser): I will test it with a list of 1,000 example "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 66,
+          "score": 0.0308,
+          "relevant": false,
+          "preview": "that keeps the core budgeting experience fully functional without network connectivity. 6.4 Lessons Learned Several impo"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 57,
+          "score": 0.03,
+          "relevant": false,
+          "preview": "Dataset Category Inconsistency: The four Kaggle source datasets used different category taxonomies. A manual mapping ste"
+        }
+      ]
+    },
+    {
+      "id": "q021",
+      "question": "What base model and quantization technique were chosen for the Event Parser to extract structured transaction data?",
+      "gold_page": 38,
+      "rank": 10,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 38,
+          "score": 0.0325,
+          "relevant": false,
+          "preview": "Figure 14 Training & Val results 4.5.3 Results The classifier achieved a test accuracy of 99.85% and a test F1-score of "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 27,
+          "score": 0.0323,
+          "relevant": false,
+          "preview": "3.4.2 Data Flow Diagram (DFD): A. Input & Parsing (User Action) 1. User enters data (1.0): The User provides a transacti"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 36,
+          "score": 0.0315,
+          "relevant": false,
+          "preview": "4.4 Dataset A key contribution of this project is the creation and public release of a custom dataset, abuhussein1504/ev"
+        }
+      ]
+    },
+    {
+      "id": "q022",
+      "question": "How is the Runway Buffer calculated and updated when a user spends less than their daily allowance?",
+      "gold_page": 56,
+      "rank": 9,
+      "page_rank": 9,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 21,
+          "score": 0.0328,
+          "relevant": false,
+          "preview": "Instantly (The Runway Buffer) - The Problem: Most apps do not explicitly reward the user when they spend less than their"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 31,
+          "score": 0.0318,
+          "relevant": false,
+          "preview": "to help the user recover. o Under Budget: The system calculates a Runway Buffer, showing the user their financial safety"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 31,
+          "score": 0.0294,
+          "relevant": false,
+          "preview": "A. User Input & NLP Flow 1. Input: The user launches the app, loads the dashboard, and types the natural language transa"
+        }
+      ]
+    },
+    {
+      "id": "q023",
+      "question": "How was the coaching and chatbot model evaluated for advice relevance, tone, and financial grounding?",
+      "gold_page": 62,
+      "rank": 5,
+      "page_rank": 5,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 66,
+          "score": 0.0323,
+          "relevant": false,
+          "preview": "coach and chatbot model — all coordinated through a single Flutter client with deterministic budget arithmetic as the au"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 65,
+          "score": 0.0315,
+          "relevant": false,
+          "preview": "6.1 Summary of the Project This project developed Make My Money Last (3ML), a chat-based, AI-powered personal budgeting "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 61,
+          "score": 0.0311,
+          "relevant": false,
+          "preview": "value was present, and returning intent: unknown with low confidence for uninterpretable inputs such as 'hi' or 'took', "
+        }
+      ]
+    },
+    {
+      "id": "q024",
+      "question": "How do sample outputs illustrate the coach and chatbot model adapting advice to user deficits and days to payday?",
+      "gold_page": 44,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 44,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "4.7.4 Sample Outputs In coach mode, for an over-budget user with a deficit who spent 30.00 on shoes, the model generated"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 61,
+          "score": 0.031,
+          "relevant": false,
+          "preview": "value was present, and returning intent: unknown with low confidence for uninterpretable inputs such as 'hi' or 'took', "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 62,
+          "score": 0.0308,
+          "relevant": false,
+          "preview": "restaurant dining, the model identified the critical status and produced recoveryoriented advice; for a user in a comfor"
+        }
+      ]
+    },
+    {
+      "id": "q025",
+      "question": "How does the activity flow handle under-budget status to calculate the Runway Buffer and display the coaching tip?",
+      "gold_page": 31,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 31,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "to help the user recover. o Under Budget: The system calculates a Runway Buffer, showing the user their financial safety"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 31,
+          "score": 0.0311,
+          "relevant": true,
+          "preview": "A. User Input & NLP Flow 1. Input: The user launches the app, loads the dashboard, and types the natural language transa"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 27,
+          "score": 0.0297,
+          "relevant": false,
+          "preview": "3.4.2 Data Flow Diagram (DFD): A. Input & Parsing (User Action) 1. User enters data (1.0): The User provides a transacti"
+        }
+      ]
+    },
+    {
+      "id": "q026",
+      "question": "What future work directions and feature expansions are proposed for the 3ML application?",
+      "gold_page": 66,
+      "rank": 4,
+      "page_rank": 4,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 24,
+          "score": 0.031,
+          "relevant": false,
+          "preview": "3.1 Introduction This chapter translates the project's initial aims into specific functional and nonfunctional requireme"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 25,
+          "score": 0.0308,
+          "relevant": false,
+          "preview": "fully auditable. Privacy by Default The system shall ensure privacy by supporting manual entry only and strictly prevent"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 33,
+          "score": 0.0307,
+          "relevant": false,
+          "preview": "number. 3.7 Summary Chapter 3 defines the functional and non-functional requirements for the 3ML application. It details"
+        }
+      ]
+    },
+    {
+      "id": "q027",
+      "question": "What dual roles does the fine-tuned Llama-3.2-3B model fulfill, and how was its training dataset constructed?",
+      "gold_page": 41,
+      "rank": 2,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 41,
+          "score": 0.0318,
+          "relevant": false,
+          "preview": "4.6.3 Output Schema and Sample Results The model is constrained by a structured system prompt to always produce a JSON o"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 41,
+          "score": 0.0311,
+          "relevant": true,
+          "preview": "loaded in 4bit quantization and fine-tuned using QLoRA with the Unsloth library [17], which provides approximately 2x tr"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 62,
+          "score": 0.031,
+          "relevant": false,
+          "preview": "(Qwen2.5-3B), deterministic budgeting (BudgetService), and coaching (Llama-3.2-3B) into four distinct concerns produced "
+        }
+      ]
+    },
+    {
+      "id": "q028",
+      "question": "How did 3ML fulfill its secondary objectives regarding privacy-by-default and offline reliability?",
+      "gold_page": 65,
+      "rank": null,
+      "page_rank": 4,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 25,
+          "score": 0.0325,
+          "relevant": false,
+          "preview": "fully auditable. Privacy by Default The system shall ensure privacy by supporting manual entry only and strictly prevent"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 32,
+          "score": 0.0311,
+          "relevant": false,
+          "preview": "3.5 Alternative Approaches - Bank Linking vs. Manual Entry (Privacy): The chosen approach is Manual Entry Only. This was"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 21,
+          "score": 0.0305,
+          "relevant": false,
+          "preview": "needing bank linking, 3ML will utilize a Quick-Split Income Prompt. After a user logs a salary event (e.g., \"paycheck 20"
+        }
+      ]
+    },
+    {
+      "id": "q029",
+      "question": "What functional requirements specify the Tap-to-Justify calculation modal and micro-coaching advice?",
+      "gold_page": 24,
+      "rank": 7,
+      "page_rank": 7,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 62,
+          "score": 0.032,
+          "relevant": false,
+          "preview": "restaurant dining, the model identified the critical status and produced recoveryoriented advice; for a user in a comfor"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 26,
+          "score": 0.0318,
+          "relevant": false,
+          "preview": "3.4 System Modelling 3.4.1 Use Case Diagram: 1. Logging Transactions: - The user inputs spending using simple text (Log "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 62,
+          "score": 0.0315,
+          "relevant": false,
+          "preview": "high fixed-bill ratios leaving near-zero disposable income, and over-budget scenarios. The Tap-to-Justify modal correctl"
+        }
+      ]
+    },
+    {
+      "id": "q030",
+      "question": "How does 3ML differ from conventional budgeting apps that emphasize bank linking and complex categorization?",
+      "gold_page": 16,
+      "rank": 2,
+      "page_rank": 2,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 21,
+          "score": 0.0318,
+          "relevant": false,
+          "preview": "needing bank linking, 3ML will utilize a Quick-Split Income Prompt. After a user logs a salary event (e.g., \"paycheck 20"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 16,
+          "score": 0.0315,
+          "relevant": true,
+          "preview": "2.1 Introduction This chapter explains where Make My Money Last (3ML) fits in existing ideas and tools. Many budgeting a"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 65,
+          "score": 0.031,
+          "relevant": false,
+          "preview": "local-only data storage, and no bank account linking. The secondary objective of lightweight spending analytics was fulf"
+        }
+      ]
+    },
+    {
+      "id": "q031",
+      "question": "What are the roles of the Event Parser, Counting Engine, and Coach Generator in 3ML's hybrid architecture?",
+      "gold_page": 25,
+      "rank": 3,
+      "page_rank": 3,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 29,
+          "score": 0.0325,
+          "relevant": false,
+          "preview": "3.4.4 Sequence Diagram: 1. Input and Parsing: The Mobile Client (UI) sends the raw text to the Event Parser (Model A). T"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 35,
+          "score": 0.0325,
+          "relevant": false,
+          "preview": "implementation, and manual validation before proceeding. This approach was particularly critical for the split between p"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 25,
+          "score": 0.0315,
+          "relevant": true,
+          "preview": "text logs, identifying the intent, amount, and date. - Counting Engine (Rules Engine): The deterministic logic core. It "
+        }
+      ]
+    },
+    {
+      "id": "q032",
+      "question": "What JSON schema is the Event Parser model constrained to produce for transaction events?",
+      "gold_page": 41,
+      "rank": 6,
+      "page_rank": 6,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 56,
+          "score": 0.032,
+          "relevant": false,
+          "preview": "chat history, theme preferences, and per-day Safe-to-Spend snapshots for buffer rollover are persisted in SharedPreferen"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 38,
+          "score": 0.0313,
+          "relevant": false,
+          "preview": "Figure 14 Training & Val results 4.5.3 Results The classifier achieved a test accuracy of 99.85% and a test F1-score of "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 36,
+          "score": 0.0302,
+          "relevant": false,
+          "preview": "4.4 Dataset A key contribution of this project is the creation and public release of a custom dataset, abuhussein1504/ev"
+        }
+      ]
+    },
+    {
+      "id": "q033",
+      "question": "How does data flow from user text input through the Event Parser, Counting Engine, and Coach Generator in the DFD?",
+      "gold_page": 27,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 27,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "3.4.2 Data Flow Diagram (DFD): A. Input & Parsing (User Action) 1. User enters data (1.0): The User provides a transacti"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 29,
+          "score": 0.0323,
+          "relevant": false,
+          "preview": "3.4.4 Sequence Diagram: 1. Input and Parsing: The Mobile Client (UI) sends the raw text to the Event Parser (Model A). T"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 31,
+          "score": 0.0315,
+          "relevant": false,
+          "preview": "A. User Input & NLP Flow 1. Input: The user launches the app, loads the dashboard, and types the natural language transa"
+        }
+      ]
+    },
+    {
+      "id": "q034",
+      "question": "Why did 3ML choose manual entry and a two-model split with a rules engine over bank linking and pure LLM approaches?",
+      "gold_page": 32,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 32,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "3.5 Alternative Approaches - Bank Linking vs. Manual Entry (Privacy): The chosen approach is Manual Entry Only. This was"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 17,
+          "score": 0.0318,
+          "relevant": false,
+          "preview": "Synthesis for design. The theoretical threads converge on four design imperatives for 3ML: 1. Prioritize immediacy (JITA"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 21,
+          "score": 0.0313,
+          "relevant": false,
+          "preview": "needing bank linking, 3ML will utilize a Quick-Split Income Prompt. After a user logs a salary event (e.g., \"paycheck 20"
+        }
+      ]
+    },
+    {
+      "id": "q035",
+      "question": "How did the final 3ML system achieve each of the primary objectives established in Chapter 1?",
+      "gold_page": 65,
+      "rank": 8,
+      "page_rank": 8,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 24,
+          "score": 0.0323,
+          "relevant": false,
+          "preview": "3.1 Introduction This chapter translates the project's initial aims into specific functional and nonfunctional requireme"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 33,
+          "score": 0.0307,
+          "relevant": false,
+          "preview": "number. 3.7 Summary Chapter 3 defines the functional and non-functional requirements for the 3ML application. It details"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 32,
+          "score": 0.0303,
+          "relevant": false,
+          "preview": "3.5 Alternative Approaches - Bank Linking vs. Manual Entry (Privacy): The chosen approach is Manual Entry Only. This was"
+        }
+      ]
+    },
+    {
+      "id": "q036",
+      "question": "How does 3ML use parallel execution in its sequence diagram to compute budget updates and coaching simultaneously?",
+      "gold_page": 29,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 29,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "3.4.4 Sequence Diagram: 1. Input and Parsing: The Mobile Client (UI) sends the raw text to the Event Parser (Model A). T"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 26,
+          "score": 0.0304,
+          "relevant": false,
+          "preview": "3.4 System Modelling 3.4.1 Use Case Diagram: 1. Logging Transactions: - The user inputs spending using simple text (Log "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 66,
+          "score": 0.0292,
+          "relevant": false,
+          "preview": "coach and chatbot model — all coordinated through a single Flutter client with deterministic budget arithmetic as the au"
+        }
+      ]
+    },
+    {
+      "id": "q037",
+      "question": "How does 3ML compare to PocketGuard, Simplifi, and Revolut in terms of data capture, timeliness, and explainability?",
+      "gold_page": 20,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 20,
+          "score": 0.032,
+          "relevant": true,
+          "preview": "2.6 Comparative Discussion Aspect PocketGuard Quicken Simplifi Revolut 3ML (My app) Main idea Single allowance (Leftover"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 22,
+          "score": 0.0315,
+          "relevant": false,
+          "preview": "2.7 Summary This chapter has systematically situated the Make My Money Last (3ML) project within the broader context of "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 16,
+          "score": 0.0313,
+          "relevant": false,
+          "preview": "permission number for today helps those choices. - Less clutter, less avoidance. When apps feel heavy—too many charts or"
+        }
+      ]
+    },
+    {
+      "id": "q038",
+      "question": "What three testing layers comprise the testing strategy for verifying math, flow, and user trust in 3ML?",
+      "gold_page": 32,
+      "rank": 3,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 32,
+          "score": 0.0317,
+          "relevant": false,
+          "preview": "3.5 Alternative Approaches - Bank Linking vs. Manual Entry (Privacy): The chosen approach is Manual Entry Only. This was"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 59,
+          "score": 0.0311,
+          "relevant": false,
+          "preview": "review, unit testing, and integration testing. All features were traced back to their corresponding functional requireme"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 32,
+          "score": 0.0307,
+          "relevant": true,
+          "preview": "Testing and Evaluation Considerations This section defines the practical steps I will take to ensure the system is relia"
+        }
+      ]
+    },
+    {
+      "id": "q039",
+      "question": "What test accuracy and F1-score did the DistilBERT intent classifier achieve on held-out evaluation data?",
+      "gold_page": 38,
+      "rank": 2,
+      "page_rank": 2,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 61,
+          "score": 0.0328,
+          "relevant": false,
+          "preview": "5.1 Introduction This chapter presents the results of the three AI models and the functional evaluation of the 3ML appli"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 38,
+          "score": 0.0323,
+          "relevant": true,
+          "preview": "Figure 14 Training & Val results 4.5.3 Results The classifier achieved a test accuracy of 99.85% and a test F1-score of "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 37,
+          "score": 0.031,
+          "relevant": false,
+          "preview": "samples from the event-parser-data dataset [6], and conversational samples from fahmiaziz/fingpt [14] and ceadar-ie/FinT"
+        }
+      ]
+    },
+    {
+      "id": "q040",
+      "question": "How does PocketGuard calculate its single allowance figure and what are its dependencies?",
+      "gold_page": 18,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 18,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "(parsing accuracy, P95 latency, solvency to payday) guide iteration. 2.5 Related Work (Existing Solutions) 2.5.1 PocketG"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 20,
+          "score": 0.0323,
+          "relevant": false,
+          "preview": "2.6 Comparative Discussion Aspect PocketGuard Quicken Simplifi Revolut 3ML (My app) Main idea Single allowance (Leftover"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 21,
+          "score": 0.0308,
+          "relevant": false,
+          "preview": "2.6.1 Synthesis and Design Imperatives The review of related work and theoretical frameworks converges on four specific "
+        }
+      ]
+    },
+    {
+      "id": "q041",
+      "question": "What are the primary problems with existing budgeting applications identified in the problem definition of 3ML?",
+      "gold_page": 11,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 11,
+          "score": 0.0318,
+          "relevant": true,
+          "preview": "small, variable expenses every day. The app helps users by converting these daily transactions into a single \"Safe-to-Sp"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 21,
+          "score": 0.0306,
+          "relevant": false,
+          "preview": "2.6.1 Synthesis and Design Imperatives The review of related work and theoretical frameworks converges on four specific "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 16,
+          "score": 0.0299,
+          "relevant": false,
+          "preview": "2.1 Introduction This chapter explains where Make My Money Last (3ML) fits in existing ideas and tools. Many budgeting a"
+        }
+      ]
+    },
+    {
+      "id": "q042",
+      "question": "How does Chapter 3 summarize the functional, non-functional, and architectural requirements of 3ML?",
+      "gold_page": 33,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 33,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "number. 3.7 Summary Chapter 3 defines the functional and non-functional requirements for the 3ML application. It details"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 24,
+          "score": 0.032,
+          "relevant": false,
+          "preview": "3.1 Introduction This chapter translates the project's initial aims into specific functional and nonfunctional requireme"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 23,
+          "score": 0.0315,
+          "relevant": false,
+          "preview": "Chapter 3 - Requirements and Analysis"
+        }
+      ]
+    },
+    {
+      "id": "q043",
+      "question": "What synthesis of market gaps and academic literature justified the design imperatives of 3ML?",
+      "gold_page": 22,
+      "rank": 2,
+      "page_rank": 2,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 21,
+          "score": 0.0325,
+          "relevant": false,
+          "preview": "2.6.1 Synthesis and Design Imperatives The review of related work and theoretical frameworks converges on four specific "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 22,
+          "score": 0.032,
+          "relevant": true,
+          "preview": "2.7 Summary This chapter has systematically situated the Make My Money Last (3ML) project within the broader context of "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 17,
+          "score": 0.032,
+          "relevant": false,
+          "preview": "Synthesis for design. The theoretical threads converge on four design imperatives for 3ML: 1. Prioritize immediacy (JITA"
+        }
+      ]
+    },
+    {
+      "id": "q044",
+      "question": "What overall conclusions and evaluation findings are summarized at the end of Chapter 5?",
+      "gold_page": 63,
+      "rank": 3,
+      "page_rank": 3,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 60,
+          "score": 0.0315,
+          "relevant": false,
+          "preview": "Chapter 5: Results and Discussion"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 61,
+          "score": 0.0313,
+          "relevant": false,
+          "preview": "5.1 Introduction This chapter presents the results of the three AI models and the functional evaluation of the 3ML appli"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 63,
+          "score": 0.0301,
+          "relevant": true,
+          "preview": "project reinforced iterative development practices, technical documentation discipline, and full-stack system integratio"
+        }
+      ]
+    },
+    {
+      "id": "q045",
+      "question": "What custom dataset was created and released on Hugging Face to train the Event Parser and coaching model?",
+      "gold_page": 36,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 36,
+          "score": 0.0323,
+          "relevant": true,
+          "preview": "4.4 Dataset A key contribution of this project is the creation and public release of a custom dataset, abuhussein1504/ev"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 37,
+          "score": 0.032,
+          "relevant": false,
+          "preview": "samples from the event-parser-data dataset [6], and conversational samples from fahmiaziz/fingpt [14] and ceadar-ie/FinT"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 59,
+          "score": 0.032,
+          "relevant": false,
+          "preview": "were built: a DistilBERT intent classifier, a Qwen2.5-3B-Instruct event parser fine-tuned with QLoRA, and a Llama-3.2-3B"
+        }
+      ]
+    },
+    {
+      "id": "q046",
+      "question": "What technical challenges and implementation problems were encountered during 3ML's development?",
+      "gold_page": 57,
+      "rank": null,
+      "page_rank": null,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 63,
+          "score": 0.0315,
+          "relevant": false,
+          "preview": "project reinforced iterative development practices, technical documentation discipline, and full-stack system integratio"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 63,
+          "score": 0.0313,
+          "relevant": false,
+          "preview": "5.7 Skills Acquired The development of 3ML facilitated acquisition of a broad range of technical and professional skills"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 59,
+          "score": 0.0308,
+          "relevant": false,
+          "preview": "review, unit testing, and integration testing. All features were traced back to their corresponding functional requireme"
+        }
+      ]
+    },
+    {
+      "id": "q047",
+      "question": "What system test cases and results are recorded in Table 4.1 for offline access and profile updates?",
+      "gold_page": 58,
+      "rank": 2,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 58,
+          "score": 0.0325,
+          "relevant": false,
+          "preview": "Full step-by-step formula modal opens Pass Spending tab category tap Expanded transaction list for category shown Pass C"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 58,
+          "score": 0.0323,
+          "relevant": true,
+          "preview": "4.10.4 System Testing End-to-end system tests simulated complete user workflows: onboarding, profile setup, transaction "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 57,
+          "score": 0.0308,
+          "relevant": false,
+          "preview": "Dataset Category Inconsistency: The four Kaggle source datasets used different category taxonomies. A manual mapping ste"
+        }
+      ]
+    },
+    {
+      "id": "q048",
+      "question": "What findings resulted from the functional evaluation of the Tap-to-Justify modal and chat-first logging?",
+      "gold_page": 62,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 62,
+          "score": 0.0323,
+          "relevant": true,
+          "preview": "high fixed-bill ratios leaving near-zero disposable income, and over-budget scenarios. The Tap-to-Justify modal correctl"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 62,
+          "score": 0.0313,
+          "relevant": false,
+          "preview": "restaurant dining, the model identified the critical status and produced recoveryoriented advice; for a user in a comfor"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 61,
+          "score": 0.0294,
+          "relevant": false,
+          "preview": "5.1 Introduction This chapter presents the results of the three AI models and the functional evaluation of the 3ML appli"
+        }
+      ]
+    },
+    {
+      "id": "q049",
+      "question": "What four theoretical design imperatives guide the design of the 3ML application?",
+      "gold_page": 17,
+      "rank": 2,
+      "page_rank": 2,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 21,
+          "score": 0.0323,
+          "relevant": false,
+          "preview": "2.6.1 Synthesis and Design Imperatives The review of related work and theoretical frameworks converges on four specific "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 17,
+          "score": 0.032,
+          "relevant": true,
+          "preview": "Synthesis for design. The theoretical threads converge on four design imperatives for 3ML: 1. Prioritize immediacy (JITA"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 33,
+          "score": 0.0313,
+          "relevant": false,
+          "preview": "number. 3.7 Summary Chapter 3 defines the functional and non-functional requirements for the 3ML application. It details"
+        }
+      ]
+    },
+    {
+      "id": "q050",
+      "question": "What core domain entities and relationships are modeled in the 3ML Class Diagram?",
+      "gold_page": 28,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 28,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "3.4.3 Class Diagram 1. Core User Data - UserProfile: Stores who the user is and their goals (e.g., monthlyIncome, payday"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 66,
+          "score": 0.0308,
+          "relevant": false,
+          "preview": "that keeps the core budgeting experience fully functional without network connectivity. 6.4 Lessons Learned Several impo"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 33,
+          "score": 0.0306,
+          "relevant": false,
+          "preview": "number. 3.7 Summary Chapter 3 defines the functional and non-functional requirements for the 3ML application. It details"
+        }
+      ]
+    },
+    {
+      "id": "q051",
+      "question": "How did the project implement validation, verification, and requirements traceability?",
+      "gold_page": 59,
+      "rank": 3,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 59,
+          "score": 0.0323,
+          "relevant": false,
+          "preview": "4.10.5 Acceptance Testing Each functional requirement from Chapter 3 was mapped to a test scenario and executed against "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 23,
+          "score": 0.0313,
+          "relevant": false,
+          "preview": "Chapter 3 - Requirements and Analysis"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 59,
+          "score": 0.0308,
+          "relevant": true,
+          "preview": "review, unit testing, and integration testing. All features were traced back to their corresponding functional requireme"
+        }
+      ]
+    },
+    {
+      "id": "q052",
+      "question": "Why does 3ML incorporate Just-in-Time Adaptive Interventions (JITAI) and how does it calculate the Safe-to-Spend limit?",
+      "gold_page": 16,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 16,
+          "score": 0.0325,
+          "relevant": true,
+          "preview": "permission number for today helps those choices. - Less clutter, less avoidance. When apps feel heavy—too many charts or"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 25,
+          "score": 0.0318,
+          "relevant": false,
+          "preview": "fully auditable. Privacy by Default The system shall ensure privacy by supporting manual entry only and strictly prevent"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 22,
+          "score": 0.0313,
+          "relevant": false,
+          "preview": "2.7 Summary This chapter has systematically situated the Make My Money Last (3ML) project within the broader context of "
+        }
+      ]
+    },
+    {
+      "id": "q053",
+      "question": "Why does 3ML implement savings-first logic in calculating the daily Safe-to-Spend number?",
+      "gold_page": 21,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 21,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "2.6.1 Synthesis and Design Imperatives The review of related work and theoretical frameworks converges on four specific "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 16,
+          "score": 0.032,
+          "relevant": false,
+          "preview": "2.1 Introduction This chapter explains where Make My Money Last (3ML) fits in existing ideas and tools. Many budgeting a"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 25,
+          "score": 0.031,
+          "relevant": false,
+          "preview": "fully auditable. Privacy by Default The system shall ensure privacy by supporting manual entry only and strictly prevent"
+        }
+      ]
+    },
+    {
+      "id": "q054",
+      "question": "What are the five structural layers of the 3ML Flutter mobile application architecture?",
+      "gold_page": 45,
+      "rank": 5,
+      "page_rank": 3,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 63,
+          "score": 0.0325,
+          "relevant": false,
+          "preview": "5.7 Skills Acquired The development of 3ML facilitated acquisition of a broad range of technical and professional skills"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 35,
+          "score": 0.032,
+          "relevant": false,
+          "preview": "4.1 Introduction This chapter presents the complete design, implementation, and testing of the Make My Money Last (3ML) "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 45,
+          "score": 0.0318,
+          "relevant": false,
+          "preview": "4.8 Mobile Application Implementation 4.8.1 Technology Stack The mobile front-end was developed using Flutter (Dart SDK "
+        }
+      ]
+    },
+    {
+      "id": "q055",
+      "question": "What tables and data entities are managed by DatabaseService in the local SQLite database?",
+      "gold_page": 56,
+      "rank": null,
+      "page_rank": 8,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 57,
+          "score": 0.0313,
+          "relevant": false,
+          "preview": "and SQLite transaction aggregation through to the Safe-to-Spend and justify outputs, verifying each arithmetic step agai"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 35,
+          "score": 0.0312,
+          "relevant": false,
+          "preview": "BudgetService aggregates the user profile and SQLite transactions and applies deterministic arithmetic to produce the Sa"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 65,
+          "score": 0.0311,
+          "relevant": false,
+          "preview": "local-only data storage, and no bank account linking. The secondary objective of lightweight spending analytics was fulf"
+        }
+      ]
+    },
+    {
+      "id": "q056",
+      "question": "How are accuracy and precision evaluated for extracting transaction amounts and dates in 3ML?",
+      "gold_page": 32,
+      "rank": 4,
+      "page_rank": 4,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 61,
+          "score": 0.0311,
+          "relevant": false,
+          "preview": "0.9999, and typical financial questions as CONVERSATION with similarly high confidence. These results validate the choic"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 61,
+          "score": 0.0311,
+          "relevant": false,
+          "preview": "5.1 Introduction This chapter presents the results of the three AI models and the functional evaluation of the 3ML appli"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 38,
+          "score": 0.0306,
+          "relevant": false,
+          "preview": "Figure 14 Training & Val results 4.5.3 Results The classifier achieved a test accuracy of 99.85% and a test F1-score of "
+        }
+      ]
+    },
+    {
+      "id": "q057",
+      "question": "How do Quicken Simplifi and Revolut present spending plans and budget analytics to users?",
+      "gold_page": 19,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 19,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "2.5.2 Quicken Simplifi — “Spending Plan” / “Left to spend” Simplifi presents a real-time “Spending Plan” that highlights"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 20,
+          "score": 0.032,
+          "relevant": false,
+          "preview": "2.6 Comparative Discussion Aspect PocketGuard Quicken Simplifi Revolut 3ML (My app) Main idea Single allowance (Leftover"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 11,
+          "score": 0.0303,
+          "relevant": false,
+          "preview": "small, variable expenses every day. The app helps users by converting these daily transactions into a single \"Safe-to-Sp"
+        }
+      ]
+    },
+    {
+      "id": "q058",
+      "question": "What decision logic occurs in the activity diagram when parsing confidence is below 90% or when checking budget status?",
+      "gold_page": 31,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 31,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "A. User Input & NLP Flow 1. Input: The user launches the app, loads the dashboard, and types the natural language transa"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 30,
+          "score": 0.031,
+          "relevant": false,
+          "preview": "3.4.5 Activity Diagram: Figure 11 Activity Diagram"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 26,
+          "score": 0.0308,
+          "relevant": false,
+          "preview": "3.4 System Modelling 3.4.1 Use Case Diagram: 1. Logging Transactions: - The user inputs spending using simple text (Log "
+        }
+      ]
+    },
+    {
+      "id": "q059",
+      "question": "How does the Budget Chat interface present user logs, embedded transactions, and contextual input suggestions?",
+      "gold_page": 49,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 49,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "Budget Chat: The chat screen mimics a familiar messaging interface. User messages appear bubbles on the right; system re"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 61,
+          "score": 0.0303,
+          "relevant": false,
+          "preview": "value was present, and returning intent: unknown with low confidence for uninterpretable inputs such as 'hi' or 'took', "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 31,
+          "score": 0.0301,
+          "relevant": false,
+          "preview": "A. User Input & NLP Flow 1. Input: The user launches the app, loads the dashboard, and types the natural language transa"
+        }
+      ]
+    },
+    {
+      "id": "q060",
+      "question": "What fields and controls allow users to configure their income and payday in the Edit Profile screen?",
+      "gold_page": 55,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 55,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "Edit Profile Screen: A full-screen form for updating name, currency (from a fixed dropdown list), monthly salary, fixed "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 52,
+          "score": 0.032,
+          "relevant": false,
+          "preview": "Settings (Top Half): The settings tab opens with a profile card showing the user's name, avatar, salary, and payday. A L"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 46,
+          "score": 0.0308,
+          "relevant": false,
+          "preview": "Home Dashboard: The home screen greets the user by name and centres on a large mintgreen card displaying the headline 'A"
+        }
+      ]
+    },
+    {
+      "id": "q061",
+      "question": "How does 3ML's user experience focus on influencing daily spending decisions to ensure month-end solvency?",
+      "gold_page": 22,
+      "rank": 2,
+      "page_rank": 2,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 3,
+          "score": 0.0325,
+          "relevant": false,
+          "preview": "Abstract Reaching the end of the month with financial uncertainty erodes confidence, and spreadsheets rarely help. Make "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 22,
+          "score": 0.0315,
+          "relevant": true,
+          "preview": "to foster user trust; and lowering capture costs to prioritize user privacy. These foundational principles justify the a"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 16,
+          "score": 0.0306,
+          "relevant": false,
+          "preview": "2.1 Introduction This chapter explains where Make My Money Last (3ML) fits in existing ideas and tools. Many budgeting a"
+        }
+      ]
+    },
+    {
+      "id": "q062",
+      "question": "What key lessons were learned regarding model scale versus domain alignment and deterministic finance logic?",
+      "gold_page": 66,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 66,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "that keeps the core budgeting experience fully functional without network connectivity. 6.4 Lessons Learned Several impo"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 66,
+          "score": 0.0318,
+          "relevant": false,
+          "preview": "coach and chatbot model — all coordinated through a single Flutter client with deterministic budget arithmetic as the au"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 67,
+          "score": 0.0317,
+          "relevant": false,
+          "preview": "6.6 Final Remarks Make My Money Last demonstrates that a thoughtfully designed AI system, built with domain-specific fin"
+        }
+      ]
+    },
+    {
+      "id": "q063",
+      "question": "What is 3ML's scope and positioning as a behavior-focused MVP compared to traditional PFM suites?",
+      "gold_page": 20,
+      "rank": 2,
+      "page_rank": 2,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 16,
+          "score": 0.0301,
+          "relevant": false,
+          "preview": "permission number for today helps those choices. - Less clutter, less avoidance. When apps feel heavy—too many charts or"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 20,
+          "score": 0.0299,
+          "relevant": true,
+          "preview": "varies. Plan vs. actual clear; formula detail varies. Visual breakdowns; allowance formula secondary. Tap-to-justify inp"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 17,
+          "score": 0.0297,
+          "relevant": false,
+          "preview": "Synthesis for design. The theoretical threads converge on four design imperatives for 3ML: 1. Prioritize immediacy (JITA"
+        }
+      ]
+    },
+    {
+      "id": "q064",
+      "question": "What percentage of household consumption expenditure is typically taken by housing, food, and transport?",
+      "gold_page": 11,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 11,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "1.1 Overview People don't need another spreadsheet; they need a reliable daily reference to avoid end-of-month shortfall"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 68,
+          "score": 0.0323,
+          "relevant": false,
+          "preview": "References 1. European Commission. (n.d.). Household consumption by purpose. Available at: https://ec.europa.eu/eurostat"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 51,
+          "score": 0.0317,
+          "relevant": false,
+          "preview": "All Spending Categories Modal: Expanding the analytics view opens a full-list modal showing every category with total sp"
+        }
+      ]
+    },
+    {
+      "id": "q065",
+      "question": "How does AppProvider coordinate message routing between the Event Parser and BudgetService?",
+      "gold_page": 35,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 35,
+          "score": 0.0325,
+          "relevant": true,
+          "preview": "BudgetService aggregates the user profile and SQLite transactions and applies deterministic arithmetic to produce the Sa"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 35,
+          "score": 0.0325,
+          "relevant": false,
+          "preview": "implementation, and manual validation before proceeding. This approach was particularly critical for the split between p"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 45,
+          "score": 0.031,
+          "relevant": false,
+          "preview": "registered at the root. It owns the user profile, transaction list, derived BudgetResult, chat messages, suggestion rows"
+        }
+      ]
+    },
+    {
+      "id": "q066",
+      "question": "What technical skills in machine learning, mobile development, and full-stack integration were acquired?",
+      "gold_page": 63,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 63,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "5.7 Skills Acquired The development of 3ML facilitated acquisition of a broad range of technical and professional skills"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 63,
+          "score": 0.0323,
+          "relevant": false,
+          "preview": "project reinforced iterative development practices, technical documentation discipline, and full-stack system integratio"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 35,
+          "score": 0.0315,
+          "relevant": false,
+          "preview": "4.1 Introduction This chapter presents the complete design, implementation, and testing of the Make My Money Last (3ML) "
+        }
+      ]
+    },
+    {
+      "id": "q067",
+      "question": "What performance metrics and confusion matrix results were observed for the intent classifier in Chapter 5?",
+      "gold_page": 61,
+      "rank": 2,
+      "page_rank": 2,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 63,
+          "score": 0.0325,
+          "relevant": false,
+          "preview": "project reinforced iterative development practices, technical documentation discipline, and full-stack system integratio"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 61,
+          "score": 0.0323,
+          "relevant": true,
+          "preview": "5.1 Introduction This chapter presents the results of the three AI models and the functional evaluation of the 3ML appli"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 38,
+          "score": 0.0308,
+          "relevant": false,
+          "preview": "Figure 14 Training & Val results 4.5.3 Results The classifier achieved a test accuracy of 99.85% and a test F1-score of "
+        }
+      ]
+    },
+    {
+      "id": "q068",
+      "question": "How accurately did the fine-tuned Qwen2.5-3B Event Parser extract transaction fields and amounts?",
+      "gold_page": 61,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 61,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "0.9999, and typical financial questions as CONVERSATION with similarly high confidence. These results validate the choic"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 38,
+          "score": 0.032,
+          "relevant": false,
+          "preview": "Figure 14 Training & Val results 4.5.3 Results The classifier achieved a test accuracy of 99.85% and a test F1-score of "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 56,
+          "score": 0.0308,
+          "relevant": false,
+          "preview": "chat history, theme preferences, and per-day Safe-to-Spend snapshots for buffer rollover are persisted in SharedPreferen"
+        }
+      ]
+    },
+    {
+      "id": "q069",
+      "question": "What problem does Make My Money Last (3ML) address, and what are its key features?",
+      "gold_page": 3,
+      "rank": 3,
+      "page_rank": 3,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 22,
+          "score": 0.0318,
+          "relevant": false,
+          "preview": "2.7 Summary This chapter has systematically situated the Make My Money Last (3ML) project within the broader context of "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 16,
+          "score": 0.0317,
+          "relevant": false,
+          "preview": "2.1 Introduction This chapter explains where Make My Money Last (3ML) fits in existing ideas and tools. Many budgeting a"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 3,
+          "score": 0.031,
+          "relevant": true,
+          "preview": "Abstract Reaching the end of the month with financial uncertainty erodes confidence, and spreadsheets rarely help. Make "
+        }
+      ]
+    },
+    {
+      "id": "q070",
+      "question": "What non-functional requirements govern usability, explainability, latency, offline capability, and privacy in 3ML?",
+      "gold_page": 25,
+      "rank": 3,
+      "page_rank": 3,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 33,
+          "score": 0.0323,
+          "relevant": false,
+          "preview": "number. 3.7 Summary Chapter 3 defines the functional and non-functional requirements for the 3ML application. It details"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 32,
+          "score": 0.0315,
+          "relevant": false,
+          "preview": "3.5 Alternative Approaches - Bank Linking vs. Manual Entry (Privacy): The chosen approach is Manual Entry Only. This was"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 25,
+          "score": 0.0302,
+          "relevant": true,
+          "preview": "fully auditable. Privacy by Default The system shall ensure privacy by supporting manual entry only and strictly prevent"
+        }
+      ]
+    },
+    {
+      "id": "q071",
+      "question": "What functional requirements govern transaction logging, Safe-to-Spend calculation, and runway countdown in 3ML?",
+      "gold_page": 24,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 24,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "3.1 Introduction This chapter translates the project's initial aims into specific functional and nonfunctional requireme"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 26,
+          "score": 0.0313,
+          "relevant": false,
+          "preview": "3.4 System Modelling 3.4.1 Use Case Diagram: 1. Logging Transactions: - The user inputs spending using simple text (Log "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 24,
+          "score": 0.031,
+          "relevant": false,
+          "preview": "allows users to input transactions quickly using natural-language text logging (e.g., \"coffee 7.50\"). Input Mechanism Re"
+        }
+      ]
+    },
+    {
+      "id": "q072",
+      "question": "What methodologies, including Design Science Research and human-centered design, were adopted for 3ML?",
+      "gold_page": 18,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 18,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "2.4 Methodologies Design science research (DSR): identify the problem (end-of-month shortfalls), design an app (3ML), an"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 63,
+          "score": 0.0318,
+          "relevant": false,
+          "preview": "project reinforced iterative development practices, technical documentation discipline, and full-stack system integratio"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 17,
+          "score": 0.0308,
+          "relevant": false,
+          "preview": "Synthesis for design. The theoretical threads converge on four design imperatives for 3ML: 1. Prioritize immediacy (JITA"
+        }
+      ]
+    },
+    {
+      "id": "q073",
+      "question": "What is the design and purpose of the DistilBERT binary intent classifier in 3ML?",
+      "gold_page": 37,
+      "rank": 2,
+      "page_rank": 2,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 61,
+          "score": 0.0325,
+          "relevant": false,
+          "preview": "5.1 Introduction This chapter presents the results of the three AI models and the functional evaluation of the 3ML appli"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 37,
+          "score": 0.0325,
+          "relevant": true,
+          "preview": "4.5 Model 1: The Classifier 4.5.1 Model Design The Classifier is a binary text classification model fine-tuned on Distil"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 38,
+          "score": 0.0315,
+          "relevant": false,
+          "preview": "Figure 14 Training & Val results 4.5.3 Results The classifier achieved a test accuracy of 99.85% and a test F1-score of "
+        }
+      ]
+    },
+    {
+      "id": "q074",
+      "question": "What core accomplishments and components define the completed Make My Money Last project?",
+      "gold_page": 65,
+      "rank": 5,
+      "page_rank": 5,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 24,
+          "score": 0.0325,
+          "relevant": false,
+          "preview": "3.1 Introduction This chapter translates the project's initial aims into specific functional and nonfunctional requireme"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 35,
+          "score": 0.032,
+          "relevant": false,
+          "preview": "4.1 Introduction This chapter presents the complete design, implementation, and testing of the Make My Money Last (3ML) "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 1,
+          "score": 0.0318,
+          "relevant": false,
+          "preview": "Faculty of Computer Studies Artificial intelligence Department “Make My Money Last” Abdullah Hussein Mohammed - 22513175"
+        }
+      ]
+    },
+    {
+      "id": "q075",
+      "question": "What are the planned deliverables, target user group, and scope for the 3ML project?",
+      "gold_page": 13,
+      "rank": null,
+      "page_rank": null,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 63,
+          "score": 0.0304,
+          "relevant": false,
+          "preview": "project reinforced iterative development practices, technical documentation discipline, and full-stack system integratio"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 33,
+          "score": 0.0294,
+          "relevant": false,
+          "preview": "there is no internet. 3.6.4 Sample Size and Datasets - For the AI (Parser): I will test it with a list of 1,000 example "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 24,
+          "score": 0.0289,
+          "relevant": false,
+          "preview": "3.1 Introduction This chapter translates the project's initial aims into specific functional and nonfunctional requireme"
+        }
+      ]
+    },
+    {
+      "id": "q076",
+      "question": "What interactions are defined in the 3ML Use Case diagram for logging transactions and viewing budgets?",
+      "gold_page": 26,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 26,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "3.4 System Modelling 3.4.1 Use Case Diagram: 1. Logging Transactions: - The user inputs spending using simple text (Log "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 24,
+          "score": 0.032,
+          "relevant": false,
+          "preview": "3.1 Introduction This chapter translates the project's initial aims into specific functional and nonfunctional requireme"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 58,
+          "score": 0.0301,
+          "relevant": false,
+          "preview": "4.10.4 System Testing End-to-end system tests simulated complete user workflows: onboarding, profile setup, transaction "
+        }
+      ]
+    },
+    {
+      "id": "q077",
+      "question": "What final conclusions does the author draw regarding domain-specific fine-tuning on modest hardware for personal finance?",
+      "gold_page": 67,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 67,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "6.6 Final Remarks Make My Money Last demonstrates that a thoughtfully designed AI system, built with domain-specific fin"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 66,
+          "score": 0.032,
+          "relevant": false,
+          "preview": "that keeps the core budgeting experience fully functional without network connectivity. 6.4 Lessons Learned Several impo"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 38,
+          "score": 0.0303,
+          "relevant": false,
+          "preview": "[16], a 3-billion parameter instruction-following model, loaded in 4-bit quantization (NF4 format) and fine-tuned using "
+        }
+      ]
+    },
+    {
+      "id": "q078",
+      "question": "How does the Quick-Split Income Prompt help users allocate paychecks without linking bank accounts?",
+      "gold_page": 21,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 21,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "needing bank linking, 3ML will utilize a Quick-Split Income Prompt. After a user logs a salary event (e.g., \"paycheck 20"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 21,
+          "score": 0.0323,
+          "relevant": false,
+          "preview": "Instantly (The Runway Buffer) - The Problem: Most apps do not explicitly reward the user when they spend less than their"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 20,
+          "score": 0.0303,
+          "relevant": false,
+          "preview": "2.6 Comparative Discussion Aspect PocketGuard Quicken Simplifi Revolut 3ML (My app) Main idea Single allowance (Leftover"
+        }
+      ]
+    },
+    {
+      "id": "q079",
+      "question": "What is the Runway Buffer in 3ML and how does it reward underspending?",
+      "gold_page": 21,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 21,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "Instantly (The Runway Buffer) - The Problem: Most apps do not explicitly reward the user when they spend less than their"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 21,
+          "score": 0.032,
+          "relevant": true,
+          "preview": "2.6.1 Synthesis and Design Imperatives The review of related work and theoretical frameworks converges on four specific "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 31,
+          "score": 0.0315,
+          "relevant": false,
+          "preview": "to help the user recover. o Under Budget: The system calculates a Runway Buffer, showing the user their financial safety"
+        }
+      ]
+    },
+    {
+      "id": "q080",
+      "question": "How did the Event Parser handle incomplete transactions, missing amounts, and out-of-domain inputs?",
+      "gold_page": 61,
+      "rank": null,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 61,
+          "score": 0.0325,
+          "relevant": false,
+          "preview": "0.9999, and typical financial questions as CONVERSATION with similarly high confidence. These results validate the choic"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 36,
+          "score": 0.0315,
+          "relevant": false,
+          "preview": "category taxonomies, so a mapping step was applied to unify all labels into the app's sixteen target categories. Three s"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 56,
+          "score": 0.0291,
+          "relevant": false,
+          "preview": "chat history, theme preferences, and per-day Safe-to-Spend snapshots for buffer rollover are persisted in SharedPreferen"
+        }
+      ]
+    },
+    {
+      "id": "q081",
+      "question": "How does the BudgetService calculate the Safe-to-Spend figure using disposable budget and remaining days?",
+      "gold_page": 56,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 56,
+          "score": 0.0325,
+          "relevant": true,
+          "preview": "4.8.4 Budget Calculation Engine The core financial logic is implemented as a deterministic rules-based engine in BudgetS"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 47,
+          "score": 0.0325,
+          "relevant": false,
+          "preview": "Calculation Breakdown (Tapto-Justify): Tapping the main card opens a bottom sheet titled 'How We Calculated This' with a"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 12,
+          "score": 0.031,
+          "relevant": false,
+          "preview": "1.3 Aims and Objectives 1.3.1 Aims The project aims to boost user confidence by providing a single Safe-to-Spend number "
+        }
+      ]
+    },
+    {
+      "id": "q082",
+      "question": "What financial insights and interactive breakdowns are provided in the Spending Breakdown analytics tab?",
+      "gold_page": 50,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 50,
+          "score": 0.0328,
+          "relevant": true,
+          "preview": "Spending Breakdown (Where Money Goes): The analytics tab shows a summary card with total spent in red and remaining in g"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 19,
+          "score": 0.0315,
+          "relevant": false,
+          "preview": "2.5.2 Quicken Simplifi — “Spending Plan” / “Left to spend” Simplifi presents a real-time “Spending Plan” that highlights"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 65,
+          "score": 0.0313,
+          "relevant": false,
+          "preview": "local-only data storage, and no bank account linking. The secondary objective of lightweight spending analytics was fulf"
+        }
+      ]
+    },
+    {
+      "id": "q083",
+      "question": "What configuration options and budget parameters are presented on the 3ML Settings screen?",
+      "gold_page": 52,
+      "rank": 1,
+      "page_rank": 1,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 52,
+          "score": 0.0323,
+          "relevant": true,
+          "preview": "Settings (Top Half): The settings tab opens with a profile card showing the user's name, avatar, salary, and payday. A L"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 45,
+          "score": 0.0311,
+          "relevant": false,
+          "preview": "registered at the root. It owns the user profile, transaction list, derived BudgetResult, chat messages, suggestion rows"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 53,
+          "score": 0.0302,
+          "relevant": false,
+          "preview": "Settings (Bottom Half): Scrolling down reveals Privacy & Data options (Privacy Policy viewer, CSV export, JSON backup), "
+        }
+      ]
+    },
+    {
+      "id": "q084",
+      "question": "What are the primary objectives of 3ML regarding its home screen and transaction logging approach?",
+      "gold_page": 12,
+      "rank": 3,
+      "page_rank": 3,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 24,
+          "score": 0.032,
+          "relevant": false,
+          "preview": "3.1 Introduction This chapter translates the project's initial aims into specific functional and nonfunctional requireme"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 32,
+          "score": 0.0308,
+          "relevant": false,
+          "preview": "3.5 Alternative Approaches - Bank Linking vs. Manual Entry (Privacy): The chosen approach is Manual Entry Only. This was"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 12,
+          "score": 0.0303,
+          "relevant": true,
+          "preview": "1.3 Aims and Objectives 1.3.1 Aims The project aims to boost user confidence by providing a single Safe-to-Spend number "
+        }
+      ]
+    },
+    {
+      "id": "q085",
+      "question": "What hyperparameters and training configuration were used to fine-tune the Qwen2.5-3B Event Parser?",
+      "gold_page": 39,
+      "rank": 4,
+      "page_rank": 4,
+      "top3": [
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 61,
+          "score": 0.0325,
+          "relevant": false,
+          "preview": "0.9999, and typical financial questions as CONVERSATION with similarly high confidence. These results validate the choic"
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 38,
+          "score": 0.0325,
+          "relevant": false,
+          "preview": "Figure 14 Training & Val results 4.5.3 Results The classifier achieved a test accuracy of 99.85% and a test F1-score of "
+        },
+        {
+          "source": "Abdullah_Hussein_Mohammed_-_22513175_-_FULL.pdf",
+          "page": 59,
+          "score": 0.0303,
+          "relevant": false,
+          "preview": "were built: a DistilBERT intent classifier, a Qwen2.5-3B-Instruct event parser fine-tuned with QLoRA, and a Llama-3.2-3B"
+        }
+      ]
+    }
+  ],
+  "name": "04_hybrid_rrf",
+  "created_at": "2026-11-23T20:12:46.702139+00:00",
+  "config": {
+    "retriever": "hybrid",
+    "chunk_size": 1000,
+    "overlap": 200,
+    "embedding_backend": "remote",
+    "n_questions": 85,
+    "embedder": {
+      "status": "ok",
+      "model": "BAAI/bge-base-en-v1.5",
+      "dimension": 768
+    }
+  }
+}
