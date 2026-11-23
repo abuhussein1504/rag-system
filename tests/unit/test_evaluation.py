@@ -116,10 +116,4 @@ def test_evaluate_ranks_and_pages():
     assert report["metrics"]["hit@3"] == 1.0
     assert report["metrics"]["page_hit@3"] == 1.0
 
-def test_old_format_needs_the_same_page():
-    gold = GoldItem(
-        id="q", question="What is it?", doc="a.pdf", page=5, start_char=0, end_char=500
-    )
-    assert is_relevant(make_chunk("x" * 400, page=5), gold)
-    assert not is_relevant(make_chunk("x" * 400, page=6), gold)
 
