@@ -21,9 +21,13 @@ def main() -> None:
 
     settings = get_settings()
     golden = load_golden(Path(args.golden))
-    retriever = DenseRetriever(
-        get_embedder(), get_vector_store(), collection_name(args.project)
-    )
+    store = get_vector_store()
+    if store.count(collection_name(args.project)) == 0:
+        raise SystemExit(
+            f"Collection for project '{args.project}' is empty. "
+            f"Index it first: POST /api/data/index/{args.project}"
+        )
+    retriever = DenseRetriever(get_embedder(), store, collection_name(args.project))
 
     report = evaluate(golden, retriever.retrieve, k=args.k)
     report["name"] = args.name

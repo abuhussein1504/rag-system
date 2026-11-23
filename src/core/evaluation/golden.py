@@ -50,7 +50,9 @@ class GoldItem(BaseModel):
     @model_validator(mode="after")
     def _validate_ground_truth(self) -> "GoldItem":
         if not self.answers and (self.start_char is None or self.end_char is None):
-            raise ValueError("answers must not be empty unless start_char and end_char are provided")
+            raise ValueError(
+                "answers must not be empty unless start_char and end_char are provided"
+            )
         return self
 
 
@@ -66,19 +68,21 @@ def load_golden(path: Path) -> list[GoldItem]:
 def is_relevant(chunk: Chunk, gold: GoldItem) -> bool:
     if original_name(chunk.metadata.get("source", "")) != gold.doc:
         return False
-    if not gold.answers:
-        if gold.start_char is not None and gold.end_char is not None:
-            overlap = min(chunk.end_char, gold.end_char) - max(chunk.start_char, gold.start_char)
-            if overlap <= 0:
-                return False
-            smaller = min(chunk.end_char - chunk.start_char, gold.end_char - gold.start_char)
-            return overlap >= 0.5 * smaller
-        return chunk.metadata.get("page") == gold.page
-    return any(coverage(answer, chunk.text) >= MIN_COVERAGE for answer in gold.answers)
+    if gold.answers:
+        return any(coverage(answer, chunk.text) >= MIN_COVERAGE for answer in gold.answers)
+    # Old format (no answers yet): must be the same page AND an overlapping range
+    if chunk.metadata.get("page") != gold.page:
+        return False
+    if gold.start_char is None or gold.end_char is None:
+        return False
+    overlap = min(chunk.end_char, gold.end_char) - max(chunk.start_char, gold.start_char)
+    if overlap <= 0:
+        return False
+    smaller = min(chunk.end_char - chunk.start_char, gold.end_char - gold.start_char)
+    return overlap >= 0.5 * smaller
 
 
 def is_right_page(chunk: Chunk, gold: GoldItem) -> bool:
-    """Looser check used as a second metric: right file and right page."""
     return (
         gold.page is not None
         and original_name(chunk.metadata.get("source", "")) == gold.doc

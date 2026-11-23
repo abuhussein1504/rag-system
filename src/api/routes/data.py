@@ -45,12 +45,12 @@ async def upload(project_id: ProjectId, file: UploadFile, settings: SettingsDep)
         raise HTTPException(
             status_code=415,
             detail={"status": ResponseStatus.FILE_TYPE_NOT_SUPPORTED},
-        )
+        ) from None
     except FileTooLargeError:
         raise HTTPException(
             status_code=413,
             detail={"status": ResponseStatus.FILE_SIZE_EXCEEDED},
-        )
+        ) from None
     return UploadResponse(status=ResponseStatus.SUCCESS, stored_filename=path.name)
 
 

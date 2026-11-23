@@ -34,8 +34,8 @@ class GeminiEmbedder:
         for i in range(0, len(texts), self.batch_size):
             batch = texts[i : i + self.batch_size]
             response = retry(
-                lambda: self.client.models.embed_content(
-                    model=self.model_id, contents=batch, config=config
+                lambda b=batch: self.client.models.embed_content(
+                    model=self.model_id, contents=b, config=config
                 ),
                 should_retry=_is_retryable,
             )

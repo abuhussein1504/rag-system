@@ -78,6 +78,11 @@ class QdrantStore:
             )
         return hits
 
+    def count(self, collection: str) -> int:
+        if not self.client.collection_exists(collection):
+            return 0
+        return self.client.count(collection_name=collection).count
+
     def delete_by_source(self, collection: str, source: str) -> None:
         if not self.client.collection_exists(collection):
             return
