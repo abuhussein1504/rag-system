@@ -1,5 +1,5 @@
-from typing import Any
 from functools import partial
+from typing import Any
 
 from google import genai
 from google.genai import errors, types
