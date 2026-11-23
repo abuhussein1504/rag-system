@@ -8,7 +8,7 @@ from src.config import get_settings
 from src.core.evaluation.golden import load_golden
 from src.core.evaluation.runner import evaluate
 from src.core.indexing.indexer import collection_name
-from src.core.retrieval.dense import DenseRetriever
+from src.core.retrieval.factory import build_retriever
 
 
 def main() -> None:
@@ -17,6 +17,7 @@ def main() -> None:
     parser.add_argument("--name", required=True, help="e.g. 01_dense_baseline")
     parser.add_argument("--golden", default="eval/golden_set.jsonl")
     parser.add_argument("--k", type=int, default=10)
+    parser.add_argument("--retriever", choices=["dense", "bm25", "hybrid"], default="dense")
     args = parser.parse_args()
 
     settings = get_settings()
@@ -27,13 +28,19 @@ def main() -> None:
             f"Collection for project '{args.project}' is empty. "
             f"Index it first: POST /api/data/index/{args.project}"
         )
-    retriever = DenseRetriever(get_embedder(), store, collection_name(args.project))
+    retriever = build_retriever(
+        args.retriever,
+        project=args.project,
+        processed_dir=Path(settings.DATA_DIR) / "processed" / args.project,
+        embedder=get_embedder(),
+        store=store,
+    )
 
     report = evaluate(golden, retriever.retrieve, k=args.k)
     report["name"] = args.name
     report["created_at"] = datetime.now(UTC).isoformat()
     report["config"] = {
-        "retriever": "dense",
+        "retriever": args.retriever,
         "chunk_size": settings.FILE_DEFAULT_CHUNK_SIZE,
         "overlap": settings.FILE_DEFAULT_OVERLAP_SIZE,
         "embedding_backend": settings.EMBEDDING_BACKEND,
