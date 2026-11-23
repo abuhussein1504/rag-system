@@ -9,6 +9,8 @@ from src.models.enums import EmbeddingBackend
 from src.stores.embedding.base import Embedder
 from src.stores.embedding.gemini_embedder import GeminiEmbedder
 from src.stores.embedding.remote_embedder import RemoteEmbedder
+from src.stores.reranking.base import Reranker
+from src.stores.reranking.remote_reranker import RemoteReranker
 from src.stores.vectordb.base import VectorStore
 from src.stores.vectordb.qdrant import QdrantStore
 
@@ -40,6 +42,14 @@ def get_vector_store() -> VectorStore:
     return QdrantStore(
         s.VECTOR_DB_PATH, s.VECTOR_DB_DISTANCE_METHOD
     )
+
+
+@lru_cache
+def get_reranker() -> Reranker:
+    s = get_settings()
+    if not s.REMOTE_EMBEDDER_URL:
+        raise RuntimeError("REMOTE_EMBEDDER_URL is required for the remote reranker")
+    return RemoteReranker(s.REMOTE_EMBEDDER_URL)
 
 
 SettingsDep = Annotated[Settings, Depends(get_settings)]
