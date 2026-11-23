@@ -8,7 +8,9 @@ from src.models.schemas import Answer, Chunk, RetrievedChunk
 
 
 def make_chunk(**overrides: Any) -> Chunk:
-    data: dict[str, Any] = {"id": "c1", "doc_id": "d1", "text": "hello", "start_char": 0, "end_char": 5}
+    data: dict[str, Any] = {
+        "id": "c1", "doc_id": "d1", "text": "hello", "start_char": 0, "end_char": 5,
+    }
     data.update(overrides)
     return Chunk(**data)
 

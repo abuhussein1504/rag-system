@@ -26,8 +26,9 @@ def make_chunk(text, source="abc123def456_a.pdf", page=None) -> Chunk:
     )
 
 
-GOLD = GoldItem(id="q001", question="What is the first rule?", doc="a.pdf", page=65, answers=[ANSWER])
-
+GOLD = GoldItem(
+    id="q001", question="What is the first rule?", doc="a.pdf", page=65, answers=[ANSWER]
+)
 
 def test_original_name_removes_upload_prefix():
     assert original_name("afb14667855d_clean-code.pdf") == "clean-code.pdf"

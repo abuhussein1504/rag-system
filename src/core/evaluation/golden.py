@@ -57,10 +57,7 @@ def load_golden(path: Path) -> list[GoldItem]:
 def is_relevant(chunk: Chunk, gold: GoldItem) -> bool:
     if original_name(chunk.metadata.get("source", "")) != gold.doc:
         return False
-    return any(coverage(
-        answer, 
-        chunk.text
-        ) >= MIN_COVERAGE for answer in gold.answers)
+    return any(coverage(answer, chunk.text) >= MIN_COVERAGE for answer in gold.answers)
 
 
 def is_right_page(chunk: Chunk, gold: GoldItem) -> bool:
