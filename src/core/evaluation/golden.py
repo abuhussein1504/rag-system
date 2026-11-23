@@ -1,7 +1,7 @@
 import re
 from pathlib import Path
 
-from pydantic import BaseModel, Field, field_validator, model_validator
+from pydantic import BaseModel, Field, field_validator
 
 from src.models.schemas import Chunk
 
@@ -16,7 +16,7 @@ def original_name(stored_name: str) -> str:
 
 
 def _shingles(text: str) -> set[tuple[str, ...]]:
-    words = _WORDS.findall(text.lower())  # ignores punctuation, line breaks, case
+    words = _WORDS.findall(text.lower())
     if len(words) < SHINGLE_SIZE:
         return set()
     return {tuple(words[i : i + SHINGLE_SIZE]) for i in range(len(words) - SHINGLE_SIZE + 1)}
@@ -34,10 +34,7 @@ class GoldItem(BaseModel):
     question: str = Field(min_length=5)
     doc: str
     page: int | None = None
-    answers: list[str] = Field(default_factory=list)
-    start_char: int | None = None
-    end_char: int | None = None
-    preview: str = ""
+    answers: list[str] = Field(min_length=1)
 
     @field_validator("answers")
     @classmethod
@@ -47,13 +44,6 @@ class GoldItem(BaseModel):
                 raise ValueError(f"Answer needs at least {SHINGLE_SIZE + 1} words: {answer!r}")
         return answers
 
-    @model_validator(mode="after")
-    def _validate_ground_truth(self) -> "GoldItem":
-        if not self.answers and (self.start_char is None or self.end_char is None):
-            raise ValueError(
-                "answers must not be empty unless start_char and end_char are provided"
-            )
-        return self
 
 
 def load_golden(path: Path) -> list[GoldItem]:
@@ -68,18 +58,10 @@ def load_golden(path: Path) -> list[GoldItem]:
 def is_relevant(chunk: Chunk, gold: GoldItem) -> bool:
     if original_name(chunk.metadata.get("source", "")) != gold.doc:
         return False
-    if gold.answers:
-        return any(coverage(answer, chunk.text) >= MIN_COVERAGE for answer in gold.answers)
-    # Old format (no answers yet): must be the same page AND an overlapping range
-    if chunk.metadata.get("page") != gold.page:
-        return False
-    if gold.start_char is None or gold.end_char is None:
-        return False
-    overlap = min(chunk.end_char, gold.end_char) - max(chunk.start_char, gold.start_char)
-    if overlap <= 0:
-        return False
-    smaller = min(chunk.end_char - chunk.start_char, gold.end_char - gold.start_char)
-    return overlap >= 0.5 * smaller
+    return any(coverage(
+        answer, 
+        chunk.text
+        ) >= MIN_COVERAGE for answer in gold.answers)
 
 
 def is_right_page(chunk: Chunk, gold: GoldItem) -> bool:
