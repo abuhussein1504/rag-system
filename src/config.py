@@ -20,10 +20,8 @@ class Settings(BaseSettings):
     FILE_MAX_SIZE: int
     DATA_DIR: str
 
-
     FILE_DEFAULT_CHUNK_SIZE: int = Field(gt=0)
     FILE_DEFAULT_OVERLAP_SIZE: int = Field(ge=0)
-
 
     # EMBEDDING
     EMBEDDING_BACKEND: EmbeddingBackend
@@ -36,6 +34,12 @@ class Settings(BaseSettings):
     VECTOR_DB_BACKEND: VectorDBBackend
     VECTOR_DB_PATH: str
     VECTOR_DB_DISTANCE_METHOD: DistanceMethod = DistanceMethod.COSINE
+
+    # GENERATION
+    GENERATION_MODEL_ID: str
+    GENERATION_TEMPERATURE: float = 0.0
+    DEFAULT_RETRIEVER: str = "dense"
+
 
     @model_validator(mode="after")
     def _check_overlap(self) -> "Settings":
