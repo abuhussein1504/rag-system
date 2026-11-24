@@ -46,6 +46,8 @@ class Citation(BaseModel):
     chunk_id: str
     doc_id: str
     snippet: str
+    source: str = ""
+    page: int | None = None
 
 
 class Answer(BaseModel):
