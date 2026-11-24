@@ -4,6 +4,7 @@ import re
 from src.core.generation.prompt import REFUSAL_TEXT, SYSTEM_PROMPT, build_prompt
 from src.core.llm.base import LLMClient
 from src.core.retrieval.base import Retriever
+from src.core.ingestion.storage import original_name
 from src.models.schemas import Answer, Citation, RetrievedChunk
 
 logger = logging.getLogger(__name__)
@@ -28,7 +29,7 @@ def extract_citations(
                 chunk_id=chunk.id,
                 doc_id=chunk.doc_id,
                 snippet=chunk.text[:snippet_chars],
-                source=str(chunk.metadata.get("source", "")),
+                source=original_name(str(chunk.metadata.get("source", ""))),
                 page=chunk.metadata.get("page"),
             )
         )

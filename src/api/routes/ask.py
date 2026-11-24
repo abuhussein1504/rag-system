@@ -14,6 +14,7 @@ from src.api.schemas.ask import AskCitation, AskRequest, AskResponse
 from src.core.generation.generator import AnswerGenerator
 from src.core.llm.base import LLMError
 from src.core.retrieval.factory import build_retriever
+from src.core.indexing.indexer import collection_name
 from src.models.enums import RetrieverName
 
 ask_router = APIRouter(prefix="/api/ask", tags=["ask"])
@@ -28,6 +29,12 @@ def ask(
     store: StoreDep,
     llm: LLMDep,
 ) -> AskResponse:
+
+    if store.count(collection_name(project_id)) == 0:
+        raise HTTPException(
+            status_code=404, detail=f"Project '{project_id}' has no indexed documents"
+        )
+    
     name = body.retriever or settings.DEFAULT_RETRIEVER
     retriever = build_retriever(
         name,
