@@ -3,7 +3,12 @@ from functools import lru_cache
 from pydantic import Field, SecretStr, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-from src.models.enums import DistanceMethod, EmbeddingBackend, VectorDBBackend
+from src.models.enums import (
+    DistanceMethod,
+    EmbeddingBackend,
+    RetrieverName,
+    VectorDBBackend,
+)
 
 
 class Settings(BaseSettings):
@@ -36,9 +41,9 @@ class Settings(BaseSettings):
     VECTOR_DB_DISTANCE_METHOD: DistanceMethod = DistanceMethod.COSINE
 
     # GENERATION
-    GENERATION_MODEL_ID: str
-    GENERATION_TEMPERATURE: float = 0.0
-    DEFAULT_RETRIEVER: str = "dense"
+    GENERATION_MODEL_ID: str = "gemini-2.5-flash"
+    GENERATION_TEMPERATURE: float = Field(default=0.0, ge=0, le=2)
+    DEFAULT_RETRIEVER: RetrieverName = RetrieverName.DENSE
 
 
     @model_validator(mode="after")

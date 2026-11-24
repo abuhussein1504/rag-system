@@ -41,3 +41,9 @@ class DistanceMethod(StrEnum):
     COSINE = "cosine"
     DOT = "dot"
 
+class RetrieverName(StrEnum):
+    DENSE = "dense"
+    BM25 = "bm25"
+    HYBRID = "hybrid"
+    HYBRID_RERANK = "hybrid_rerank"
+
