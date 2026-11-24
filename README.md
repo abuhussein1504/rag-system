@@ -271,6 +271,32 @@ The evaluator calculates:
 
 ---
 
+## Results
+
+Evaluated on 85 questions about a 69-page thesis (109 chunks). Differences were
+checked with a paired bootstrap (95% interval on the change in MRR).
+
+| experiment | hit@1 | hit@5 | hit@10 | MRR | page_hit@5 | page MRR | latency (ms) |
+|---|---|---|---|---|---|---|---|
+| 01 dense baseline | 0.482 | 0.682 | 0.847 | 0.574 | 0.788 | 0.643 | 2514 |
+| 02 clean data | 0.447 | 0.718 | 0.835 | 0.555 | 0.824 | 0.628 | 3228 |
+| 03 BM25 only | 0.529 | 0.788 | 0.882 | 0.636 | 0.871 | 0.722 | 0.1 |
+| 04 hybrid (RRF) | 0.471 | 0.812 | 0.906 | 0.610 | 0.871 | 0.708 | 1977 |
+| 05 hybrid + rerank | 0.518 | 0.718 | 0.871 | 0.612 | 0.812 | 0.725 | 2099 |
+
+- **Data cleaning** (page numbers, contents pages, Word bullets): no significant change.
+- **BM25 beat dense** on this question set, because the questions reuse the thesis's own terms.
+- **Hybrid vs dense:** a real but modest gain (MRR change +0.007 to +0.105). Hybrid has the best recall (8 of 85 questions missed in the top 10).
+- **Cross-encoder reranker:** no significant gain (MRR change -0.079 to +0.081).
+
+## Limitations
+
+- One document and 109 chunks, so differences between methods are compressed.
+- Questions are keyword-heavy, which favours BM25. Paraphrased questions are not covered.
+- Each question has one annotated answer passage, so equally valid passages elsewhere count as misses.
+- Embeddings and reranking run on a remote Colab server, so results are not reproducible without it.
+- Scanned PDFs (images without text) are not supported.
+
 ## Testing & Quality
 
 Run the test suite with pytest:
