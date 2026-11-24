@@ -10,6 +10,26 @@ Retrieval-Augmented Generation (RAG) is an AI architecture that enhances Large L
 
 ---
 
+## Architecture
+
+```mermaid
+flowchart LR
+    subgraph Ingestion["Ingestion (offline)"]
+        U[Upload] --> P["Process<br/>load · clean · chunk"] --> I["Index<br/>embed · Qdrant"]
+    end
+    subgraph Query["Question answering (online)"]
+        Q[Question] --> R["Retriever<br/>dense · bm25 · hybrid · hybrid_rerank"]
+        R --> PB["Prompt builder<br/>numbered passages"]
+        PB --> L["LLM model"]
+        L --> A["Answer + citations"]
+    end
+    I -.-> R
+```
+
+See [docs/architecture.md](docs/architecture.md) for the request flow and design decisions.
+
+---
+
 ## Project Structure
 
 > In accordance with project conventions, only directories are listed below to illustrate architectural organization:
@@ -30,16 +50,16 @@ rag-system/
 ├── scripts/                           # CLI commands and evaluation utilities
 ├── src/                               # Main application source code
 │   ├── api/                           # FastAPI web service layer
-│   │   ├── routes/                    # API route handlers (data ingestion, search, info)
+│   │   ├── routes/                    # API route handlers (data ingestion, search, ask, info)
 │   │   └── schemas/                   # Pydantic request and response schemas
 │   ├── core/                          # Core business logic and processing pipelines
 │   │   ├── chunking/                  # Chunking strategies (fixed-size with overlap)
 │   │   ├── evaluation/                # Retrieval evaluation logic (metrics, runner, golden set)
-│   │   ├── generation/                # LLM response generation and prompt synthesis
+│   │   ├── generation/                # Prompt building, answer generation, citation extraction
 │   │   ├── indexing/                  # Vector indexing and embedding orchestration
 │   │   ├── ingestion/                 # Document ingestion, cleaning, and storage logic
 │   │   │   └── loaders/               # Multi-format document loaders (PDF, DOCX, HTML, TXT, MD)
-│   │   ├── llm/                       # LLM client abstractions
+│   │   ├── llm/                       # LLM client (Google Gemini)
 │   │   └── retrieval/                 # Information retrieval engines (dense retriever)
 │   ├── infrastructure/                # Persistence and system infrastructure adapters
 │   ├── models/                        # Core domain schemas, enums, and retry mechanisms
@@ -64,6 +84,7 @@ rag-system/
   - **Free Colab GPU Server**: Included Jupyter notebook (`colab_embedding_server.ipynb`) to run sentence-transformers on a free Google Colab GPU over an ngrok tunnel.
 - **Vector Database (Qdrant)**: Local persistent storage using Qdrant with project-scoped collections, metadata payloads, and configurable distance metrics (Cosine, Dot product).
 - **Dense Semantic Retrieval**: High-performance vector retrieval with top-$k$ similarity filtering and score ranking.
+- **Grounded Answer Generation**: `POST /api/ask/{project_id}` retrieves the best chunks, asks the LLM to answer *only* from them, and returns the answer with citations (source file, page and snippet). When the documents do not contain the answer, the system says so instead of guessing.
 - **RESTful API (FastAPI)**: Clean REST endpoints with automatic OpenAPI documentation (`/docs`) for uploading, processing, indexing, resetting, and querying documents.
 - **Comprehensive Evaluation Harness**:
   - Interactive CLI tool to generate golden question-chunk datasets (`scripts/build_golden_set.py`).
@@ -82,6 +103,7 @@ rag-system/
 | **Vector Database** | [Qdrant](https://qdrant.tech/) (`qdrant-client`) | High-performance vector search engine with local persistence |
 | **Embeddings** | [Google GenAI SDK](https://github.com/google-gemini/generative-ai-python) / Remote HTTP | Gemini embeddings or self-hosted sentence-transformers |
 | **Document Loaders** | PyMuPDF (`fitz`), python-docx, BeautifulSoup4 | Native parsing for PDF, Word documents, and HTML |
+| **Generation** | Google Gemini (`google-genai`) | Answer generation from retrieved context |
 | **Package Manager** | [uv](https://docs.astral.sh/uv/) | Extremely fast Python package manager and resolver |
 | **Testing & Quality** | Pytest, Pytest-Cov, Ruff, Mypy | Test coverage, static linting, and strict type checking |
 
@@ -115,6 +137,14 @@ Create your `.env` configuration file from the provided template:
 ```bash
 cp .env.example .env
 ```
+
+Answer generation uses your existing `GOOGLE_API_KEY` plus these optional variables:
+
+| Variable | Default | Description |
+|---|---|---|
+| `GENERATION_MODEL_ID` | `gemini-2.5-flash` | Gemini model used to write answers (check it matches a model your key can use) |
+| `GENERATION_TEMPERATURE` | `0.0` | Keep low for factual answers |
+| `DEFAULT_RETRIEVER` | `dense` | Retriever used by `/api/ask` when the request does not choose one: `dense`, `bm25`, `hybrid` or `hybrid_rerank` |
 
 ### Run the API
 
@@ -166,7 +196,41 @@ curl -X POST "http://127.0.0.1:8000/api/search/project_1" \
      -d '{"query": "What is the primary conclusion?", "top_k": 5}'
 ```
 
-### 6. Reset / Delete Data
+### 6. Ask a Question (grounded answer)
+Retrieve the most relevant chunks and generate an answer that cites them:
+```bash
+curl -X POST "http://127.0.0.1:8000/api/ask/project_1" \
+     -H "Content-Type: application/json" \
+     -d '{"question": "How many vacation days do new employees get?", "top_k": 5}'
+```
+`retriever` (optional) overrides `DEFAULT_RETRIEVER` for a single request, e.g. `"retriever": "hybrid"`.
+
+Example response (illustrative, for a project containing an employee handbook):
+```json
+{
+  "answer": "New employees get 15 vacation days per year, accrued monthly [1]. Unused days can be carried over for up to 3 months [2].",
+  "refused": false,
+  "citations": [
+    {
+      "chunk_id": "3f9c1a7e5b20d4c8",
+      "doc_id": "handbook",
+      "source": "handbook.pdf",
+      "page": 7,
+      "snippet": "Section 4.2 Vacation. Full-time employees receive 15 days of paid vacation per year..."
+    },
+    {
+      "chunk_id": "b81d6e02a9f4c735",
+      "doc_id": "handbook",
+      "source": "handbook.pdf",
+      "page": 7,
+      "snippet": "Unused vacation days may be carried over into the first three months of the next year..."
+    }
+  ]
+}
+```
+If nothing relevant is found, or the model decides the passages do not answer the question, the response is `{"answer": "I don't know based on the provided documents.", "refused": true, "citations": []}`. If the language model is unreachable or out of quota, the endpoint returns `502`.
+
+### 7. Reset / Delete Data
 Delete project-specific data (scopes: `raw`, `processed`, `vectors`, or `all`):
 ```bash
 curl -X DELETE "http://127.0.0.1:8000/api/data/project_1?scope=all"
