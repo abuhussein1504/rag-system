@@ -44,6 +44,7 @@ def client(tmp_path):
         APP_VERSION="0",
         FILE_DEFAULT_CHUNK_SIZE=200,
         FILE_DEFAULT_OVERLAP_SIZE=20,
+        DEFAULT_RETRIEVER="dense",
     )
     store = QdrantStore(str(tmp_path / "qdrant"), DistanceMethod.COSINE)
 
