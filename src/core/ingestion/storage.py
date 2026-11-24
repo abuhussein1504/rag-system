@@ -6,6 +6,7 @@ import aiofiles
 from fastapi import UploadFile
 
 READ_CHUNK_BYTES = 512 * 1024  # 512 KB
+_UPLOAD_PREFIX = re.compile(r"^[0-9a-f]{12}_")
 
 
 class FileTypeNotSupportedError(Exception):
@@ -14,6 +15,10 @@ class FileTypeNotSupportedError(Exception):
 
 class FileTooLargeError(Exception):
     pass
+
+
+def original_name(stored_name: str) -> str:
+    return _UPLOAD_PREFIX.sub("", stored_name)
 
 
 def get_extension(filename: str) -> str:

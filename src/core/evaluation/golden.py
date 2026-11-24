@@ -4,15 +4,12 @@ from pathlib import Path
 from pydantic import BaseModel, Field, field_validator
 
 from src.models.schemas import Chunk
+from src.core.ingestion.storage import original_name
 
-_UPLOAD_PREFIX = re.compile(r"^[0-9a-f]{12}_")
+
 _WORDS = re.compile(r"\w+")
 SHINGLE_SIZE = 5
 MIN_COVERAGE = 0.6
-
-
-def original_name(stored_name: str) -> str:
-    return _UPLOAD_PREFIX.sub("", stored_name)
 
 
 def _shingles(text: str) -> set[tuple[str, ...]]:
