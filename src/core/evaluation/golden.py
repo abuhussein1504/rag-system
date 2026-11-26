@@ -3,9 +3,8 @@ from pathlib import Path
 
 from pydantic import BaseModel, Field, field_validator
 
-from src.models.schemas import Chunk
 from src.core.ingestion.storage import original_name
-
+from src.models.schemas import Chunk
 
 _WORDS = re.compile(r"\w+")
 SHINGLE_SIZE = 5

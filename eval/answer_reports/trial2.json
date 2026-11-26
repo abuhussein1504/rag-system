@@ -1,0 +1,205 @@
+{
+  "metrics": {
+    "n_answerable": 5,
+    "n_unanswerable": 15,
+    "answer_rate": 1.0,
+    "correct_rate": 0.8,
+    "faithfulness": 0.98,
+    "fully_supported_rate": 0.8,
+    "context_hit_rate": 0.8,
+    "citation_hit_rate": 0.8,
+    "uncited_rate": 0.0,
+    "refusal_rate_unanswerable": 1.0,
+    "judge_errors": 0,
+    "avg_latency_ms": 3645.6
+  },
+  "answerable": [
+    {
+      "id": "q001",
+      "question": "How were white box and black box testing conducted on the BudgetService and parser endpoints?",
+      "answer": "White‑box testing involved a line‑by‑line trace of the BudgetService calculation pipeline, following user profile inputs and SQLite transaction aggregation through to the Safe‑to‑Spend and justify outputs and checking each arithmetic step against hand‑calculated values. The AppProvider.sendMessage flow was also traced end‑to‑end, covering classifier routing, parser dispatch, database write, budget recalculation, and coach call. Black‑box testing was performed by interacting only with the Flutter interface, with test cases derived from the functional requirements; it verified correct parsing and saving of natural‑language inputs, rejection of non‑financial messages, accurate budget recalculation after each transaction, coach tip rendering, chat responses, and correct PaydayCircle rendering. These tests ensured that the parser endpoints behaved correctly both when the eventparser API returned a clear result and when the fallback regex or local heuristics were used. [1][4]",
+      "refused": false,
+      "cited_numbers": [
+        1,
+        4
+      ],
+      "context_has_answer": true,
+      "citation_hit": true,
+      "latency_ms": 7188.9,
+      "faithfulness": 0.9,
+      "fully_supported": false,
+      "correct": false,
+      "judge_error": false
+    },
+    {
+      "id": "q002",
+      "question": "How did acceptance testing verify that all functional requirements from Chapter 3 were satisfied?",
+      "answer": "Acceptance testing mapped every functional requirement from Chapter 3 to a specific test scenario and ran those scenarios against the deployed local instance. The tests confirmed that the system correctly computed and displayed the Safe‑to‑Spend figure, rendered the Tap‑to‑Justify breakdown, processed natural‑language transaction logs through the AI pipeline, displayed category analytics, generated coaching tips, answered chatbot queries, preserved data locally without bank linking, and exported data in CSV and JSON formats. All acceptance criteria were met, indicating that every functional requirement was satisfied. [1]",
+      "refused": false,
+      "cited_numbers": [
+        1
+      ],
+      "context_has_answer": true,
+      "citation_hit": true,
+      "latency_ms": 1954.3,
+      "faithfulness": 1.0,
+      "fully_supported": true,
+      "correct": true,
+      "judge_error": false
+    },
+    {
+      "id": "q003",
+      "question": "What complete user workflows were simulated during end-to-end system testing of 3ML?",
+      "answer": "End‑to‑end system tests simulated the following complete user workflows: onboarding, profile setup, transaction logging via chat, spending analytics, and settings management. The tests also included an offline scenario where network access was disabled to confirm that previously logged transactions remained accessible and budget calculations stayed functional through the fallback pipeline. [2]",
+      "refused": false,
+      "cited_numbers": [
+        2
+      ],
+      "context_has_answer": true,
+      "citation_hit": true,
+      "latency_ms": 2082.4,
+      "faithfulness": 1.0,
+      "fully_supported": true,
+      "correct": true,
+      "judge_error": false
+    },
+    {
+      "id": "q004",
+      "question": "How was the dataset for the DistilBERT intent classifier constructed, balanced, and trained?",
+      "answer": "The DistilBERT intent classifier was trained on a dataset assembled from three sources: transaction samples from the event‑parser‑data dataset [6] and conversational samples from fahmiaziz/fingpt [14] and ceadar‑ie/FinTalk‑19k [15] [1][4]. The combined data were balanced to 13,452 samples per class and split 80/10/10 for training, validation, and testing using stratified sampling [4]. Fine‑tuning used the Hugging Face Trainer API for 5 epochs with a batch size of 64, a learning rate of 2e‑5, weight decay of 0.05, and fp16 mixed‑precision training, selecting the best checkpoint by validation F1‑score [4].",
+      "refused": false,
+      "cited_numbers": [
+        1,
+        4
+      ],
+      "context_has_answer": true,
+      "citation_hit": true,
+      "latency_ms": 2694.7,
+      "faithfulness": 1.0,
+      "fully_supported": true,
+      "correct": true,
+      "judge_error": false
+    },
+    {
+      "id": "q005",
+      "question": "What principal contributions did the 3ML project make to personal finance AI and open datasets?",
+      "answer": "The 3ML project delivered a fully functional, privacy‑first budgeting app that requires no bank account linking or external data aggregator sign‑ups, thereby lowering barriers to adoption and keeping all data on the device [3]. It also introduced an integrated three‑model AI pipeline—consisting of a fast intent classifier, a structured event parser, and a fine‑tuned coaching chatbot—to provide natural‑language interaction and micro‑coaching within a deterministic budgeting engine [2]. Beyond the application, the project released a reusable public dataset for personal finance AI research, establishing a foundation for future iterations and broader user reach [1]. These contributions collectively advance both the practical tools and the data resources available to the personal finance AI community.",
+      "refused": false,
+      "cited_numbers": [
+        3,
+        2,
+        1
+      ],
+      "context_has_answer": false,
+      "citation_hit": false,
+      "latency_ms": 4307.9,
+      "faithfulness": 1.0,
+      "fully_supported": true,
+      "correct": true,
+      "judge_error": false
+    }
+  ],
+  "unanswerable": [
+    {
+      "id": "u01",
+      "question": "Who is Cristiano Ronaldo?",
+      "answer": "I don't know based on the provided documents.",
+      "refused": true
+    },
+    {
+      "id": "u02",
+      "question": "What is the capital of Australia?",
+      "answer": "I don't know based on the provided documents.",
+      "refused": true
+    },
+    {
+      "id": "u03",
+      "question": "How do I bake sourdough bread at home?",
+      "answer": "I don't know based on the provided documents.",
+      "refused": true
+    },
+    {
+      "id": "u04",
+      "question": "Who wrote the play Hamlet?",
+      "answer": "I don't know based on the provided documents.",
+      "refused": true
+    },
+    {
+      "id": "u05",
+      "question": "What is the boiling point of water at sea level?",
+      "answer": "I don't know based on the provided documents.",
+      "refused": true
+    },
+    {
+      "id": "u06",
+      "question": "What is the latest iPhone model?",
+      "answer": "I don't know based on the provided documents.",
+      "refused": true
+    },
+    {
+      "id": "u07",
+      "question": "How many people live in Egypt?",
+      "answer": "I don't know based on the provided documents.",
+      "refused": true
+    },
+    {
+      "id": "u08",
+      "question": "How do I train for a marathon?",
+      "answer": "I don't know based on the provided documents.",
+      "refused": true
+    },
+    {
+      "id": "u09",
+      "question": "What was the total development cost of 3ML in US dollars?",
+      "answer": "I don't know based on the provided documents.",
+      "refused": true
+    },
+    {
+      "id": "u10",
+      "question": "Which cloud provider hosts the 3ML backend servers?",
+      "answer": "I don't know based on the provided documents.",
+      "refused": true
+    },
+    {
+      "id": "u11",
+      "question": "How many users downloaded 3ML from Google Play?",
+      "answer": "I don't know based on the provided documents.",
+      "refused": true
+    },
+    {
+      "id": "u12",
+      "question": "What monthly subscription price does 3ML charge?",
+      "answer": "I don't know based on the provided documents.",
+      "refused": true
+    },
+    {
+      "id": "u13",
+      "question": "Which payment gateway does 3ML use for in-app purchases?",
+      "answer": "I don't know based on the provided documents.",
+      "refused": true
+    },
+    {
+      "id": "u14",
+      "question": "What is the star rating of 3ML on the Apple App Store?",
+      "answer": "I don't know based on the provided documents.",
+      "refused": true
+    },
+    {
+      "id": "u15",
+      "question": "Which investors funded the 3ML project?",
+      "answer": "I don't know based on the provided documents.",
+      "refused": true
+    }
+  ],
+  "name": "trial2",
+  "created_at": "2026-11-26T22:37:24.843080+00:00",
+  "config": {
+    "retriever": "hybrid",
+    "top_k": 5,
+    "generation_backend": "openai_compatible",
+    "generation_model": "openai/gpt-oss-20b",
+    "judge_backend": "openai_compatible",
+    "judge_model": "openai/gpt-oss-120b",
+    "same_model_judges_itself": false
+  }
+}
