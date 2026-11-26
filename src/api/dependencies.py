@@ -6,7 +6,7 @@ from fastapi import Path as PathParam
 
 from src.config import Settings, get_settings
 from src.core.llm.base import LLMClient
-from src.core.llm.gemini import GeminiLLM
+from src.core.llm.factory import llm_from_settings
 from src.models.enums import EmbeddingBackend
 from src.stores.embedding.base import Embedder
 from src.stores.embedding.gemini_embedder import GeminiEmbedder
@@ -56,14 +56,12 @@ def get_reranker() -> Reranker:
 
 @lru_cache
 def get_llm() -> LLMClient:
-    s = get_settings()
-    if s.GOOGLE_API_KEY is None:
-        raise RuntimeError("GOOGLE_API_KEY is required for answer generation")
-    return GeminiLLM(
-        s.GOOGLE_API_KEY.get_secret_value(),
-        s.GENERATION_MODEL_ID,
-        s.GENERATION_TEMPERATURE,
-    )
+    return llm_from_settings(get_settings())
+
+
+@lru_cache
+def get_judge_llm() -> LLMClient:
+    return llm_from_settings(get_settings(), judge=True)
 
 
 SettingsDep = Annotated[Settings, Depends(get_settings)]

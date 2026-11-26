@@ -25,12 +25,13 @@ class RetrievalSource(StrEnum):
 class GenerationBackend(StrEnum):
     GEMINI = "gemini"
     OLLAMA = "ollama"
+    OPENAI_COMPATIBLE = "openai_compatible"  # Groq, Cerebras, Mistral, OpenRouter, Ollama...
 
 
 class EmbeddingBackend(StrEnum):
     SENTENCE_TRANSFORMERS = "sentence_transformers"
     GEMINI = "gemini"
-    REMOTE = "remote"  # any HTTP embedding server (e.g. Colab + ngrok)
+    REMOTE = "remote"
 
 
 class VectorDBBackend(StrEnum):

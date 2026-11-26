@@ -9,9 +9,11 @@ from src.models.retry import retry
 
 
 def _is_retryable(exc: Exception) -> bool:
-    return isinstance(exc, errors.APIError) and (
-        exc.code == 429 or (exc.code or 0) >= 500
-    )
+    if not isinstance(exc, errors.APIError):
+        return False
+    if exc.code == 429 and "PerDay" in str(exc):
+        return False
+    return exc.code == 429 or (exc.code or 0) >= 500
 
 
 class GeminiLLM:
