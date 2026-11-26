@@ -43,6 +43,7 @@ class RetrievedChunk(BaseModel):
 class Citation(BaseModel):
     model_config = ConfigDict(frozen=True)
 
+    number: int = 0
     chunk_id: str
     doc_id: str
     snippet: str
