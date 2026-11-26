@@ -12,9 +12,9 @@ from src.api.dependencies import (
 )
 from src.api.schemas.ask import AskCitation, AskRequest, AskResponse
 from src.core.generation.generator import AnswerGenerator
+from src.core.indexing.indexer import collection_name
 from src.core.llm.base import LLMError
 from src.core.retrieval.factory import build_retriever
-from src.core.indexing.indexer import collection_name
 from src.models.enums import RetrieverName
 
 ask_router = APIRouter(prefix="/api/ask", tags=["ask"])

@@ -2,9 +2,9 @@ import logging
 import re
 
 from src.core.generation.prompt import REFUSAL_TEXT, SYSTEM_PROMPT, build_prompt
+from src.core.ingestion.storage import original_name
 from src.core.llm.base import LLMClient
 from src.core.retrieval.base import Retriever
-from src.core.ingestion.storage import original_name
 from src.models.schemas import Answer, Citation, RetrievedChunk
 
 logger = logging.getLogger(__name__)
@@ -26,6 +26,7 @@ def extract_citations(
         chunk = hits[n - 1].chunk
         citations.append(
             Citation(
+                number=n,
                 chunk_id=chunk.id,
                 doc_id=chunk.doc_id,
                 snippet=chunk.text[:snippet_chars],

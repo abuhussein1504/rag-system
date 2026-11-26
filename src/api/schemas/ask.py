@@ -12,6 +12,7 @@ class AskRequest(BaseModel):
 
 
 class AskCitation(BaseModel):
+    number: int
     chunk_id: str
     doc_id: str
     source: str
