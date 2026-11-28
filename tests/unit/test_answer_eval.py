@@ -9,6 +9,7 @@ from src.core.evaluation.answers import (
     evaluate_answerable,
     load_unanswerable,
     parse_judgement,
+    reusable_rows,
     run_answer_eval,
     summarize,
 )
@@ -119,12 +120,27 @@ def test_a_refusal_counts_as_not_correct_and_skips_the_judge():
     assert judge.calls == []
 
 
-@pytest.mark.parametrize("judge", [ScriptedJudge("garbage"), ScriptedJudge(error=LLMError("x"))])
-def test_a_failing_judge_is_recorded_not_crashed(judge):
+def test_an_unreadable_verdict_is_recorded_not_crashed():
     answer = Answer(text="Small [1].", citations=[cited(1, GOOD)])
-    row = evaluate_answerable(GOLD, answer_fn_for(answer, [GOOD]), judge)
+    row = evaluate_answerable(GOLD, answer_fn_for(answer, [GOOD]), ScriptedJudge("garbage"))
     assert row["judge_error"] is True
     assert row["correct"] is False
+
+
+def test_an_unavailable_judge_stops_the_run_instead_of_faking_a_verdict():
+    answer = Answer(text="Small [1].", citations=[cited(1, GOOD)])
+    with pytest.raises(LLMError):
+        evaluate_answerable(
+            GOLD, answer_fn_for(answer, [GOOD]), ScriptedJudge(error=LLMError("quota"))
+        )
+
+
+def test_reusable_rows_drop_only_judge_failures():
+    report = {
+        "answerable": [row(id="q1"), row(id="q2", judge_error=True)],
+        "unanswerable": [{"id": "u1", "refused": True}],
+    }
+    assert set(reusable_rows(report)) == {"a:q1", "u:u1"}
 
 
 def test_recording_retriever_remembers_the_last_hits():
@@ -201,3 +217,27 @@ def test_load_unanswerable_checks_ids(tmp_path):
     f.write_text(line + "\n" + line + "\n", encoding="utf-8")
     with pytest.raises(ValueError):
         load_unanswerable(f)
+
+
+def test_show_rows_formats_a_row_for_hand_checking():
+    from scripts.show_rows import format_row
+
+    text = format_row(row(id="q9", question="Why?", answer="Because [1]."),
+                      {"page": 7, "answers": ["the reference"]})
+    assert "== q9" in text
+    assert "QUESTION: Why?" in text
+    assert "ANSWER:   Because [1]." in text
+    assert "GOLD (page 7): the reference" in text
+
+
+def test_answer_report_comparison_table_and_flips():
+    from scripts.compare_answer_reports import build_table, flips
+
+    old = {"name": "a", "metrics": {"correct_rate": 0.5}, "answerable": [
+        row(id="q1", correct=True), row(id="q2", correct=False), row(id="q3", correct=False)]}
+    new = {"name": "b", "metrics": {"correct_rate": 0.6}, "answerable": [
+        row(id="q1", correct=False), row(id="q2", correct=True), row(id="q3", correct=False)]}
+    assert flips(old, new) == (["q2"], ["q1"])
+    table = build_table([old, new])
+    assert "| a | 0.5 |" in table
+    assert "| b | 0.6 |" in table

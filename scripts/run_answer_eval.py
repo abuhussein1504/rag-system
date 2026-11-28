@@ -15,6 +15,7 @@ from src.core.evaluation.answers import (
     RecordingRetriever,
     Row,
     load_unanswerable,
+    reusable_rows,
     run_answer_eval,
 )
 from src.core.evaluation.golden import load_golden
@@ -32,6 +33,11 @@ def main() -> None:
     parser.add_argument("--top-k", type=int, default=5)
     parser.add_argument("--limit", type=int, help="only the first N answerable questions")
     parser.add_argument("--delay", type=float, default=4.0, help="seconds between questions")
+    parser.add_argument(
+        "--redo-errors",
+        metavar="REPORT",
+        help="start from a finished report and redo only the rows the judge failed on",
+    )
     parser.add_argument("--golden", default="eval/golden_set.jsonl")
     parser.add_argument("--unanswerable", default="eval/unanswerable.jsonl")
     args = parser.parse_args()
@@ -71,6 +77,10 @@ def main() -> None:
             entry = json.loads(line)
             existing[entry["key"]] = entry["row"]
         print(f"Resuming: {len(existing)} questions already done.")
+    elif args.redo_errors:
+        finished = json.loads((out_dir / f"{args.redo_errors}.json").read_text(encoding="utf-8"))
+        existing = reusable_rows(finished)
+        print(f"Keeping {len(existing)} good rows of {args.redo_errors}; redoing the rest.")
 
     def save_row(key: str, row: Row) -> None:
         with partial.open("a", encoding="utf-8") as f:

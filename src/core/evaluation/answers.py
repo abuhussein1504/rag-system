@@ -11,7 +11,7 @@ from pydantic import BaseModel, Field
 
 from src.core.evaluation.golden import GoldItem, is_relevant
 from src.core.generation.prompt import format_passage
-from src.core.llm.base import LLMClient, LLMError
+from src.core.llm.base import LLMClient
 from src.models.schemas import Answer, RetrievedChunk
 
 JUDGE_SYSTEM = (
@@ -134,7 +134,7 @@ def evaluate_answerable(item: GoldItem, answer_fn: AnswerFn, judge: LLMClient) -
     try:
         prompt = build_judge_prompt(item.question, hits, item.answers, answer.text)
         verdict = parse_judgement(judge.generate(JUDGE_SYSTEM, prompt))
-    except (LLMError, ValueError):
+    except ValueError:  # unreadable verdict; an unavailable judge (LLMError) stops the run
         row["judge_error"] = True
         return row
     row["faithfulness"] = round(verdict.faithfulness, 4)
@@ -173,6 +173,17 @@ def summarize(answerable: list[Row], unanswerable: list[Row]) -> dict[str, Any]:
         "avg_latency_ms": round(mean(r["latency_ms"] for r in answerable), 1)
         if answerable else None,
     }
+
+
+def reusable_rows(report: dict[str, Any]) -> dict[str, Row]:
+    """Rows of a finished report that need no redo: everything except judge failures."""
+    keep: dict[str, Row] = {}
+    for row in report["answerable"]:
+        if not row["judge_error"]:
+            keep[f"a:{row['id']}"] = row
+    for row in report["unanswerable"]:
+        keep[f"u:{row['id']}"] = row
+    return keep
 
 
 def run_answer_eval(
